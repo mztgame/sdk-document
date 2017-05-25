@@ -11,8 +11,8 @@ POST  `http://beacon.mztgame.com/service/checkAppUpdate`
 |------|------|------|
 | errorCode | 成功:0,失败错误码自定义| 游戏自定义(字符串型） |
 | errorMsg | 错误信息,可选 | 例："init failed" |
-| appid | 游戏APPID | |
-| openid | 玩家唯一的标识，若无填空 |  |
+| appid | 手游平台分配的appid | |
+| openid | sdk登陆后entity中的openid | 玩家唯一的标识，如果是第1次登录，因取不到值则填0；以后登录则需要填写实际的值。 |
 | totaltime | 检查更新耗时,单位：ms  |  |
 | platform |  登录平台（取值：1 ios, 2 android, 3 wp, 9 other） |  |
 | ver_addr | 版本服务器域名或者ip |  |
@@ -44,8 +44,8 @@ POST  `http://beacon.mztgame.com/service/downloadEvent`
  
 | 参数名 | 说明 | 备注 |
 |------|------|------|
-| oepnid | 玩家唯一的标识，若无填空 |  |
-| appid | 游戏APPID | |
+| openid | sdk登陆后entity中的openid | 玩家唯一的标识，如果是第1次登录，因取不到值则填0；以后登录则需要填写实际的值。 |
+| appid | 手游平台分配的appid | |
 | platform |  登录平台（取值：1 ios, 2 android, 3 wp, 9 other） |  |
 | begintime | 操作开始时间 |精确到秒yyyy-mm-dd hh:mm:ss (PRC) |
 | version | 下载的版本号 |  |
