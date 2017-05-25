@@ -1,4 +1,4 @@
-下载服务化(手游)上报接口
+下载服务化(手游)上报接口（备注：所有请求字段可没有值，但是要保留字段名）
 =========================
 
 ## 1.检查版本更新事件数据接口
@@ -9,12 +9,12 @@ POST  `http://beacon.mztgame.com/service/checkAppUpdate`
  
 | 参数名 | 说明 | 备注 |
 |------|------|------|
-| errorCode | 成功:0,失败错误码参考备注| 游戏自定义(字符串型） |
-| errorMsg | 错误信息,可选 |  |
+| errorCode | 成功:0,失败错误码自定义| 游戏自定义(字符串型） |
+| errorMsg | 错误信息,可选 | 例："init failed" |
 | appid | 游戏APPID | |
 | openid | 玩家唯一的标识，若无填空 |  |
 | totaltime | 检查更新耗时,单位：ms  |  |
-| platform | 登录平台（取值：1 ios 2 android 3 wp 9 other） |  |
+| platform |  登录平台（取值：1 ios, 2 android, 3 wp, 9 other） |  |
 | ver_addr | 版本服务器域名或者ip |  |
 | version | 要下载的版本号 |  |
 | build | build版本,若无填空 |  |
@@ -46,15 +46,15 @@ POST  `http://beacon.mztgame.com/service/downloadEvent`
 |------|------|------|
 | oepnid | 玩家唯一的标识，若无填空 |  |
 | appid | 游戏APPID | |
-| platform | 登录平台（取值：1 ios 2 android 3 wp 9 other） |  |
+| platform |  登录平台（取值：1 ios, 2 android, 3 wp, 9 other） |  |
 | begintime | 操作开始时间 |精确到秒yyyy-mm-dd hh:mm:ss (PRC) |
 | version | 下载的版本号 |  |
 | build | 下载的build号，若无填空  |  |
 | oldversion | 当前版本号 |  |
 | oldbuild | 当前build号 |  |
 | resultCode | 下载结果 |0成功，1失败 |
-| errorCode | 错误码 | 游戏自定义(字符串型）  |
-| errorMsg | 错误原因 |  |
+| errorCode | 成功:0,失败错误码自定义| 游戏自定义(字符串型） |
+| errorMsg | 错误信息,可选 | 例："init failed" |
 | totaltime |  下载总耗时(单位：ms) |这个耗时是指用户从开始下载到下载结束的总耗时,不管是否成功。|
 | filesize |  已下载的总大小(单位：字节） | 这个字节数是指用户从开始下载到下载结束的总字节数,不管是否成功。 |
 | url |  下载的url | 多包下载可上报最后一个文件的url |
