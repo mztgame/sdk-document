@@ -100,7 +100,7 @@ POST  `http://beacon.mztgame.com/service/loginLoadRole`
 | errorMsg | 错误信息,可选 | 例："init failed" |
 | appid | 手游平台分配的appid | |
 | openid | sdk登陆后entity中的openid | 玩家唯一的标识，如果是第1次登录，因取不到值则填0；以后登录则需要填写实际的值。 |
-| totaltime | 加载角色耗时,单位：ms  |  |
+| totaltime | 新建或者加载角色耗时时间,单位：ms  |  |
 | platform | 登录平台（取值：1 ios, 2 android, 3 wp, 9 other） |  |
 | zoneid | 分区分服，填小服ID；全区全服填0；若无填-1 |  |
 | role_list | 角色列表, 上报格式规范：{"角色id":"角色名"}，例如:{"1001":"test1","1002":"test2"}，若无填0 |  |
