@@ -39,9 +39,8 @@ errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-1
 
 #### 响应说明
 
-HTTP 
-application/json 
-{"code":0}
+    HTTP  application/json 
+    {"code":0}
 
 
 
@@ -69,9 +68,8 @@ errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-1
 
 #### 响应说明
 
-HTTP 
-application/json 
-{"code":0}
+    HTTP  application/json 
+    {"code":0}
 
 
 ## 3.拉取区服列表事件数据接口
@@ -98,9 +96,8 @@ errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-1
 
 #### 响应说明
 
-HTTP 
-application/json 
-{"code":0}
+    HTTP  application/json 
+    {"code":0}
 
 
 ## 4.加载角色事件(新建或者获取已有角色)事件数据接口
@@ -129,9 +126,8 @@ errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-1
 
 #### 响应说明
 
-HTTP 
-application/json 
-{"code":0}
+    HTTP  application/json 
+    {"code":0}
 
 
 ## 5.登录到大厅事件数据接口
@@ -159,9 +155,8 @@ errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-1
 
 #### 响应说明
 
-HTTP 
-application/json 
-{"code":0}
+    HTTP  application/json 
+    {"code":0}
 
 
 ## 6.加载角色事件(新建或者获取已有角色)事件数据接口
@@ -189,6 +184,5 @@ errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-1
 
 #### 响应说明
 
-HTTP
-application/json 
-{"code":0}
+    HTTP  application/json 
+    {"code":0}
