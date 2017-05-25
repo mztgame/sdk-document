@@ -1,15 +1,15 @@
 下载服务化(手游)上报接口（备注：所有请求字段可没有值，但是要保留字段名）
 =========================
 
-###### 描述
+## 描述
+---
 1.启动游戏后,会检查是否有更新(app或资源文件更新),这个逻辑增加上报Service_Login_CheckAppUpdate的事件。
 2.如果用户进入下载逻辑,且不是跳转appstore或应用宝,在完成下载后(不管成功还是失败)上报Service_DownloadEvent事件。
-######
-
+---
 #### 参考流程图
 
 <img src="http://cdn.mztgame.ztgame.com.cn/data/update-collect.png">
-
+##
 ## 1.检查版本更新事件数据接口
 
 POST  `http://beacon.mztgame.com/service/checkAppUpdate`
