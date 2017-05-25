@@ -8,7 +8,7 @@
 
 #### 参考流程图
 
-<img src="http://cdn.mztgame.ztgame.com.cn/data/update-collect.png" width="430">
+<img src="http://cdn.mztgame.ztgame.com.cn/data/update-collect.png">
 
 ## 1.检查版本更新事件数据接口
 
