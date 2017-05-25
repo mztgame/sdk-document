@@ -58,7 +58,7 @@ POST  `http://beacon.mztgame.com/service/downloadEvent`
 | totaltime | 下载总耗时(单位：ms) | 这个耗时是指用户从开始下载到下载结束的总耗时,不管是否成功。|
 | filesize | 已下载的总大小(单位：字节） | 这个字节数是指用户从开始下载到下载结束的总字节数,不管是否成功。 |
 | url | 下载的url | 多包下载可上报最后一个文件的url |
-| final_url | 下载的最终url |?经过域名解析得到明确ip或经过302跳转后最后的带ip的url |
+| final_url | 下载的最终url | 经过域名解析得到明确ip或经过302跳转后最后的带ip的url |
 | versionType | 更新类型，区分app更新和资源更新方式 | 取值0：appstore；1：下载apk；2：资源文件更新 |
 | totalfilesize | 需要下载的总大小（单位：字节） | |
  
