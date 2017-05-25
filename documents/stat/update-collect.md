@@ -3,8 +3,8 @@
 
 #### 描述
 
-    1.启动游戏后,会检查是否有更新(app或资源文件更新),这个逻辑增加上报Service_Login_CheckAppUpdate的事件。
-    2.如果用户进入下载逻辑,且不是跳转appstore或应用宝,在完成下载后(不管成功还是失败)上报Service_DownloadEvent事件。
+    1.启动游戏后,会检查是否有更新(app或资源文件更新),这个逻辑增加上报service/loginCheckAppUpdate的事件。
+    2.如果用户进入下载逻辑,在完成下载后(不管成功还是失败)上报service/downloadEvent事件。
 
 #### 参考流程图
 
