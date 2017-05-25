@@ -18,7 +18,7 @@ POST  `http://beacon.mztgame.com/service/checkAppUpdate`
 | ver_addr | 版本服务器域名或者ip |  |
 | version | 要下载的版本号 |  |
 | build | build版本,若无填空 |  |
-| resultCode |  有更新：1；无更新：0 | 否 |
+| resultCode |  有更新：1；无更新：0 |  |
 | updateType |  在有更新情况下，用户主动选择更新：1；强制更新：2；用户忽略更新：0 |  |
 | versionType |  更新类型，区分app更新和资源更新方式 | 取值0：appstore；1：下载apk；2：资源文件更新 |
  
