@@ -1,4 +1,4 @@
-手游登录上报事件接口
+手游登录上报事件接口（备注：所有请求字段可没有值，但是要保留字段名）
 =========================
 
 ## 1.启动游戏事件数据接口
@@ -12,7 +12,7 @@ POST  `http://beacon.mztgame.com/service/loginGameStart`
 | errorCode | 成功:0,失败错误码自定义| 游戏自定义(字符串型） |
 | errorMsg | 错误信息,可选 | 例："init failed" |
 | appid | 手游平台分配的appid | |
-| openid | 玩家唯一的标识，若无填空 | 玩家唯一的标识，如果是第1次登录，因取不到值则填0；以后登录则需要填写实际的值。 |
+| openid | sdk登陆后entity中的openid | 玩家唯一的标识，如果是第1次登录，因取不到值则填0；以后登录则需要填写实际的值。 |
 | totaltime | 启动客户端耗时,单位：ms  |  |
 | platform | 登录平台（取值：1 ios, 2 android, 3 wp, 9 other） |  |
  
@@ -39,9 +39,9 @@ POST  `http://beacon.mztgame.com/service/loginSdkClient`
 | 参数名 | 说明 | 备注 |
 |------|------|------|
 | errorCode | 成功:0,失败错误码自定义| 游戏自定义(字符串型） |
-| errorMsg | 错误信息,可选 |  |
+| errorMsg | 错误信息,可选 | 例："init failed" |
 | appid | 手游平台分配的appid | |
-| openid | 玩家唯一的标识，若无填空 | 玩家唯一的标识，如果是第1次登录，因取不到值则填0；以后登录则需要填写实际的值。 |
+| openid | sdk登陆后entity中的openid | 玩家唯一的标识，如果是第1次登录，因取不到值则填0；以后登录则需要填写实际的值。 |
 | totaltime | SDK登陆耗时,单位：ms  |  |
 | platform | 登录平台（取值：1 ios, 2 android, 3 wp, 9 other） |  |
 | zoneid | 分区分服，填小服ID；全区全服填0；若无填-1 |  |
@@ -68,9 +68,9 @@ POST  `http://beacon.mztgame.com/service/loginSelectServer`
 | 参数名 | 说明 | 备注 |
 |------|------|------|
 | errorCode | 成功:0,失败错误码自定义| 游戏自定义(字符串型） |
-| errorMsg | 错误信息,可选 |  |
+| errorMsg | 错误信息,可选 | 例："init failed" |
 | appid | 手游平台分配的appid | |
-| openid | 玩家唯一的标识，若无填空 | 玩家唯一的标识，如果是第1次登录，因取不到值则填0；以后登录则需要填写实际的值。 |
+| openid | sdk登陆后entity中的openid| 玩家唯一的标识，如果是第1次登录，因取不到值则填0；以后登录则需要填写实际的值。 |
 | totaltime | 拉取列表耗时,单位：ms  |  |
 | platform | 登录平台（取值：1 ios, 2 android, 3 wp, 9 other） |  |
 | zoneid | 分区分服，填小服ID；全区全服填0；若无填-1 |  |
@@ -97,9 +97,9 @@ POST  `http://beacon.mztgame.com/service/loginLoadRole`
 | 参数名 | 说明 | 备注 |
 |------|------|------|
 | errorCode | 成功:0,失败错误码自定义| 游戏自定义(字符串型） |
-| errorMsg | 错误信息,可选 |  |
+| errorMsg | 错误信息,可选 | 例："init failed" |
 | appid | 手游平台分配的appid | |
-| openid | 玩家唯一的标识，若无填空 | 玩家唯一的标识，如果是第1次登录，因取不到值则填0；以后登录则需要填写实际的值。 |
+| openid | sdk登陆后entity中的openid | 玩家唯一的标识，如果是第1次登录，因取不到值则填0；以后登录则需要填写实际的值。 |
 | totaltime | 加载角色耗时,单位：ms  |  |
 | platform | 登录平台（取值：1 ios, 2 android, 3 wp, 9 other） |  |
 | zoneid | 分区分服，填小服ID；全区全服填0；若无填-1 |  |
@@ -128,9 +128,9 @@ POST  `http://beacon.mztgame.com/service/loginInLobby`
 | 参数名 | 说明 | 备注 |
 |------|------|------|
 | errorCode | 成功:0,失败错误码自定义| 游戏自定义(字符串型） |
-| errorMsg | 错误信息,可选 |  |
+| errorMsg | 错误信息,可选 | 例："init failed" |
 | appid | 手游平台分配的appid | |
-| openid | 玩家唯一的标识，若无填空 | 玩家唯一的标识，如果是第1次登录，因取不到值则填0；以后登录则需要填写实际的值。 |
+| openid | sdk登陆后entity中的openid | 玩家唯一的标识，如果是第1次登录，因取不到值则填0；以后登录则需要填写实际的值。 |
 | totaltime | 登陆大厅耗时,单位：ms  |  |
 | platform | 登录平台（取值：1 ios, 2 android, 3 wp, 9 other） |  |
 | zoneid | 分区分服，填小服ID；全区全服填0；若无填-1 |  |
@@ -158,9 +158,9 @@ POST  `http://beacon.mztgame.com/service/loginEnterGame`
 | 参数名 | 说明 | 备注 |
 |------|------|------|
 | errorCode | 成功:0,失败错误码自定义| 游戏自定义(字符串型） |
-| errorMsg | 错误信息,可选 |  |
+| errorMsg | 错误信息,可选 | 例："init failed" |
 | appid | 手游平台分配的appid | |
-| openid | 玩家唯一的标识，若无填空 | 玩家唯一的标识，如果是第1次登录，因取不到值则填0；以后登录则需要填写实际的值。 |
+| openid | sdk登陆后entity中的openid | 玩家唯一的标识，如果是第1次登录，因取不到值则填0；以后登录则需要填写实际的值。 |
 | totaltime | 加载角色耗时,单位：ms  |  |
 | platform | 登录平台（取值：1 ios, 2 android, 3 wp, 9 other） |  |
 | zoneid | 分区分服，填小服ID；全区全服填0；若无填-1 |  |
