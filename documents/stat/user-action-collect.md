@@ -13,7 +13,7 @@ POST  `http://beacon.mztgame.com/service/loginGameStart`
 | errorMsg | 错误信息,可选 | 例："init failed" |
 | appid | 手游平台分配的appid | |
 | openid | sdk登陆后entity中的openid | 玩家唯一的标识，如果是第1次登录，因取不到值则填0；以后登录则需要填写实际的值。 |
-| totaltime | 启动客户端耗时,单位：ms  |  |
+| totaltime | 启动客户端耗时,单位：ms  | 初始化时间：即从点击图标开始，到加载资源完成的时间） |
 | platform | 登录平台（取值：1 ios, 2 android, 3 wp, 9 other） |  |
  
 #### 对接地址参数范例
@@ -42,7 +42,7 @@ POST  `http://beacon.mztgame.com/service/loginSdkClient`
 | errorMsg | 错误信息,可选 | 例："init failed" |
 | appid | 手游平台分配的appid | |
 | openid | sdk登陆后entity中的openid | 玩家唯一的标识，如果是第1次登录，因取不到值则填0；以后登录则需要填写实际的值。 |
-| totaltime | SDK登陆耗时,单位：ms  |  |
+| totaltime | SDK登陆耗时,单位：ms  | 从客户端发起SDK登录请求，到收到SDK的返回数据 |
 | platform | 登录平台（取值：1 ios, 2 android, 3 wp, 9 other） |  |
 | zoneid | 分区分服，填小服ID；全区全服填0；若无填-1 |  |
  
