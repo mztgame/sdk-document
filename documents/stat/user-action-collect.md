@@ -174,6 +174,6 @@ errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-1
 
 #### 响应说明
 
-HTTP 
+HTTP
 application/json 
 {"code":0}
