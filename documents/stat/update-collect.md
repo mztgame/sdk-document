@@ -44,9 +44,8 @@ errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-1
 
 #### 响应说明
 
-HTTP 
-application/json 
-{"code":0}
+    HTTP application/json 
+    {"code":0}
 
 
 
@@ -84,6 +83,5 @@ oepnid=1-11122&appid=5012&platform=1&begintime=2017-05-14 10:00:00&version=1.0.1
 
 #### 响应说明
 
-HTTP 
-application/json 
-{"code":0}
+    HTTP application/json 
+    {"code":0}
