@@ -14,7 +14,6 @@
 
     所有请求字段可没有值，但是要保留字段名
 
-####
 ## 1.检查版本更新事件数据接口
 
 POST  `http://beacon.mztgame.com/service/checkAppUpdate`
