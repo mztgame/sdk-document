@@ -13,7 +13,7 @@ POST  `http://beacon.mztgame.com/service/loginGameStart`
 | errorMsg | 错误信息,可选 |  |
 | appid | 游戏APPID | |
 | openid | 玩家唯一的标识，若无填空 |  |
-| totaltime | 检查更新耗时,单位：ms  |  |
+| totaltime | 耗时,单位：ms  |  |
 | platform | 登录平台（取值：1 ios 2 android 3 wp 9 other） |  |
  
 #### 对接地址参数范例
@@ -42,7 +42,7 @@ POST  `http://beacon.mztgame.com/service/loginSdkClient`
 | errorMsg | 错误信息,可选 |  |
 | appid | 游戏APPID | |
 | openid | 玩家唯一的标识，若无填空 |  |
-| totaltime | 检查更新耗时,单位：ms  |  |
+| totaltime | 耗时,单位：ms  |  |
 | platform | 登录平台（取值：1 ios 2 android 3 wp 9 other） |  |
 | zoneid | 分区分服，填小服ID；全区全服填0；若无填-1 |  |
  
@@ -71,7 +71,7 @@ POST  `http://beacon.mztgame.com/service/loginSelectServer`
 | errorMsg | 错误信息,可选 |  |
 | appid | 游戏APPID | |
 | openid | 玩家唯一的标识，若无填空 |  |
-| totaltime | 检查更新耗时,单位：ms  |  |
+| totaltime | 耗时,单位：ms  |  |
 | platform | 登录平台（取值：1 ios 2 android 3 wp 9 other） |  |
 | zoneid | 分区分服，填小服ID；全区全服填0；若无填-1 |  |
  
@@ -100,7 +100,7 @@ POST  `http://beacon.mztgame.com/service/loginLoadRole`
 | errorMsg | 错误信息,可选 |  |
 | appid | 游戏APPID | |
 | openid | 玩家唯一的标识，若无填空 |  |
-| totaltime | 检查更新耗时,单位：ms  |  |
+| totaltime | 耗时,单位：ms  |  |
 | platform | 登录平台（取值：1 ios 2 android 3 wp 9 other） |  |
 | zoneid | 分区分服，填小服ID；全区全服填0；若无填-1 |  |
 | role_list | 角色列表, 上报格式规范：{"角色id":"角色名"}，例如:{"1001":"test1","1002":"test2"}，若无填0 |  |
@@ -131,7 +131,7 @@ POST  `http://beacon.mztgame.com/service/loginInLobby`
 | errorMsg | 错误信息,可选 |  |
 | appid | 游戏APPID | |
 | openid | 玩家唯一的标识，若无填空 |  |
-| totaltime | 检查更新耗时,单位：ms  |  |
+| totaltime | 耗时,单位：ms  |  |
 | platform | 登录平台（取值：1 ios 2 android 3 wp 9 other） |  |
 | zoneid | 分区分服，填小服ID；全区全服填0；若无填-1 |  |
 | role_list | 角色列表, 上报格式规范：{"角色id":"角色名"}，例如:{"1001":"test1","1002":"test2"}，若无填0 |  |
@@ -161,7 +161,7 @@ POST  `http://beacon.mztgame.com/service/loginEnterGame`
 | errorMsg | 错误信息,可选 |  |
 | appid | 游戏APPID | |
 | openid | 玩家唯一的标识，若无填空 |  |
-| totaltime | 检查更新耗时,单位：ms  |  |
+| totaltime | 耗时,单位：ms  |  |
 | platform | 登录平台（取值：1 ios 2 android 3 wp 9 other） |  |
 | zoneid | 分区分服，填小服ID；全区全服填0；若无填-1 |  |
 | role_list | 角色列表, 上报格式规范：{"角色id":"角色名"}，例如:{"1001":"test1","1002":"test2"}，若无填0 |  |
