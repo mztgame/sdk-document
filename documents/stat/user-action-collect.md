@@ -4,8 +4,8 @@
 #### 描述
 
     1、业务不涉及到的登录环节，则可以不上报。
-    2、如果Service_Login_InLobby和Service_Login_EnterGame重复，则只上报一个事件。
-    3、Service_Login_CheckAppUpdate和Service_DownloadEvent在下载服务化中描述了上报需求，本文不再说明。
+    2、如果service/loginInLobby和service/loginEnterGame重复，则只上报一个事件。
+    3、service/loginCheckAppUpdate和Service/downloadEvent在下载服务化中描述了上报需求，本文不再说明。
 
 
 #### 参考流程图
