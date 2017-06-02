@@ -33,9 +33,7 @@
 
     （1）安卓  方法一(建议):调用gasdk IZTLibBase.getUserInfo().get("config.ad_id"); 方法二:项目从 assets/ztsdk_config.properties 文件获取 config.ad_id=*****(CPS打包工具写入或者自行修改）;
     
-    （2）IOS            
-    
-     没有CPS的概念，填入0或者填空即可.
+    （2）IOS   没有CPS的概念，填入0或者填空即可.
     
 *  `openid及account填什么？`
 
