@@ -29,7 +29,7 @@
 
     （1）安卓   
     
-            `调用gasdk IZTLibBase.getInstance().getPlatform()`;
+            调用gasdk IZTLibBase.getInstance().getPlatform();
     
     （2）IOS     
             
@@ -39,7 +39,7 @@
 
     （1）安卓  
            
-           方法一(建议):`调用gasdk IZTLibBase.getUserInfo().get("config.ad_id")`; 
+           方法一(建议):调用gasdk IZTLibBase.getUserInfo().get("config.ad_id"); 
            方法二:从 assets/ztsdk_config.properties 文件获取 config.ad_id=*****(CPS打包工具写入或者自行修改）;
     
     （2）IOS   
