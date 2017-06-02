@@ -23,5 +23,8 @@
 
     gasdk初始化-> 广告插件初始化(否则取不到channel参数）
 
+* `channel参数如何传入?`
 
+    （1）安卓    调用gasdk IZTLibBase.getInstance().getPlatform();
+    （2）IOS     只有一个渠道，插件中已写死，不必另作处理。
 
