@@ -19,17 +19,17 @@
 
 # 1.4. FAQ
 
-*  `如何进行广告插件的初始化?`
+*  `如何进行广告插件的初始化？`
 
     gasdk初始化-> 广告插件初始化(否则取不到channel参数）
 
-* `channel参数如何传入?`
+* `channel参数如何传入？`
 
     （1）安卓    调用gasdk IZTLibBase.getInstance().getPlatform();
     
     （2）IOS     只有一个渠道，插件中已写死，不必另作处理。
 
-* `adid参数如何传入?`
+* `adid参数如何传入？`
 
     （1）安卓    安卓&emsp;建议方法一 :调用gasdk IZTLibBase.getUserInfo().get("config.ad_id"); 方法二:项目从 assets/ztsdk_config.properties 文件获取 config.ad_id=*****(CPS打包工具写入或者自行修改）;
     
