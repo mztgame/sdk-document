@@ -13,6 +13,10 @@
 
 > * 数据查看  项目->数据中心提供报表
 
+#### 1.1.3. 客户端sdk及文档下载地址
+
+* [安卓](http://docs.mztgame.com/files/Android/plugin/DataPluginSdk1.1.9.zip)
+* [IOS](http://docs.mztgame.com/files/iOS/plugin/ZTDataLib.zip)
 
 ### 1.2. FAQ
 
