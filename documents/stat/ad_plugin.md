@@ -25,13 +25,13 @@
 
 * **channel参数如何传入？**
 
-    （1）安卓    调用gasdk IZTLibBase.getInstance().getPlatform();
+    （1）安卓    `调用gasdk IZTLibBase.getInstance().getPlatform()`;
     
     （2）IOS     只有一个渠道，插件中已写死，不必另作处理。
 
 * **adid参数如何传入？**
 
-    （1）安卓  方法一(建议):调用gasdk IZTLibBase.getUserInfo().get("config.ad_id"); 方法二:项目从 assets/ztsdk_config.properties 文件获取 config.ad_id=*****(CPS打包工具写入或者自行修改）;
+    （1）安卓  方法一(建议):`调用gasdk IZTLibBase.getUserInfo().get("config.ad_id")`; 方法二:项目从 assets/ztsdk_config.properties 文件获取 config.ad_id=*****(CPS打包工具写入或者自行修改）;
     
     （2）IOS   没有CPS的概念，填入0或者填空即可.
     
