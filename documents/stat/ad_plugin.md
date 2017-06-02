@@ -41,7 +41,7 @@
            
            方法一(建议):调用gasdk IZTLibBase.getUserInfo().get("config.ad_id"); 
            方法二:从 assets/ztsdk_config.properties 文件获取 config.ad_id=*****(CPS打包工具写入或者自行修改）;        
-           **注意：官方包填0或者填空即可，但是要和ios填入的统一，便于统计**
+           注意：官方包填0或者填空即可，但是要和ios填入的统一，便于统计
     
     （2）IOS   
     
