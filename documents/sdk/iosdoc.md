@@ -40,7 +40,6 @@ libstdc++.dylib
 {
     [[ZTLibBase getInstance] applicationWillEnterForegroundZTGame:application];
 }
-
 2、这三个接口里都要实现
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
