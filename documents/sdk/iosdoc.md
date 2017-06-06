@@ -35,6 +35,30 @@ libstdc++.dylib
 各个渠道不同：
 
 * XY渠道需要在xcode 6的项目配置里面的Embeded Framework里面添加XYFramework
+1、2017.6.6 xy更新所以多加了一个接口，请实现
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    [[ZTLibBase getInstance] applicationWillEnterForegroundZTGame:application];
+}
+
+2、这三个接口里都要实现
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+  [[ZTLibBase getInstance] handleOpenURLZTGame:url];
+  return YES;
+}
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+  [[ZTLibBase getInstance] handleOpenURLZTGame:url];
+  return YES;
+}
+-(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options
+{
+  [[ZTLibBase getInstance] handleOpenURLZTGame:url];
+  return YES;
+}
+
+
 
 * 海马渠道需要在xcode 6的项目配置里面的Embeded Framework里面添加AiBeiFramework.framework
 
