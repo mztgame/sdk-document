@@ -95,7 +95,9 @@ libstdc++.dylib
 1、URL Schemes设置成CloudPoint.Bundle identifier。比如：CloudPoint.com.mztgame.hm2.hm 
 
 * 果盘渠道 
+
 1、需要实现下面两个接口
+
 ```
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
