@@ -35,6 +35,7 @@ libstdc++.dylib
 各个渠道不同：
 
 * XY渠道需要在xcode 6的项目配置里面的Embeded Framework里面添加XYFramework
+
 1、2017.6.6 xy更新所以多加了一个接口，请实现
 ```
 - (void)applicationWillEnterForeground:(UIApplication *)application
