@@ -94,6 +94,26 @@ libstdc++.dylib
 * 云点渠道  
 1、URL Schemes设置成CloudPoint.Bundle identifier。比如：CloudPoint.com.mztgame.hm2.hm 
 
+* 果盘渠道 
+1、需要实现下面两个接口
+```
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+  [[ZTLibBase getInstance] handleOpenURLZTGame:url];
+  return YES;
+}
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options
+{
+  [[ZTLibBase getInstance] handleOpenURLZTGame:url];
+  return YES;
+}
+```
+
+2、2017.6.6 果盘更新所以多加了一个接口，请实现
+```
+- (void)GPUploadGamePlayerInfo:(NSString*)playerID playerNickName:(NSString*)playerNickName severName:(NSString*)severName severID:(NSString*)serverID gameLevel:(NSString*)gameLevel;
+```
+
 #游戏需要调用接口：
 
 ###UIApplicationDelegate类的接口
