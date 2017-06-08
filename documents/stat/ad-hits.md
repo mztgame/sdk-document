@@ -18,6 +18,7 @@
 |------|------|------|
 | ad_id | 广告位ID(巨人提供) | 是 |
 | m_id | 媒体ID(巨人提供) | 是 |
+| s_mid | 媒体子渠道ID(媒体提供) | 否 | 按业务需求选填
 | game_id | 巨人游戏应用 id(巨人提供) | 是|
 | idfa | IOS IDFA | 否 |
 | imei | 设备IMEI(Android)  | 否 |
@@ -29,7 +30,7 @@
 ### 对接地址范例
 
 ```
-http://ad.stat.mztgame.com/ad/s2s-hits?ad_id=2000001&m_id=1&game_id=5012&idfa=(idfa)&ip=1.1.1.1&ua=(ua)&callback=
+http://ad.stat.mztgame.com/ad/s2s-hits?ad_id=2000001&m_id=1&game_id=5012&idfa=(idfa)&ip=1.1.1.1&ua=(ua)&callback=&s_mid=
 ```
 
 ### 响应说明
@@ -48,6 +49,7 @@ HTTP 响应状态码为 204，无响应内容
 |------|------|------|
 | ad_id | 广告位ID(巨人提供) | 是 |
 | m_id | 媒体ID(巨人提供) | 是 |
+| s_mid | 媒体子渠道ID(媒体提供) | 否 | 按业务需求选填
 | game_id | 巨人游戏应用 id(巨人提供) | 是|
 | idfa | IOS IDFA | 否 |
 | imei | 设备IMEI(Android)  | 否 |
@@ -66,7 +68,7 @@ HTTP 响应状态码为 204，无响应内容
 * 客户端跳转方式
 
 ```
-http://ad.stat.mztgame.com/ad/client-hits?ad_id=2000001&m_id=1&game_id=5012&idfa=(idfa)&default_url=https://itunes.apple.com&ios_url=&android_url=&callback=
+http://ad.stat.mztgame.com/ad/client-hits?ad_id=2000001&m_id=1&game_id=5012&idfa=(idfa)&default_url=https://itunes.apple.com&ios_url=&android_url=&callback=&s_mid=
 ```
  
 ### 响应说明
