@@ -58,6 +58,7 @@ channel=1&appid=101&clientversion=1.2&appunid=&os=1&osversion=9.3&hardware=iphon
 
 ### appunid生成规则
 
+```
 一、ios加密算法步骤
  
 1. 组合信息
@@ -109,4 +110,4 @@ Imei即为：
  
 规则同IOS
 
-
+```
