@@ -61,6 +61,7 @@ channel=1&appid=101&clientversion=1.2&appunid=&os=1&osversion=9.3&hardware=iphon
 一、ios加密算法步骤
  ```
 1. 组合信息
+
   1+idfa+日期时间（unixtime+6位微秒级，转化为32进制）
 
   例：一台ios设备启动时间为 2017-01-20 10:10:10.123456
