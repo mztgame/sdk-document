@@ -48,3 +48,44 @@ POST `http://beacon.mztgame.com/game/serverExtra`
 ```
 channel=1&appid=101&clientversion=1.2&appunid=&os=1&osversion=9.3&hardware=iphone6s&isp=1&net=1&udid=&idfa=458be47d-7205-4010-bc77-dc6e551ec514&adaid=&mac=7a:bb:14:99:52:2e&imei=493002407599521&androidid=a2948e662f4b4056&advertisingid=73af65f4-a06c-44a5-8cc6-f72465ac52ac&openid=1-1112&charid=&eventid=11&eventname=死亡&remark=&kv1=money:1230&kv2=level:29&kv3=&kv4=&kv5=&kv6=&kv7=&kv8=&kv9=&kv10=&
 ```
+### appunid生成规则
+
+一、ios加密算法步骤
+ ```
+1. 组合信息
+
+  1+idfa+日期时间（unixtime+6位微秒级，转化为32进制）
+
+  例：一台ios设备启动时间为 2017-01-20 10:10:10.123456
+
+  idfa--- 458be47d-7205-4010-bc77-dc6e551ec514（如果为空或非法，则固定为：458be47d-7205-4010-bc77-dc6e551ec514）
+
+  日期时间--- 1484907010123456--1A6GFDDPPM0(32进制)
+
+  组合后 1458be47d-7205-4010-bc77-dc6e551ec5141A6GFDDPPM0
+
+  去掉-，即为：1458be47d72054010bc77dc6e551ec5141A6GFDDPPM0
+
+2. 反转字符串 0MPPDDFG6A1415ce155e6cd77cb01045027d74eb8541
+ 
+3. 将第5位-第15位的字符串移到字符串头部 DDFG6A1415c0MPPe155e6cd77cb01045027d74eb8541
+ ```
+ 
+二、android加密算法步骤
+
+```
+1、 组合信息（优先mac，无或空或非法则imei，均无或空或非法，则用默认的固定mac，即为：7abb1499522e）：
+
+    2+mac+日期时间
+    3+imei+日期时间
+ 
+    mac--7a:bb:14:99:52:2e（去掉“:”，变为7abb1499522e）
+    imei--443567421776722
+ 
+    日期时间 格式  yyyyMMddHHmmssSSSSS 转化为(32进制)
+
+2、 反转字符串 规则同IOS
+
+3、 将第5位-第15位的字符串移到字符串头部 规则同IOS
+
+```
