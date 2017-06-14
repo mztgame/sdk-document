@@ -69,16 +69,12 @@ channel=1&appid=101&clientversion=1.2&appunid=&os=1&osversion=9.3&hardware=iphon
 idfa--- 458be47d-7205-4010-bc77-dc6e551ec514（如果为空或非法，则固定为：458be47d-7205-4010-bc77-dc6e551ec514）
 日期时间 格式  yyyyMMddHHmmssSSSSS 转化为(32进制)
 
-组合后
-1458be47d-7205-4010-bc77-dc6e551ec5141A6GFDDPPM0
-去掉-，即为：
-1458be47d72054010bc77dc6e551ec5141A6GFDDPPM0
+组合后 1458be47d-7205-4010-bc77-dc6e551ec5141A6GFDDPPM0
+去掉-，即为：1458be47d72054010bc77dc6e551ec5141A6GFDDPPM0
 
-2. 反转字符串
-0MPPDDFG6A1415ce155e6cd77cb01045027d74eb8541
+2. 反转字符串 0MPPDDFG6A1415ce155e6cd77cb01045027d74eb8541
  
-3. 将第5位-第15位的字符串移到字符串头部
-DDFG6A1415c0MPPe155e6cd77cb01045027d74eb8541
+3. 将第5位-第15位的字符串移到字符串头部 DDFG6A1415c0MPPe155e6cd77cb01045027d74eb8541
  ```
  
 二、android加密算法步骤
@@ -93,16 +89,12 @@ imei--443567421776722
  
 日期时间格式，同IOS
  
-mac即为：
-27abb1499522e1A6GFDDPPM0
+mac即为：27abb1499522e1A6GFDDPPM0
  
-Imei即为：
-34435674217767221A6GFDDPPM0
+Imei即为：34435674217767221A6GFDDPPM0
 
-2、 反转字符串
-规则同IOS
+2、 反转字符串 规则同IOS
 
-3、 将第5位-第15位的字符串移到字符串头部
-规则同IOS
+3、 将第5位-第15位的字符串移到字符串头部 规则同IOS
 
 ```
