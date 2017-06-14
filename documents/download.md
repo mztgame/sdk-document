@@ -121,7 +121,4 @@
 * [ 打包工具使用文档 ](http://docs.mztgame.com/files/Android/doc/dbgj.doc)
 
 ### GASDK-Android版
-* [GASDK-V1.0.0版本下载地址](http://docs.mztgame.com/files/Android/gasdk/GASDK-Android-1.0.0.zip)
-* [GASDK-V1.0.1版本下载地址](http://docs.mztgame.com/files/Android/gasdk/GASDK-Android-1.0.1-060512.zip)
-* [GASDK-V1.0.0测试APK下载地址](http://docs.mztgame.com/files/Android/gasdk/GiantNewSdk-V1.0.apk)
-* [GASDK-V1.0.1测试APK下载地址](http://docs.mztgame.com/files/Android/gasdk/GiantNewSdk-V1.0.1.apk)
+* [GASDK-V1.0.0版本下载地址](http://docs.mztgame.com/files/Android/gasdk/GASDK-Android-1.0.2.zip)
