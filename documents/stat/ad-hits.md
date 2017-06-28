@@ -9,7 +9,7 @@
 
 ### 点击接口地址
 
-`http://beacon.mztgame.com/stat/s2sHits`
+`http://beacon.ztgame.com/stat/s2sHits`
  
 ### 接口参数
  
@@ -31,7 +31,7 @@
 ### 对接地址范例
 
 ```
-http://beacon.mztgame.com/stat/s2sHits?aid=2000001&m_id=1&game_id=5012&idfa=ABCD-EFG-HIJKLM&ip=1.1.1.1&ua==(ua)&s_mid=&tid=8&dnm=y_x_x_x&pr=500
+http://beacon.ztgame.com/stat/s2sHits?aid=2000001&m_id=1&game_id=5012&idfa=ABCD-EFG-HIJKLM&ip=1.1.1.1&ua==(ua)&s_mid=&tid=8&dnm=y_x_x_x&pr=500
 ```
 
 ### 响应说明
@@ -42,7 +42,7 @@ HTTP 响应状态码为 204，无响应内容
 
 ### 点击接口地址
 
-`http://beacon.mztgame.com/stat/clientHits`
+`http://beacon.ztgame.com/stat/clientHits`
 
 ### 接口参数
  
@@ -72,7 +72,7 @@ HTTP 响应状态码为 204，无响应内容
 * 客户端跳转方式
 
 ```
-http://beacon.mztgame.com/stat/clientHits?aid=2000001&m_id=1&game_id=5012idfa=ABCD-EFG-HIJKLM&default_url=https://itunes.apple.com&ios_url=&android_url=&callback=&s_mid=&tid=8&dnm=y_x_x_x&pr=500
+http://beacon.ztgame.com/stat/clientHits?aid=2000001&m_id=1&game_id=5012idfa=ABCD-EFG-HIJKLM&default_url=https://itunes.apple.com&ios_url=&android_url=&callback=&s_mid=&tid=8&dnm=y_x_x_x&pr=500
 ```
  
 ### 响应说明
