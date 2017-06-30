@@ -3,7 +3,7 @@
 
 关卡接口日志:
 
-POST `http://beacon.mztgame.com/game/stage`
+POST `http://beacon.ztgame.com/game/stage`
  
 ### 接口参数
  
