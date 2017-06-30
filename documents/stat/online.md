@@ -3,7 +3,7 @@
 
 在线接口日志:
 
-POST `http://beacon.mztgame.com/game/online`
+POST `http://beacon.ztgame.com/game/online`
  
 ### 接口参数
  
