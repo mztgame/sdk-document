@@ -3,7 +3,7 @@
 
 等级接口日志:
 ```
-     获取等级变化情况的日志
+     上报等级变化情况的日志
 ```
 POST `http://beacon.ztgame.com/game/level`
  
