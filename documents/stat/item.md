@@ -3,7 +3,7 @@
 
 道具接口日志:
 ```
-     获取道具变化情况的日志
+     上报道具变化情况的日志
 ```
 POST `http://beacon.ztgame.com/game/item`
  
