@@ -9,7 +9,7 @@
 
 参数传递方式(Content-Type): `application/x-www-form-urlencoded`
 
-接口地址: `http://stat.ztgame.com/game/online`
+接口地址: `http://stat.mztgame.com/game/online`
 
 响应内容类型: `JSON`
 
@@ -35,5 +35,5 @@
 ## 举例说明
 
 ~~~
-http://stat.ztgame.com/game/online?game_id=5012&channel_id=1&zone_id=1&number=123&sign=abcdef
+http://stat.mztgame.com/game/online?game_id=5012&channel_id=1&zone_id=1&number=123&sign=abcdef
 ~~~
