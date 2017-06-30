@@ -3,7 +3,7 @@
 
 在线接口日志:
 ```
-   获取在线人数数据
+   上报在线人数数据
 ```
 
 POST `http://beacon.ztgame.com/game/online`
