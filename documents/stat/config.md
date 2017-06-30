@@ -3,7 +3,7 @@
 
 配置接口日志:
 
-POST `http://beacon.mztgame.com/game/config`
+POST `http://beacon.ztgame.com/game/config`
  
 ### 接口参数
  
