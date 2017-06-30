@@ -18,7 +18,7 @@
 
 ## 1.启动游戏事件数据接口
 
-POST  `http://beacon.mztgame.com/service/loginGameStart`
+POST  `http://beacon.ztgame.com/service/loginGameStart`
 
 #### 接口参数
 
@@ -46,7 +46,7 @@ errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-1
 
 ## 2.sdk登陆事件数据接口
 
-POST  `http://beacon.mztgame.com/service/loginSdkClient`
+POST  `http://beacon.ztgame.com/service/loginSdkClient`
 
 #### 接口参数
  
@@ -74,7 +74,7 @@ errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-1
 
 ## 3.拉取区服列表事件数据接口
 
-POST  `http://beacon.mztgame.com/service/loginSelectServer`
+POST  `http://beacon.ztgame.com/service/loginSelectServer`
 
 #### 接口参数
  
@@ -102,7 +102,7 @@ errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-1
 
 ## 4.加载角色事件(新建或者获取已有角色)事件数据接口
 
-POST  `http://beacon.mztgame.com/service/loginLoadRole`
+POST  `http://beacon.ztgame.com/service/loginLoadRole`
 
 #### 接口参数
  
@@ -132,7 +132,7 @@ errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-1
 
 ## 5.登录到大厅事件数据接口
 
-POST  `http://beacon.mztgame.com/service/loginInLobby`
+POST  `http://beacon.ztgame.com/service/loginInLobby`
 
 #### 接口参数
  
@@ -161,7 +161,7 @@ errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-1
 
 ## 6.加载角色事件(新建或者获取已有角色)事件数据接口
 
-POST  `http://beacon.mztgame.com/service/loginEnterGame`
+POST  `http://beacon.ztgame.com/service/loginEnterGame`
 
 #### 接口参数
  
