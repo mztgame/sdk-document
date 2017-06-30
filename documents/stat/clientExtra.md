@@ -3,7 +3,7 @@
 
 客户端自定义接口日志:
 ```
-      可接收客户端自定义数据
+      上报客户端自定义数据
 ```
 POST `http://beacon.ztgame.com/game/clientExtra`
  
