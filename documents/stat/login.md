@@ -3,7 +3,7 @@
 
 登陆登出接口日志:
 
-POST `http://beacon.mztgame.com/game/login`
+POST `http://beacon.ztgame.com/game/login`
  
 ### 接口参数
  
