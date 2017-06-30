@@ -3,7 +3,7 @@
 
 页面场景日志:
 
-POST `http://beacon.mztgame.com/game/scene`
+POST `http://beacon.ztgame.com/game/scene`
  
 ### 接口参数
  
