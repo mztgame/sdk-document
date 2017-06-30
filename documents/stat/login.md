@@ -3,7 +3,7 @@
 
 登陆登出接口日志:
 ```
-   获取游戏登入登出数据
+   上报游戏登入登出数据
 ```
 POST `http://beacon.ztgame.com/game/login`
  
