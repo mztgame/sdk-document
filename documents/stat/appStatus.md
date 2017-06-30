@@ -3,7 +3,7 @@
 
 应用状态日志:
 
-POST `http://beacon.mztgame.com/game/appStatus`
+POST `http://beacon.ztgame.com/game/appStatus`
  
 ### 接口参数
  
