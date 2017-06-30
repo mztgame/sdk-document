@@ -3,7 +3,7 @@
 
 道具接口日志:
 
-POST `http://beacon.mztgame.com/game/item`
+POST `http://beacon.ztgame.com/game/item`
  
 ### 接口参数
  
