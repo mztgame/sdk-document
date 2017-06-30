@@ -3,7 +3,7 @@
 
 客户端自定义接口日志:
 
-POST `http://beacon.mztgame.com/game/clientExtra`
+POST `http://beacon.ztgame.com/game/clientExtra`
  
 ### 接口参数
  
