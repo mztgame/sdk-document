@@ -3,7 +3,7 @@
 
 等级接口日志:
 
-POST `http://beacon.mztgame.com/game/level`
+POST `http://beacon.ztgame.com/game/level`
  
 ### 接口参数
  
