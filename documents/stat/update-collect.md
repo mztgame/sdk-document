@@ -16,7 +16,7 @@
 
 ## 1.检查版本更新事件数据接口
 
-POST  `http://beacon.mztgame.com/service/checkAppUpdate`
+POST  `http://beacon.ztgame.com/service/checkAppUpdate`
  
 #### 接口参数
  
@@ -50,7 +50,7 @@ errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-1
 
 ## 2.版本更新事件数据接口
 
-POST  `http://beacon.mztgame.com/service/downloadEvent`
+POST  `http://beacon.ztgame.com/service/downloadEvent`
  
 #### 接口参数
  
