@@ -3,7 +3,7 @@
 
 应用更新日志:
 
-POST `http://beacon.mztgame.com/game/appUpdate`
+POST `http://beacon.ztgame.com/game/appUpdate`
  
 ### 接口参数
  
