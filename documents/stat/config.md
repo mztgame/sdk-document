@@ -3,7 +3,7 @@
 
 配置接口日志:
 ```
-   获取各种游戏配置表数据
+   上报各种游戏配置表数据
 ```
 
 POST `http://beacon.ztgame.com/game/config`
