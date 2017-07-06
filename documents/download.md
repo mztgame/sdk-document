@@ -111,6 +111,7 @@
 * [巨人官方SDK-5.2.3版本下载地址](http://docs.mztgame.com/files/Android/giantSDK5.2.3.zip)
 * [腾讯YSDK-v1.2.4版本下载地址](http://docs.mztgame.com/files/Android/ysdk4-v1.2.4.zip)
 * [腾讯YSDK-v1.3.2版本下载地址](http://docs.mztgame.com/files/Android/ysdk-v1.3.2.zip)
+* [腾讯YSDK-v1.3.4版本下载地址](http://docs.mztgame.com/files/Android/ysdk-v1.3.4.zip)
 * [百度-v3.7.4版本下载地址](http://docs.mztgame.com/files/Android/sdk/BDGameSDK3.7.4.zip)
 * [360网游SDK-v1.8.0(542)版本下载地址](http://docs.mztgame.com/files/Android/360SDK_v1.8.0_06_01.zip)
 
