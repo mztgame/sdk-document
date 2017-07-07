@@ -54,7 +54,7 @@ POST  `http://beacon.ztgame.com/service/loginGameStart`
 #### 对接地址参数范例
 
 ```
-errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-11122&totaltime=50&platform=1
+errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-11122&totaltime=50&platform=1&imei=22222&mac=22223&idfa=12323-222&androidid=2232323&EXTRA1=test1|test2
 ```
 
 #### 响应说明
@@ -83,7 +83,7 @@ POST  `http://beacon.ztgame.com/service/loginSdkClient`
 #### 对接地址参数范例
 
 ```
-errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-11122&totaltime=50&platform=1&zoneid=0
+errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-11122&totaltime=50&platform=1&zoneid=0&imei=22222&mac=22223&idfa=12323-222&androidid=2232323&EXTRA1=test1|test2
 ```
 
 #### 响应说明
@@ -111,7 +111,7 @@ POST  `http://beacon.ztgame.com/service/loginSelectServer`
 #### 对接地址参数范例
 
 ```
-errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-11122&totaltime=50&platform=1&zoneid=0
+errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-11122&totaltime=50&platform=1&zoneid=0&imei=22222&mac=22223&idfa=12323-222&androidid=2232323&EXTRA1=test1|test2
 ```
 
 #### 响应说明
@@ -141,7 +141,7 @@ POST  `http://beacon.ztgame.com/service/loginLoadRole`
 #### 对接地址参数范例
 
 ```
-errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-11122&totaltime=50&platform=1&zoneid=0&role_list={"1001":"test1","1002":"test2"}&type=1
+errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-11122&totaltime=50&platform=1&zoneid=0&role_list={"1001":"test1","1002":"test2"}&type=1&imei=22222&mac=22223&idfa=12323-222&androidid=2232323&EXTRA1=test1|test2
 ```
 
 #### 响应说明
@@ -170,7 +170,7 @@ POST  `http://beacon.ztgame.com/service/loginInLobby`
 #### 对接地址参数范例
 
 ```
-errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-11122&totaltime=50&platform=1&zoneid=0&role_list={"1001":"test1","1002":"test2"}
+errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-11122&totaltime=50&platform=1&zoneid=0&role_list={"1001":"test1","1002":"test2"}&imei=22222&mac=22223&idfa=12323-222&androidid=2232323&EXTRA1=test1|test2
 ```
 
 #### 响应说明
@@ -199,7 +199,8 @@ POST  `http://beacon.ztgame.com/service/loginEnterGame`
 #### 对接地址参数范例
 
 ```
-errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-11122&totaltime=50&platform=1&zoneid=0&role_list={"1001":"test1","1002":"test2"}
+errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-11122&totaltime=50&platform=1&zoneid=0&role_list={"1001":"test1","1002":"test2"}&imei=22222&mac=22223&idfa=12323-222&androidid=2232323&EXTRA1=test1|test2
+
 ```
 
 #### 响应说明
