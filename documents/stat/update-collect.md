@@ -41,8 +41,10 @@
     所有显式上传的字段值 按照字典排序后+约定的key后MD5.key每个appid不同
     
     举例：
-    errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-11122&totaltime=50&platform=1&ver_addr=www.update.com&version=1.0.1&build=100&resultCode=1&updateType=1&versionType=1&imei=22222&mac=22223&idfa=12323-222&androidid=2232323&EXTRA1=test1|test2
     
+```    
+errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-11122&totaltime=50&platform=1&ver_addr=www.update.com&version=1.0.1&build=100&resultCode=1&updateType=1&versionType=1&imei=22222&mac=22223&idfa=12323-222&androidid=2232323&EXTRA1=test1|test2
+```    
     md5("11111-111221.0.15010012323-22250122222222223920012232323test1|test2www.update.com连接版本更新服务器失败&abcde"")
     
     结果：sign = 1c13d8a96fc2a4e4d5eb567bc4bb7d67
