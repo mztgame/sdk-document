@@ -13,6 +13,7 @@
 ## 接入备注
 
     所有指定请求字段可没有值，但是要保留字段名。自定义参数如果不用，可不填。
+    所有字段必须字段值都必须urlencode后传递.
     
 ## 公共参数
 
@@ -24,15 +25,27 @@
 | mac | 安卓mac| 安卓必填 |
 | androidid | 安卓id | 安卓必填 |
 | idfa | IOS设备号 | ios必填 |
-| EXTRA1 | 自定义参数| 游戏自定义(字符串型） |
-| EXTRA2 | 自定义参数| 游戏自定义(字符串型） |
-| EXTRA3 | 自定义参数| 游戏自定义(字符串型） |
-| EXTRA4 | 自定义参数 | 游戏自定义(字符串型） |
-| EXTRA5 | 自定义参数  | 游戏自定义(字符串型） |
-| EXTRA6 |  自定义参数 | 游戏自定义(字符串型） |
-| EXTRA7 | 自定义参数 | 游戏自定义(字符串型） |
-| EXTRA8 | 自定义参数 | 游戏自定义(字符串型） |
+| extra1 | 自定义参数| 游戏自定义(字符串型） |
+| extra2 | 自定义参数| 游戏自定义(字符串型） |
+| extra3 | 自定义参数| 游戏自定义(字符串型） |
+| extra4 | 自定义参数 | 游戏自定义(字符串型） |
+| extra5 | 自定义参数  | 游戏自定义(字符串型） |
+| extra6 |  自定义参数 | 游戏自定义(字符串型） |
+| extra7 | 自定义参数 | 游戏自定义(字符串型） |
+| extra8 | 自定义参数 | 游戏自定义(字符串型） |
+| sign | 签名 | 签名规则，见后文 |
 | ... | ... | .. |
+
+##签名规则
+
+    所有显式上传的字段值 按照字典排序后+约定的key后MD5.key每个appid不同
+    
+    举例：
+    errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-11122&totaltime=50&platform=1&ver_addr=www.update.com&version=1.0.1&build=100&resultCode=1&updateType=1&versionType=1&imei=22222&mac=22223&idfa=12323-222&androidid=2232323&EXTRA1=test1|test2
+    
+    md5("11111-111221.0.15010012323-22250122222222223920012232323test1|test2www.update.com连接版本更新服务器失败&abcde"")
+    
+    结果：sign = 1c13d8a96fc2a4e4d5eb567bc4bb7d67
 
 ## 1.检查版本更新事件数据接口
 
@@ -58,7 +71,7 @@ POST  `http://beacon.ztgame.com/service/checkAppUpdate`
 #### 对接地址参数范例
 
 ```
-errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-11122&totaltime=50&platform=1&ver_addr=www.update.com&version=1.0.1&build=100&resultCode=1&updateType=1&versionType=1
+errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-11122&totaltime=50&platform=1&ver_addr=www.update.com&version=1.0.1&build=100&resultCode=1&updateType=1&versionType=1&imei=22222&mac=22223&idfa=12323-222&androidid=2232323&EXTRA1=test1|test2
 ```
 
 #### 响应说明
@@ -97,7 +110,7 @@ POST  `http://beacon.ztgame.com/service/downloadEvent`
 #### 对接地址参数范例
 
 ```
-oepnid=1-11122&appid=5012&platform=1&begintime=2017-05-14 10:00:00&version=1.0.1&build=100&oldversion=1.0.1&oldbuild=100&resultCode=1&errorCode=1&errorMsg=下载过程未知错误&totaltime=50&filesize=100&url=http://www.update.com&final_url=http://111.222.33&versionType=1&totalfilesize=200
+oepnid=1-11122&appid=5012&platform=1&begintime=2017-05-14 10:00:00&version=1.0.1&build=100&oldversion=1.0.1&oldbuild=100&resultCode=1&errorCode=1&errorMsg=下载过程未知错误&totaltime=50&filesize=100&url=http://www.update.com&final_url=http://111.222.33&versionType=1&totalfilesize=200&imei=22222&mac=22223&idfa=12323-222&androidid=2232323&EXTRA1=test1|test2&sign=abadwadwdaw
 ```
 
 #### 响应说明
