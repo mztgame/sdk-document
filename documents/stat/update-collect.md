@@ -17,7 +17,7 @@
     
 ## 公共参数
 
-    除去指定参数以外，每个接口还提供若干自定义参数供项目差别化使用，格式 EXTRA开头+数字,目前预留了8个。
+    除去指定参数以外，每个接口还提供若干自定义参数供项目差别化使用，格式 extra开头+数字,目前预留了8个。
 
 | 参数名 | 说明 | 备注 |
 |------|------|------|
@@ -43,7 +43,7 @@
     举例：
     
 ```    
-errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-11122&totaltime=50&platform=1&ver_addr=www.update.com&version=1.0.1&build=100&resultCode=1&updateType=1&versionType=1&imei=22222&mac=22223&idfa=12323-222&androidid=2232323&EXTRA1=test1|test2
+errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-11122&totaltime=50&platform=1&ver_addr=www.update.com&version=1.0.1&build=100&resultCode=1&updateType=1&versionType=1&imei=22222&mac=22223&idfa=12323-222&androidid=2232323&extra1=test1|test2
 ```    
     md5("11111-111221.0.15010012323-22250122222222223920012232323test1|test2www.update.com连接版本更新服务器失败&abcde"")
     
