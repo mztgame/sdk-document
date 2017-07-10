@@ -12,15 +12,28 @@ POST `http://beacon.ztgame.com/game/player-online`
 | time_begin | 统计周期开始时间（秒单位时间戳） | 1451375641 |
 | time_end | 统计周期结束时间（秒单位时间戳） | 1451375641 |
 | user_ip | 用户IP（user_ip） | 127.0.0.1 |
-| mztgame_udid | mztgame_udid | 2-123-2412423512 |
+| mztgame_udid | mztgame_udid | 2323232323 |
 | role_id | 角色ID | 1211423 |
 | exp | 游戏数值变化（经验值、比赛次数等） | 123 |
 | idfa | IDFA(idfa) | XXXXXXXXXX |
 
+## 签名规则
+
+    所有显式上传的字段值 按照字典排序后+约定的key后MD5.key每个appid不同
+    
+    举例：
+    
+```    
+game_id=5012&openid=101&time_begin=1451375641&time_end=1451375641&user_ip=127.0.0.1&mztgame_udid=2323232323&role_id=1211423&exp=123&idfa=XXXX-XXXX-XXXXXXXX
+```    
+    md5("1011231211423127.0.0.15012145137564114513756412323232323XXXX-XXXX-XXXXXXXXabcde"")
+    
+    结果：sign = 5caf1d45729155a9abf9c75af956342e
+
 ### 对接参数范例
 
 ```
-channel=1&appid=101&os=1&svrid=23141&zoneid=1312&openid=1-1111&charid=1211423&groupid=298178237&taskid=253521&taskstate=2&subtaskid=312&teamstate=1&teamnumber=3&tasktime=123
+game_id=5012&openid=101&time_begin=1451375641&time_end=1451375641&user_ip=127.0.0.1&mztgame_udid=2323232323&role_id=1211423&exp=123&idfa=XXXX-XXXX-XXXXXXXX&sign=
 ```
 
 ### mztgame_udid获取方式
