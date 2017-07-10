@@ -19,7 +19,7 @@ POST `http://beacon.ztgame.com/game/player-online`
 
 ## 签名规则
 
-    所有显式上传的字段值 按照字典排序后+约定的key后MD5.key每个appid不同
+    所有显式上传的字段值 按照字典排序后+约定的`key`后MD5.`key`每个appid不同
     
     举例：
     
