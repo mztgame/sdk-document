@@ -17,6 +17,8 @@ POST `http://beacon.ztgame.com/game/player-online`
 | role_id | 角色ID | 1211423 |
 | exp | 游戏数值变化（经验值、比赛次数等） | 123 |
 | idfa | IDFA(idfa) | XXXXXXXXXX |
+| sign | 签名 | 目前可不传 |
+
 
 ## 签名规则
 
