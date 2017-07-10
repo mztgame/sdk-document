@@ -12,6 +12,7 @@ POST `http://beacon.ztgame.com/game/player-online`
 | time_begin | 统计周期开始时间（秒单位时间戳） | 1451375641 |
 | time_end | 统计周期结束时间（秒单位时间戳） | 1451375641 |
 | user_ip | 用户IP（user_ip） | 127.0.0.1 |
+| type | 根据游戏选择（按场次 1，按经验值 2） | 1 |
 | mztgame_udid | mztgame_udid | 2323232323 |
 | role_id | 角色ID | 1211423 |
 | exp | 游戏数值变化（经验值、比赛次数等） | 123 |
@@ -24,11 +25,11 @@ POST `http://beacon.ztgame.com/game/player-online`
     举例：
     
 ```    
-game_id=5012&openid=101&time_begin=1451375641&time_end=1451375641&user_ip=127.0.0.1&mztgame_udid=2323232323&role_id=1211423&exp=123&idfa=XXXX-XXXX-XXXXXXXX
+game_id=5012&openid=101&time_begin=1451375641&time_end=1451375641&user_ip=127.0.0.1&mztgame_udid=2323232323&role_id=1211423&exp=123&idfa=XXXX-XXXX-XXXXXXXX&type=1
 ```    
-    md5("1011231211423127.0.0.15012145137564114513756412323232323XXXX-XXXX-XXXXXXXXabcde"")
+    md5("11011231211423127.0.0.15012145137564114513756412323232323XXXX-XXXX-XXXXXXXXabcde")
     
-    结果：sign = 5caf1d45729155a9abf9c75af956342e
+    结果：sign = 3078e75d4872628a3bb28a0f6a689f6a
 
 ### 对接参数范例
 
