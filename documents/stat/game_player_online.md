@@ -33,7 +33,7 @@ game_id=5012&openid=101&time_begin=1451375641&time_end=1451375641&user_ip=127.0.
 ### 对接参数范例
 
 ```
-game_id=5012&openid=101&time_begin=1451375641&time_end=1451375641&user_ip=127.0.0.1&mztgame_udid=2323232323&role_id=1211423&exp=123&idfa=XXXX-XXXX-XXXXXXXX&sign=
+game_id=5012&openid=101&time_begin=1451375641&time_end=1451375641&user_ip=127.0.0.1&mztgame_udid=2323232323&role_id=1211423&exp=123&idfa=XXXX-XXXX-XXXXXXXX&sign=5caf1d45729155a9abf9c75af956342e
 ```
 
 ### mztgame_udid获取方式
