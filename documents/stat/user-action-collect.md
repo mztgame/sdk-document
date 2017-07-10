@@ -49,7 +49,7 @@ errorCode=92001&errorMsg=连接版本更新服务器失败&appid=5012&openid=1-1
 ```    
     md5("11111-111221.0.15010012323-22250122222222223920012232323test1|test2www.update.com连接版本更新服务器失败&abcde"")
     
-    结果：sign = 1c13d8a96fc2a4e4d5eb567bc4bb7d67
+    结果：sign = 2da8c86a68ef5df87b3b36ae9056275e
 
 ## 1.启动游戏事件数据接口
 
