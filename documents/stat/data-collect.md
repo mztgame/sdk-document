@@ -12,47 +12,11 @@ Header：Content-Type:application/x-www-form-urlencoded
 | base_data   | sdk自带基础数据封装，接入方不必额外实现 | json | 否  |
 | extra_data   | 事件相关数据,接入方需要实现部分 | json | 是 |
 
-
-<style type="text/css">
-table.zyhovertable {
-    font-family: 
-    verdana,arial,sans-serif;
-    font-size:12px;
-    color:#333333;
-    border-width: 1px;
-    border-color: #999999;
-    border-collapse: collapse;
-	width:70%;
-}
-
-table.zyhovertable th {
-    background-color:#C3DDE0;
-    border-width: 1px;
-    padding: 8px;
-    border-style: solid;
-    border-color: #999999;
-}
-
-table.zyhovertable tr {
-    background-color:#E7E7E7;
-}
-
-table.zyhovertable td {
-    border-width: 1px;
-    padding: 8px;
-    border-style: solid;
-    border-color: #999999;
-}
-</style>
-
-<table class="zyhovertable">
-<tr> 
-<th>事件编号</th><th>事件名称</th><th>埋点时机</th><th>备注</th>
-</tr>
-
-<tr><td>1</td><td>1001</td><td> 应用启动</td><td>gasdk初始化后即可调用</td> 需要确保已经联网,广告监控使用</tr>
-<tr><td>2</td><td>1010</td><td>角色登陆</td><td>游戏内角色登陆后调用</td>广告监控使用</tr>
-</table>
+### 事件列表
+| 事件编号  | 事件名称 | 埋点时机 | 备注 |
+|----------|--------|--------|------|
+| 1001   | 应用启动 | gasdk初始化后调用 | 需要确保联网状态,广告监控使用 |
+| 1010   | 角色登陆 | 选择角色并进入游戏后调用 | 广告 监控使用 |
 
 ### extra_data必填参数内容(最终为json形式)
 
