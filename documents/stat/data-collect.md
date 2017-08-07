@@ -21,7 +21,7 @@
 |appid|游戏APPID（不重复）|5051|
 |openid|用户OPENID号，全局唯一账号ID，与充值消费等数据同步|1-293293293|
 |account|用户账号信息，也区分游客、手机号注册等| _80_m_1232323@2323 |
-|longitude|经度（是否有多颗卫星， GPS 和 GLONASS ？）|111.727168|
+|longitude|经度|111.727168|
 |latitudes|纬度|29.056504|
 |zoneid|游戏区Id||
 |serid|游戏服Id||
