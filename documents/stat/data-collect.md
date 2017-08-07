@@ -1,5 +1,7 @@
 Url: `http://beacon.ztgame.com/data/collect`
+
 请求方式：POST
+
 Header：Content-Type:application/x-www-form-urlencoded
 
 ### 请求参数
