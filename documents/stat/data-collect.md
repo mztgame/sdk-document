@@ -1,10 +1,12 @@
-Url: `http://beacon.ztgame.com/data/collect`
+### 接口描述
 
-请求方式：POST
+```
+    在gasdk内集成，只一个接口，通过约定的事件编号供接入方按需使用：
+    1.base_data为接口自己实现，其中包括通用数据，比如设备信息等，接入方不必另外实现
+    2.extra_data为接入方必须实现的自定义参数，除去一些必填参数（游戏，账号数据等）外，可另行增加自定义参数，一起包成json并将参数值urlecode
+```
 
-Header：Content-Type:application/x-www-form-urlencoded
-
-### 请求参数
+### 接口参数列表
 
 | 参数名   | 说明   | 类型   | 必填 |
 |----------|--------|--------|------|
