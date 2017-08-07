@@ -66,12 +66,12 @@ Header：Content-Type:application/x-www-form-urlencoded
 |serid|游戏服Id||
 
 返回与示例：
-```
-{"code":0,"msg":"OK"}
 
+{"code":0,"msg":"OK"}
 
 ### 响应参数
 Header：Content-Type:application/json
+
 
 | 参数名    | 说明         | 类型   |
 |-----------|--------------|--------|
