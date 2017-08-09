@@ -24,6 +24,7 @@
 | mac | IOS 或Android Mac | 否 |
 | ua | 用户若是通过网页点击的， 为浏览器的 User-Agent 信息 | 是 |
 | ip | 用户IP(取媒体方客户端真实IP) | 是 |
+| os | 用户操作系统，取值 1 ios 2 安卓 3 windows/wp | 是 |
 | tid | tid=2，用于展示监控。tid=5，用于点击广告素材进入外媒页面。 | 是 |
 | dnm |  素材名 tid=5时，必填，其他不填 | 否 |
 | pr |  价格 | 否 |
@@ -31,7 +32,7 @@
 ### 对接地址范例
 
 ```
-http://beacon.ztgame.com/stat/s2sHits?aid=2000001&m_id=1&game_id=5012&idfa=ABCD-EFG-HIJKLM&ip=1.1.1.1&ua==(ua)&s_mid=&tid=8&dnm=y_x_x_x&pr=500
+http://beacon.ztgame.com/stat/s2sHits?aid=2000001&m_id=1&game_id=5012&idfa=ABCD-EFG-HIJKLM&ip=1.1.1.1&ua==(ua)&s_mid=&tid=8&dnm=y_x_x_x&pr=500&os=1
 ```
 
 ### 响应说明
