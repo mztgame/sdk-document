@@ -5,6 +5,12 @@
 * Server to server
 * 客户端302跳转
 
+## 接入前必看
+
+   1、两个接口参数有些许差异，需要注意。
+   2、clientHits中的ua为调试使用，便于查看媒体获取的和我方服务端获取的是否一致。
+   3、tid=8为在clientHits接口控制是否url跳转使用。
+
 ## Server to server 接口说明
 
 ### 点击接口地址
