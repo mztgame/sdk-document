@@ -60,6 +60,7 @@ HTTP 响应状态码为 204，无响应内容
 | ios_url | 程序识别 IOS UA 跳转URL|  否 |
 | android_url | 程序识别 Android UA跳转URL |  否 |
 | ua | 为浏览器的 User-Agent 信息 | 否 |
+| os | 用户操作系统，取值 1 ios 2 安卓 3 windows/wp | 否 |
 | callback |  广告商追踪使用url，启动(激活）时会回调 |  否 |
 | tid | tid=2，用于展示监控。tid=5，用于点击广告素材进入外媒页面。tid=8，代表点击跳转下载包或公司统一下载页 | 是 |
 | dnm |  素材名 tid=5时，必填，其他不填 | 否 |
