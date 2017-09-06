@@ -19,7 +19,7 @@
 | 1001   | 应用启动 | 打开app，连接网络后调用 | 广告监控使用 | {"channel":1,"openid":"1-22","account":"22323","longitude":"111.727168","latitudes":"29.056504"}
 | 1010   | 角色登陆 | 选择角色并进入游戏后调用 | 广告监控使用 | {"channel":1,"openid":"1-22","account":"22323","longitude":"111.727168","latitudes":"29.056504","zoneid":1,"servid":2}
 
--### extra_data数据字典
+### extra_data数据字典
  
  |参数|描述|样例|
  |---|---|---|
