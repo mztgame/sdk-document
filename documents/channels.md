@@ -92,6 +92,8 @@
 | 拇指玩2                               | 107         | muzhiwan2          |              | Android           | -                     | -                     | -               |                        |
 | 360融合                               | 108         | jusdk              |              | Android           | -                     | -                     | -               |                        |
 | 爱奇艺                                | 109         | aiqiyi             |              | Android           | -                     | -                     | -               |                        |
+| 三星                                | 110         | samsung             |              | Android           | -                     | -                     | -               |                        |
+| 应用宝买量                                | 111         | ysdkguangdiantong             |              | Android           | -                     | -                     | -               |                        |
 
 
 ### 渠道 IOS
