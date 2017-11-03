@@ -28,7 +28,7 @@ $keySource = openssl_pkey_get_public($publicKey);
 $sign = base64_decode($data['sign']);
 if (openssl_verify($signData, $sign, $keySource) === 1) {
 
-    if ($data['entity']['openid'] < time() - 43200) {
+    if ($data['entity']['time'] < time() - 43200) {
         echo "登录认证过期";
     } else {
         echo '签名验证到成功, openid: ' . $data['entity']['openid'];
