@@ -30,7 +30,7 @@
 ### 第一步：请求CODE
 
 **移动应用管家授权登录**
-开发者应该使用管家官方提供的SDK进行授权登录的请求接入。正确接入SDK后，开发者移动应用会在本地拉起管家应用进行授权登录。管家用户确认后，微信将拉起开发者的移动应用，并带上授权临时票据（code）。
+开发者应该使用管家官方提供的SDK进行授权登录的请求接入。正确接入SDK后，开发者移动应用会在本地拉起管家应用进行授权登录。管家用户确认后，管家将拉起开发者的移动应用，并带上授权临时票据（code）。
 
 IOS平台授权登录接入示例：（请参考IOS的SDK）
 ```
@@ -58,9 +58,7 @@ Android平台接入示例（请参考Android的SDK）：
 
 **这里可以拉起管家app**
 
-![](./imgs/auth_example.png)
-
-> ??这里需要客户端完善交互文档
+<img src='./imgs/auth_example.png' width='300'/>
 
 ### 第二部：通过code获取access_token
 
@@ -138,6 +136,7 @@ https://gamm3.ztgame.com/sns/oauth2/refresh_token?appid=APPID&refresh_token=REFR
 | sign | 是| 签名串，见[签名算法](./signAlgorithm.md) |
 
 **返回说明**
+
 正确的返回：
 ```
 {
