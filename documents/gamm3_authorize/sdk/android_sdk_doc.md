@@ -1,6 +1,9 @@
 #第三方登录账号管家的接入文档
+
 ##Android端
+
 ###资源
+
 Android端提供2种接入资源：
 
 * **jar包 + 对应的资源**
@@ -19,7 +22,9 @@ jar包的方案可以在eclipse和AS上使用，aar包只能在AS上使用。如
 ```
 
 ###接入流程
+
 #####1、初始化api
+
 实例工厂模式，提供3个接口：
 
 ```java
@@ -131,6 +136,7 @@ public class MainActivity extends Activity {
 ```
 
 #####3、处理回调
+
 对于回调类，第三方app的接收回调类必须以`.gamm.GammCallbackActivity`结尾，并且继承`GammRespListener`接口。
 
 `GammCallbackActivity `的示例如下：
@@ -170,7 +176,61 @@ public class GammCallbackActivity extends Activity implements GammRespListener {
 </activity>
 ```
 
-#####4、错误码和相应的信息
+#####4、结构体定义
+请求的结构体`GammBaseReq`
+
+```java
+	/**
+     * 请求类型
+     */
+    public int type;
+    /**
+     * 用于保持请求和回调的状态，授权完成后带回给第三方。主要是防止CRSF攻击
+     */
+    public String state;
+```
+
+特殊的，各个业务的响应结构体基于`GammBaseReq `定义，如登录需要的
+
+```java
+	/**
+     * app的包名
+     */
+    public String packageName;
+```
+
+响应的结构体`GammBaseResp`
+	
+```java
+    /**
+     * 请求完后，对应的错误码
+     */
+    public int errCode = 0;
+    /**
+     * 具体的错误信息
+     */
+    public String errMsg = "success";
+    /**
+     * 请求时的类型
+     */
+    public int type;
+    /**
+     * 用于保持请求和回调的状态，授权完成后带回给第三方。主要是防止CRSF攻击
+     */
+    public String state;
+```	
+
+特殊的，各个业务的响应结构体基于`GammBaseResp`定义，如登录需要的`GammLoginResp`：
+
+```java
+	/**
+     * auth code
+     */
+    public String authCode;
+```	
+
+
+#####5、错误码和相应的信息
 <table border=”1″>
 <tr>
 <td>code</td>
