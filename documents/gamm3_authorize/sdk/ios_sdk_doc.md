@@ -9,7 +9,7 @@
 
 #### 1: 导入SDK静态库头文件，然后设置回调代理:
 
-```
+```obj-c
 #import <UIKit/UIKit.h>
 
 /** 导入SDK静态库 */
@@ -25,7 +25,7 @@
 
 #### 2: 使用巨人账号管家平台注册的AppID来初始化SDK, 然后在AppDelegate的handleOpenURL方法里添加拦截函数, 同时实现GammSDKApiDelegate回调函数。
 
-```
+```obj-c
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
@@ -64,7 +64,7 @@
 
 #### 3: 发起登录授权请求
 
-```
+```obj-c
 /** 点击巨人账号管家App授权 */
 - (IBAction)clickAppAuth:(id)sender {
     
@@ -85,7 +85,7 @@
 
 #### 核心通用接口
 
-```
+```obj-c
 /**
  向巨人账号管家终端程序注册第三方应用。
  
