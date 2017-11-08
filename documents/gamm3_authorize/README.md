@@ -1,4 +1,4 @@
-##  移动应用使用巨人账号管家提供授权登录指南
+##  移动应用调用巨人账号管家授权登录指南
 
 巨人账号管家（以下简称管家）授权登录可以让拥有巨人通行证的用户，在管家授权的情况下，第三方可以获取到用户的授权调用凭证（access_token），通过access_token可以获取巨人通行证的基本用户开放信息。
 
@@ -52,7 +52,6 @@ Android平台接入示例（请参考Android接入指南）：
 
 > ??这里需要客户端完善交互文档
 
-
 ### 第二部：通过code获取access_token
 
 获取第一步的code之后，请求以下链接获取access_token
@@ -60,7 +59,9 @@ Android平台接入示例（请参考Android接入指南）：
 ```
 https://gamm3.ztgame.com/sns/oauth2/get_access_token?appid=APPID&code=CODE&sign=SIGN
 ```
+
 **参数说明**
+
 | 参数 | 是否必须| 说明 |
 | ---  | ----   | ---  |
 |appid | 是     | 应用唯一标识，需要官方申请获得 |
@@ -68,6 +69,7 @@ https://gamm3.ztgame.com/sns/oauth2/get_access_token?appid=APPID&code=CODE&sign=
 |sign  | 是     | 身份校验签名，见详细的[签名算法](./signAlgorithm.md) |
 
 **返回说明**
+
 正确的返回：
 ```
 {
@@ -160,4 +162,8 @@ https://gamm3.ztgame.com/sns/oauth2/refresh_token?appid=APPID&refresh_token=REFR
 
 ## 第三步：通过access_token调用接口
 
-> 调用响应的接口，请查看对应的接口详细描述。
+> 调用响应的接口，请查看对应的具体接口。
+
+| 接口地址 | 说明(即链接) |
+| ---     | ---  |
+| /sns/account/userinfo| [用户信息](./apis/userinfo.md) |
