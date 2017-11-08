@@ -1,8 +1,8 @@
-#第三方登录账号管家的接入文档
+# 第三方登录账号管家的接入文档
 
-##Android端
+## Android端
 
-###资源
+### 资源
 
 Android端提供2种接入资源：
 
@@ -21,9 +21,9 @@ jar包的方案可以在eclipse和AS上使用，aar包只能在AS上使用。如
                   android:screenOrientation="portrait" />
 ```
 
-###接入流程
+### 接入流程
 
-#####1、初始化api
+#### 1、初始化api
 
 实例工厂模式，提供3个接口：
 
@@ -69,7 +69,7 @@ public class App extends Application {
 }
 ```
 
-#####2、sdk提供的API接口
+#### 2、sdk提供的API接口
 
 ```java
 	/**
@@ -135,7 +135,7 @@ public class MainActivity extends Activity {
 }
 ```
 
-#####3、处理回调
+#### 3、处理回调
 
 对于回调类，第三方app的接收回调类必须以`.gamm.GammCallbackActivity`结尾，并且继承`GammRespListener`接口。
 
@@ -176,7 +176,7 @@ public class GammCallbackActivity extends Activity implements GammRespListener {
 </activity>
 ```
 
-#####4、结构体定义
+#### 4、结构体定义
 请求的结构体`GammBaseReq`
 
 ```java
@@ -230,7 +230,7 @@ public class GammCallbackActivity extends Activity implements GammRespListener {
 ```	
 
 
-#####5、错误码和相应的信息
+#### 5、错误码和相应的信息
 <table border=”1″>
 <tr>
 <td>code</td>
