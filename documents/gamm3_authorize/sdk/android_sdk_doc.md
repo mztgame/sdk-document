@@ -1,0 +1,193 @@
+#第三方登录账号管家的接入文档
+##Android端
+###资源
+Android端提供2种接入资源：
+
+* **jar包 + 对应的资源**
+* **aar包**
+
+jar包的方案可以在eclipse和AS上使用，aar包只能在AS上使用。如果是AS作为开发IDE的，建议使用aar包的方式。
+
+如果以jar方式接入，需要在自己的AndroidManifest.xml里加入：
+
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+
+<activity android:name="com.gamm.thirdlogin.ui.GammDownloadActivity"
+                  android:theme="@android:style/Theme.NoTitleBar"
+                  android:screenOrientation="portrait" />
+```
+
+###接入流程
+#####1、初始化api
+实例工厂模式，提供3个接口：
+
+```java
+	/**
+     * 创建GammSDKApi对象
+     *
+     * @param context 上下文
+     * @return 返回GammSDKApi对象
+     */
+    public static GammSDKApi createSDKApi(Context context) 
+    
+    /**
+     * 创建GammSDKApi对象
+     *
+     * @param context  上下文
+     * @param appId  注册的appId
+     * @return  返回GammSDKApi对象
+     */
+    public static GammSDKApi createSDKApi(Context context, String appId)
+    
+    /**
+     * 获取实例，调用之前请先实例化
+     *
+     * @return
+     */
+    public static GammSDKApi getGammSDKApi()
+```
+
+调用示例（仅供参考）：
+
+```java
+/**
+ * Created by panda on 2017/11/6.
+ */
+public class App extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        GammApiFactory.createSDKApi(this);
+		GammApiFactory.getGammSDKApi().setGammDebug(BuildConfig.DEBUG);
+    }
+}
+```
+
+#####2、sdk提供的API接口
+
+```java
+	/**
+     * 发起具体的请求操作
+     *
+     * @param req
+     */
+    public void gammSendReq(GammBaseReq req);
+
+    /**
+     * 判断账号管家是否安装
+     *
+     * @return
+     */
+    public boolean isGammInstalled();
+
+    /**
+     * 设置sdk是否是debug状态
+     *
+     * @param isDebug
+     */
+    public void setGammDebug(boolean isDebug);
+
+    /**
+     * 完成时的回调第三方
+     *
+     * @param intent
+     * @param respListener
+     */
+    public void handleIntent(Intent intent, GammRespListener respListener);
+
+    /**
+     * SDK的版本号
+     *
+     * @return
+     */
+    public String gammVersion();
+```
+
+登录调用示例（仅供参考）：
+
+```java
+/**
+ * Created by panda on 2017/11/6.
+ */
+public class MainActivity extends Activity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+
+        findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GammLoginReq req = new GammLoginReq();
+                req.packageName = "com.gamm.thirdlogindemo";
+                // 可不传，不传的话sdk会随机生成
+                req.state = "1234";
+                GammApiFactory.getGammSDKApi().gammSendReq(req);
+            }
+        });
+    }
+}
+```
+
+#####3、处理回调
+对于回调类，第三方app的接收回调类必须以`.gamm.GammCallbackActivity`结尾，并且继承`GammRespListener`接口。
+
+`GammCallbackActivity `的示例如下：
+
+```java
+**
+ *
+ * Created by panda on 2017/11/7.
+ */
+public class GammCallbackActivity extends Activity implements GammRespListener {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        GammApiFactory.getGammSDKApi().handleIntent(getIntent(), this);
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        GammApiFactory.getGammSDKApi().handleIntent(getIntent(), this);
+    }
+
+    @Override
+    public void onResp(GammBaseResp resp) {
+        // 第三方根据需要处理业务需要
+    }
+}
+```
+
+并且在AndroidManifest.xml里定义：
+
+```xml
+<activity
+     android:name=".gamm.GammCallbackActivity"
+     android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+     android:exported="true">
+</activity>
+```
+
+#####4、错误码和相应的信息
+<table border=”1″>
+<tr>
+<td>code</td>
+<td>描述</td>
+</tr>
+<tr>
+<td>0</td>
+<td>授权成功</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>授权取消</td>
+</tr>
+<tr>
+<td>XXX</td>
+<td>授权失败</td>
+</tr>
+</table>
+
+
