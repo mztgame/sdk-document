@@ -24,9 +24,7 @@
     msg: '成功',
     data: {
         'account': 'bigWame',
-        'tname': '王五',
         'nickname': '大肚子',
-        'phone': '17777777777',
         'sex': '1',
         'birth": '2005-03-28'
     }
@@ -39,7 +37,6 @@
 | ---     | ---    |
 | account | 巨人通行证账号 |
 | nickname | 昵称 |
-| tname    | 真实姓名 |
 | sex | 性别 
 | birth | 生日 |
 
