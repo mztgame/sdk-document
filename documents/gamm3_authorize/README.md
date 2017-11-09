@@ -176,3 +176,8 @@ https://gamm3.ztgame.com/sns/oauth2/refresh_token?appid=APPID&refresh_token=REFR
 | 接口地址 | 说明(即链接) |
 | ---     | ---  |
 | /sns/account/userinfo| [用户信息](./apis/userinfo.md) |
+
+
+**后台接口错误码详细请参考**
+
+[点击查看错误码](./errorCode.md)
