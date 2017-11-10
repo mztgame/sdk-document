@@ -46,7 +46,7 @@ Android平台接入示例（请参考Android的SDK）：
 
 | 参数 | 是否必须| 说明 |
 | --- | --- | :--- |
-| appid| 是 | 应用唯一标识，需要在官方申请后获得 |
+| app_id| 是 | 应用唯一标识，需要在官方申请后获得 |
 
 返回示例：
 
@@ -65,14 +65,14 @@ Android平台接入示例（请参考Android的SDK）：
 获取第一步的code之后，请求以下链接获取access_token
 
 ```
-https://gamm3.ztgame.com/sns/oauth2/get_access_token?appid=APPID&code=CODE&sign=SIGN
+https://gamm3.ztgame.com/sns/oauth2/get_access_token?app_id=APPID&code=CODE&sign=SIGN
 ```
 
 **参数说明**
 
 | 参数 | 是否必须| 说明 |
 | ---  | ----   | ---  |
-|appid | 是     | 应用唯一标识，需要官方申请获得 |
+|app_id | 是     | 应用唯一标识，需要官方申请获得 |
 |code  | 是     | 第一步获取的code参数|
 |sign  | 是     | 身份校验签名，见详细的[签名算法](./signAlgorithm.md) |
 
@@ -124,14 +124,14 @@ refresh_token拥有较长对的有效期(30天)，当refersh失效后，需要�
 
 获取第一步的code后，请求以下链接进行refresh_token：
 ```
-https://gamm3.ztgame.com/sns/oauth2/refresh_token?appid=APPID&refresh_token=REFRESH_TOKEN&sign=SIGN
+https://gamm3.ztgame.com/sns/oauth2/refresh_token?app_id=APPID&refresh_token=REFRESH_TOKEN&sign=SIGN
 ```
 
 **参数说明**
 
 | 参数 | 是否必须 | 说明  |
 | ---  | ---     | ---  |
-| appid| 是      | 应用唯一标识|
+| app_id| 是      | 应用唯一标识|
 | refresh_token| 是| 填写获取的refresh_token|
 | sign | 是| 签名串，见[签名算法](./signAlgorithm.md) |
 
