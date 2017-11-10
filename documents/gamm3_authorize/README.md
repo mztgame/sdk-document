@@ -65,7 +65,7 @@ Android平台接入示例（请参考Android的SDK）：
 获取第一步的code之后，请求以下链接获取access_token
 
 ```
-https://gamm3.ztgame.com/sns/oauth2/get_access_token?app_id=APPID&code=CODE&sign=SIGN
+https://gamm3.ztgame.com/sns/oauth2/access_token?app_id=APPID&code=CODE&sign=SIGN
 ```
 
 **参数说明**
@@ -124,7 +124,7 @@ refresh_token拥有较长对的有效期(30天)，当refersh失效后，需要�
 
 获取第一步的code后，请求以下链接进行refresh_token：
 ```
-https://gamm3.ztgame.com/sns/oauth2/refresh_token?app_id=APPID&refresh_token=REFRESH_TOKEN&sign=SIGN
+https://gamm3.ztgame.com/sns/oauth2/new-access_token?app_id=APPID&refresh_token=REFRESH_TOKEN&sign=SIGN
 ```
 
 **参数说明**
