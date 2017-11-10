@@ -94,6 +94,8 @@
 | 爱奇艺                                | 109         | aiqiyi             |              | Android           | -                     | -                     | -               |                        |
 | 三星                                | 110         | samsung             |              | Android           | -                     | -                     | -               |                        |
 | 应用宝买量                                | 111         | ysdkguangdiantong             |              | Android           | -                     | -                     | -               |                        |
+| 巨人网页支付                                | 112         | ztgamepc             |              |    WEB        | -                     | -                     | -               |                        |
+| 微信公众号支付                                | 113         | ztgameweixin             |              |    微信公众号        | -                     | -                     | -               |                        |
 
 
 ### 渠道 IOS
