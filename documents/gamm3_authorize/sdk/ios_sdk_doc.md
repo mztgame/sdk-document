@@ -1,7 +1,8 @@
 # iOS巨人账号管家SDK接入文档
 
 ## Demo下载
-[iOS Demo Download](./demo/iOS_ThirdLogin_Demo)
+[iOS Demo Download](./demo/iOS_ThirdLogin_Demo.zip)
+[iOS Demo 源码](./demo/iOS_ThirdLogin_Demo)
 
 ## SDK接入流程
 

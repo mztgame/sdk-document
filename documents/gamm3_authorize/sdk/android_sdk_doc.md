@@ -247,6 +247,7 @@ public class GammCallbackActivity extends Activity implements GammRespListener {
 -5     | 巨人账号管家不支持      |
 
 ####完整demo
-[android demo](./demo/Android_ThirdLogin_Demo)
+[android demo download](./demo/Android_ThirdLogin_Demo.zip)
+[android demo 源码](./demo/Android_ThirdLogin_Demo)
 
 
