@@ -1,13 +1,26 @@
 # iOS巨人账号管家SDK接入文档
 
-## 先决条件
-
-#### 下载并在Xcode中导入静态库 **GammSDK.framework**
-
+## Demo下载
+[iOS Demo Download](./demo/iOS_ThirdLogin_Demo)
 
 ## SDK接入流程
 
-#### 1: 导入SDK静态库头文件，然后设置回调代理:
+#### 1. 向巨人账号管家注册你的应用程序id
+请到开发者应用登记页面进行登记，登记并选择移动应用进行设置后，将获得AppID和AppKey
+
+#### 2. 下载巨人账号管家终端SDK文件 
+SDK文件只有一个静态库GammSDK.framework
+
+#### 3. 配置Xcode
+[1] 在你的工程文件中选择Build Setting，在"Other Linker Flags"中加入"-ObjC"
+
+[2] 在Xcode中，选择你的工程设置项，选中“TARGETS”一栏，在“info”标签栏的“URL type“添加“URL scheme”为你所注册的应用程序id(规则：jrzhgj+AppID)，比如AppID=1234567890，那么URL_scheme=“jrzhgj1234567890”
+
+[3] 在Xcode中，选择你的工程设置项，选中“TARGETS”一栏，在“info”标签栏的“LSApplicationQueriesSchemes“添加jrzhgj
+
+## SDK使用流程
+
+#### 1. 先在工程里注册SDK，并设置回调代理
 
 ```obj-c
 #import <UIKit/UIKit.h>
@@ -23,7 +36,7 @@
 @end
 ```
 
-#### 2: 使用巨人账号管家平台注册的AppID来初始化SDK, 然后在AppDelegate的handleOpenURL方法里添加拦截函数, 同时实现GammSDKApiDelegate回调函数。
+#### 2. 使用巨人账号管家平台注册的AppID来初始化SDK, 然后在AppDelegate的handleOpenURL方法里添加拦截函数, 同时实现GammSDKApiDelegate回调函数
 
 ```obj-c
 #import "AppDelegate.h"
@@ -62,7 +75,7 @@
 @end
 ```
 
-#### 3: 发起登录授权请求
+#### 3. 发起登录授权请求
 
 ```obj-c
 /** 点击巨人账号管家App授权 */

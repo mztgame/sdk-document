@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7466721F1FB5A14B002D5A5E /* common.m in Sources */ = {isa = PBXBuildFile; fileRef = 7466721C1FB5A14B002D5A5E /* common.m */; };
+		746672201FB5A14B002D5A5E /* is.m in Sources */ = {isa = PBXBuildFile; fileRef = 7466721E1FB5A14B002D5A5E /* is.m */; };
+		746672231FB5A25B002D5A5E /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 746672221FB5A25B002D5A5E /* NSString+URLEncode.m */; };
+		74A94A101FBBDE2C00DA6D18 /* GammSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74A94A0F1FBBDE2C00DA6D18 /* GammSDK.framework */; };
+		74CDAF931FB2E86000CA9A39 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CDAF921FB2E86000CA9A39 /* AppDelegate.m */; };
+		74CDAF961FB2E86000CA9A39 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CDAF951FB2E86000CA9A39 /* ViewController.m */; };
+		74CDAF991FB2E86000CA9A39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74CDAF971FB2E86000CA9A39 /* Main.storyboard */; };
+		74CDAF9B1FB2E86000CA9A39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74CDAF9A1FB2E86000CA9A39 /* Assets.xcassets */; };
+		74CDAF9E1FB2E86000CA9A39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74CDAF9C1FB2E86000CA9A39 /* LaunchScreen.storyboard */; };
+		74CDAFA11FB2E86000CA9A39 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CDAFA01FB2E86000CA9A39 /* main.m */; };
+		74CDB0281FB460F800CA9A39 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB01F1FB460F800CA9A39 /* SVIndefiniteAnimatedView.m */; };
+		74CDB0291FB460F800CA9A39 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB0211FB460F800CA9A39 /* SVProgressAnimatedView.m */; };
+		74CDB02A1FB460F800CA9A39 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 74CDB0231FB460F800CA9A39 /* SVProgressHUD.bundle */; };
+		74CDB02B1FB460F800CA9A39 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB0251FB460F800CA9A39 /* SVProgressHUD.m */; };
+		74CDB02C1FB460F800CA9A39 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB0271FB460F800CA9A39 /* SVRadialGradientLayer.m */; };
+		74CDB03B1FB461C000CA9A39 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB02F1FB461C000CA9A39 /* AFHTTPSessionManager.m */; };
+		74CDB03C1FB461C000CA9A39 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB0321FB461C000CA9A39 /* AFNetworkReachabilityManager.m */; };
+		74CDB03D1FB461C000CA9A39 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB0341FB461C000CA9A39 /* AFSecurityPolicy.m */; };
+		74CDB03E1FB461C000CA9A39 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB0361FB461C000CA9A39 /* AFURLRequestSerialization.m */; };
+		74CDB03F1FB461C000CA9A39 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB0381FB461C000CA9A39 /* AFURLResponseSerialization.m */; };
+		74CDB0401FB461C000CA9A39 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CDB03A1FB461C000CA9A39 /* AFURLSessionManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7466721B1FB5A14B002D5A5E /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		7466721C1FB5A14B002D5A5E /* common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = common.m; sourceTree = "<group>"; };
+		7466721D1FB5A14B002D5A5E /* is.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = is.h; sourceTree = "<group>"; };
+		7466721E1FB5A14B002D5A5E /* is.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = is.m; sourceTree = "<group>"; };
+		746672211FB5A25A002D5A5E /* NSString+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncode.h"; sourceTree = "<group>"; };
+		746672221FB5A25B002D5A5E /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncode.m"; sourceTree = "<group>"; };
+		746672241FB5A312002D5A5E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		74A94A0F1FBBDE2C00DA6D18 /* GammSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GammSDK.framework; path = GammSDKDemo/GammSDK.framework; sourceTree = "<group>"; };
+		74CDAF8E1FB2E86000CA9A39 /* GammSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GammSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		74CDAF911FB2E86000CA9A39 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		74CDAF921FB2E86000CA9A39 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		74CDAF941FB2E86000CA9A39 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		74CDAF951FB2E86000CA9A39 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		74CDAF981FB2E86000CA9A39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		74CDAF9A1FB2E86000CA9A39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		74CDAF9D1FB2E86000CA9A39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		74CDAF9F1FB2E86000CA9A39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74CDAFA01FB2E86000CA9A39 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		74CDB01E1FB460F800CA9A39 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		74CDB01F1FB460F800CA9A39 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		74CDB0201FB460F800CA9A39 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		74CDB0211FB460F800CA9A39 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		74CDB0221FB460F800CA9A39 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		74CDB0231FB460F800CA9A39 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		74CDB0241FB460F800CA9A39 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		74CDB0251FB460F800CA9A39 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		74CDB0261FB460F800CA9A39 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		74CDB0271FB460F800CA9A39 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		74CDB02E1FB461C000CA9A39 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		74CDB02F1FB461C000CA9A39 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		74CDB0301FB461C000CA9A39 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		74CDB0311FB461C000CA9A39 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		74CDB0321FB461C000CA9A39 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		74CDB0331FB461C000CA9A39 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		74CDB0341FB461C000CA9A39 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		74CDB0351FB461C000CA9A39 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		74CDB0361FB461C000CA9A39 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		74CDB0371FB461C000CA9A39 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		74CDB0381FB461C000CA9A39 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		74CDB0391FB461C000CA9A39 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		74CDB03A1FB461C000CA9A39 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		74CDAF8B1FB2E86000CA9A39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74A94A101FBBDE2C00DA6D18 /* GammSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7466721A1FB5A14B002D5A5E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				746672211FB5A25A002D5A5E /* NSString+URLEncode.h */,
+				746672221FB5A25B002D5A5E /* NSString+URLEncode.m */,
+				7466721B1FB5A14B002D5A5E /* common.h */,
+				7466721C1FB5A14B002D5A5E /* common.m */,
+				7466721D1FB5A14B002D5A5E /* is.h */,
+				7466721E1FB5A14B002D5A5E /* is.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		74CDAF851FB2E86000CA9A39 = {
+			isa = PBXGroup;
+			children = (
+				74CDAF901FB2E86000CA9A39 /* GammSDKDemo */,
+				74CDAF8F1FB2E86000CA9A39 /* Products */,
+				74CDAFCF1FB2F61B00CA9A39 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		74CDAF8F1FB2E86000CA9A39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74CDAF8E1FB2E86000CA9A39 /* GammSDKDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		74CDAF901FB2E86000CA9A39 /* GammSDKDemo */ = {
+			isa = PBXGroup;
+			children = (
+				74CDB01C1FB460F800CA9A39 /* thirdlibs */,
+				74CDAF911FB2E86000CA9A39 /* AppDelegate.h */,
+				74CDAF921FB2E86000CA9A39 /* AppDelegate.m */,
+				74CDAF941FB2E86000CA9A39 /* ViewController.h */,
+				74CDAF951FB2E86000CA9A39 /* ViewController.m */,
+				74CDAF971FB2E86000CA9A39 /* Main.storyboard */,
+				74CDAF9A1FB2E86000CA9A39 /* Assets.xcassets */,
+				74CDAF9C1FB2E86000CA9A39 /* LaunchScreen.storyboard */,
+				74CDAF9F1FB2E86000CA9A39 /* Info.plist */,
+				74CDAFA01FB2E86000CA9A39 /* main.m */,
+			);
+			path = GammSDKDemo;
+			sourceTree = "<group>";
+		};
+		74CDAFCF1FB2F61B00CA9A39 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74A94A0F1FBBDE2C00DA6D18 /* GammSDK.framework */,
+				746672241FB5A312002D5A5E /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		74CDB01C1FB460F800CA9A39 /* thirdlibs */ = {
+			isa = PBXGroup;
+			children = (
+				7466721A1FB5A14B002D5A5E /* Utils */,
+				74CDB02D1FB461C000CA9A39 /* AFNetworking */,
+				74CDB01D1FB460F800CA9A39 /* SVProgressHUD */,
+			);
+			path = thirdlibs;
+			sourceTree = "<group>";
+		};
+		74CDB01D1FB460F800CA9A39 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				74CDB01E1FB460F800CA9A39 /* SVIndefiniteAnimatedView.h */,
+				74CDB01F1FB460F800CA9A39 /* SVIndefiniteAnimatedView.m */,
+				74CDB0201FB460F800CA9A39 /* SVProgressAnimatedView.h */,
+				74CDB0211FB460F800CA9A39 /* SVProgressAnimatedView.m */,
+				74CDB0221FB460F800CA9A39 /* SVProgressHUD-Prefix.pch */,
+				74CDB0231FB460F800CA9A39 /* SVProgressHUD.bundle */,
+				74CDB0241FB460F800CA9A39 /* SVProgressHUD.h */,
+				74CDB0251FB460F800CA9A39 /* SVProgressHUD.m */,
+				74CDB0261FB460F800CA9A39 /* SVRadialGradientLayer.h */,
+				74CDB0271FB460F800CA9A39 /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		74CDB02D1FB461C000CA9A39 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				74CDB02E1FB461C000CA9A39 /* AFHTTPSessionManager.h */,
+				74CDB02F1FB461C000CA9A39 /* AFHTTPSessionManager.m */,
+				74CDB0301FB461C000CA9A39 /* AFNetworking.h */,
+				74CDB0311FB461C000CA9A39 /* AFNetworkReachabilityManager.h */,
+				74CDB0321FB461C000CA9A39 /* AFNetworkReachabilityManager.m */,
+				74CDB0331FB461C000CA9A39 /* AFSecurityPolicy.h */,
+				74CDB0341FB461C000CA9A39 /* AFSecurityPolicy.m */,
+				74CDB0351FB461C000CA9A39 /* AFURLRequestSerialization.h */,
+				74CDB0361FB461C000CA9A39 /* AFURLRequestSerialization.m */,
+				74CDB0371FB461C000CA9A39 /* AFURLResponseSerialization.h */,
+				74CDB0381FB461C000CA9A39 /* AFURLResponseSerialization.m */,
+				74CDB0391FB461C000CA9A39 /* AFURLSessionManager.h */,
+				74CDB03A1FB461C000CA9A39 /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		74CDAF8D1FB2E86000CA9A39 /* GammSDKDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74CDAFA41FB2E86000CA9A39 /* Build configuration list for PBXNativeTarget "GammSDKDemo" */;
+			buildPhases = (
+				74CDAF8A1FB2E86000CA9A39 /* Sources */,
+				74CDAF8B1FB2E86000CA9A39 /* Frameworks */,
+				74CDAF8C1FB2E86000CA9A39 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GammSDKDemo;
+			productName = GammSDKDemo;
+			productReference = 74CDAF8E1FB2E86000CA9A39 /* GammSDKDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		74CDAF861FB2E86000CA9A39 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = ztgame.com;
+				TargetAttributes = {
+					74CDAF8D1FB2E86000CA9A39 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 74CDAF891FB2E86000CA9A39 /* Build configuration list for PBXProject "GammSDKDemo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 74CDAF851FB2E86000CA9A39;
+			productRefGroup = 74CDAF8F1FB2E86000CA9A39 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				74CDAF8D1FB2E86000CA9A39 /* GammSDKDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		74CDAF8C1FB2E86000CA9A39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74CDAF9E1FB2E86000CA9A39 /* LaunchScreen.storyboard in Resources */,
+				74CDAF9B1FB2E86000CA9A39 /* Assets.xcassets in Resources */,
+				74CDAF991FB2E86000CA9A39 /* Main.storyboard in Resources */,
+				74CDB02A1FB460F800CA9A39 /* SVProgressHUD.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		74CDAF8A1FB2E86000CA9A39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74CDB02C1FB460F800CA9A39 /* SVRadialGradientLayer.m in Sources */,
+				74CDB03C1FB461C000CA9A39 /* AFNetworkReachabilityManager.m in Sources */,
+				746672201FB5A14B002D5A5E /* is.m in Sources */,
+				746672231FB5A25B002D5A5E /* NSString+URLEncode.m in Sources */,
+				7466721F1FB5A14B002D5A5E /* common.m in Sources */,
+				74CDAF961FB2E86000CA9A39 /* ViewController.m in Sources */,
+				74CDB0291FB460F800CA9A39 /* SVProgressAnimatedView.m in Sources */,
+				74CDAFA11FB2E86000CA9A39 /* main.m in Sources */,
+				74CDAF931FB2E86000CA9A39 /* AppDelegate.m in Sources */,
+				74CDB03D1FB461C000CA9A39 /* AFSecurityPolicy.m in Sources */,
+				74CDB03E1FB461C000CA9A39 /* AFURLRequestSerialization.m in Sources */,
+				74CDB0281FB460F800CA9A39 /* SVIndefiniteAnimatedView.m in Sources */,
+				74CDB02B1FB460F800CA9A39 /* SVProgressHUD.m in Sources */,
+				74CDB03F1FB461C000CA9A39 /* AFURLResponseSerialization.m in Sources */,
+				74CDB0401FB461C000CA9A39 /* AFURLSessionManager.m in Sources */,
+				74CDB03B1FB461C000CA9A39 /* AFHTTPSessionManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		74CDAF971FB2E86000CA9A39 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74CDAF981FB2E86000CA9A39 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		74CDAF9C1FB2E86000CA9A39 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74CDAF9D1FB2E86000CA9A39 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		74CDAFA21FB2E86000CA9A39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		74CDAFA31FB2E86000CA9A39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		74CDAFA51FB2E86000CA9A39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5T4SKG3CUR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GammSDKDemo",
+				);
+				INFOPLIST_FILE = GammSDKDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ztgame.GammSDKDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		74CDAFA61FB2E86000CA9A39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5T4SKG3CUR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GammSDKDemo",
+				);
+				INFOPLIST_FILE = GammSDKDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ztgame.GammSDKDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		74CDAF891FB2E86000CA9A39 /* Build configuration list for PBXProject "GammSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74CDAFA21FB2E86000CA9A39 /* Debug */,
+				74CDAFA31FB2E86000CA9A39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74CDAFA41FB2E86000CA9A39 /* Build configuration list for PBXNativeTarget "GammSDKDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74CDAFA51FB2E86000CA9A39 /* Debug */,
+				74CDAFA61FB2E86000CA9A39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 74CDAF861FB2E86000CA9A39 /* Project object */;
+}

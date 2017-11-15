@@ -1,0 +1,6 @@
+framework module GammSDK {
+  umbrella header "GammSDK.h"
+
+  export *
+  module * { export * }
+}
