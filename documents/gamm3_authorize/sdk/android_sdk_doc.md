@@ -63,7 +63,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        GammApiFactory.createSDKApi(this);
+        GammApiFactory.createSDKApi(this, appId);
 		GammApiFactory.getGammSDKApi().setGammDebug(BuildConfig.DEBUG);
     }
 }
@@ -77,7 +77,7 @@ public class App extends Application {
      *
      * @param req
      */
-    public void gammSendReq(GammBaseReq req);
+    public void gammSendReq(GammBaseReq req, Handler handler);
 
     /**
      * 判断账号管家是否安装
@@ -229,25 +229,24 @@ public class GammCallbackActivity extends Activity implements GammRespListener {
     public String authCode;
 ```	
 
+####特殊要求
+第三方APP需要在清单文件的<application>标签里加上：
+
+> android:taskAffinity="gamm.thirdlogin.attached.stack"
+
+加这个的目的是为了将打开的账号管家的用于第三方登录的activity转移到第三方的任务栈中。
 
 #### 5、错误码和相应的信息
-<table border=”1″>
-<tr>
-<td>code</td>
-<td>描述</td>
-</tr>
-<tr>
-<td>0</td>
-<td>授权成功</td>
-</tr>
-<tr>
-<td>-1</td>
-<td>授权取消</td>
-</tr>
-<tr>
-<td>XXX</td>
-<td>授权失败</td>
-</tr>
-</table>
+状态码         | 描述           |
+--------------------|------------------|
+0      | 成功   | 
+-1     | 普通错误类型  |
+-2     | 用户点击取消并返回      |
+-3     | 发送失败      |
+-4     | 用户拒绝授权或授权失败      |
+-5     | 巨人账号管家不支持      |
+
+####完整demo
+[android demo](./demo/Android_ThirdLogin_Demo)
 
 
