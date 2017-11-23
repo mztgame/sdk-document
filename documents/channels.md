@@ -92,10 +92,11 @@
 | 拇指玩2                               | 107         | muzhiwan2          |              | Android           | -                     | -                     | -               |                        |
 | 360融合                               | 108         | jusdk              |              | Android           | -                     | -                     | -               |                        |
 | 爱奇艺                                | 109         | aiqiyi             |              | Android           | -                     | -                     | -               |                        |
-| 三星                                | 110         | samsung             |              | Android           | -                     | -                     | -               |                        |
-| 应用宝买量                                | 111         | ysdkguangdiantong             |              | Android           | -                     | -                     | -               |                        |
-| 巨人网页支付                                | 112         | ztgamepc             |              |    WEB        | -                     | -                     | -               |                        |
-| 微信公众号支付                                | 113         | ztgameweixin             |              |    微信公众号        | -                     | -                     | -               |                        |
+| 三星                                  | 110         | samsung            |              | Android           | -                     | -                     | -               |                        |
+| 应用宝买量                            | 111         | ysdkguangdiantong  |              | Android           | -                     | -                     | -               |                        |
+| 巨人网页支付                          | 112         | ztgamepc           |              |    WEB            | -                     | -                     | -               |                        |
+| 微信公众号支付                        | 113         | ztgameweixin       |              |    微信公众号     | -                     | -                     | -               |                        |
+| 手游咖啡2                             | 114         | coffee             |              | Android           | -                     | -                     | -               |                        |
 
 
 ### 渠道 IOS
