@@ -97,6 +97,7 @@
 | 巨人网页支付                          | 112         | ztgamepc           |              |    WEB            | -                     | -                     | -               |                        |
 | 微信公众号支付                        | 113         | ztgameweixin       |              |    微信公众号     | -                     | -                     | -               |                        |
 | 手游咖啡2                             | 114         | coffee             |              | Android           | -                     | -                     | -               |                        |
+| 影视大全                              | 115         | ysdq               |              | Android           | -                     | -                     | -               |                        |
 
 
 ### 渠道 IOS
