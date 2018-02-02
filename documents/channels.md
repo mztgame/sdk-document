@@ -98,6 +98,8 @@
 | 微信公众号支付                        | 113         | ztgameweixin       |              |    微信公众号     | -                     | -                     | -               |                        |
 | 手游咖啡2                             | 114         | coffee             |              | Android           | -                     | -                     | -               |                        |
 | 影视大全                              | 115         | ysdq               |              | Android           | -                     | -                     | -               |                        |
+| 乐游                                  | 116         | leyou               |              | Android           | -                     | -                     | -               |                        |
+| 汉风                                  | 117         | hanfeng               |              | Android           | -                     | -                     | -               |                        |
 | 来玩棋牌                              | 9998        | lwqp               |              |            | -                     | -                     | -               |                        |
 
 
