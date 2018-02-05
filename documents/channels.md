@@ -100,6 +100,11 @@
 | 影视大全                              | 115         | ysdq               |              | Android           | -                     | -                     | -               |                        |
 | 乐游                                  | 116         | leyou               |              | Android           | -                     | -                     | -               |                        |
 | 汉风                                  | 117         | hanfeng               |              | Android           | -                     | -                     | -               |                        |
+| 小七                                  | 118         | x7sy               |              | Android           | -                     | -                     | -               |                        |
+| 牛刀                                  | 119         | niudao               |              | Android           | -                     | -                     | -               |                        |
+| 酷米                                  | 120         | kumi               |              | Android           | -                     | -                     | -               |                        |
+| 57K                                  | 121         | c57k               |              | Android           | -                     | -                     | -               |                        |
+| 爱乐                                  | 122         | c2lyx               |              | Android           | -                     | -                     | -               |                        |
 | 来玩棋牌                              | 9998        | lwqp               |              |            | -                     | -                     | -               |                        |
 
 
