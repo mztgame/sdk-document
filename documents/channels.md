@@ -98,17 +98,17 @@
 | 微信公众号支付                        | 113         | ztgameweixin       |              |    微信公众号     | -                     | -                     | -               |                        |
 | 手游咖啡2                             | 114         | coffee             |              | Android           | -                     | -                     | -               |                        |
 | 影视大全                              | 115         | ysdq               |              | Android           | -                     | -                     | -               |                        |
-| 乐游                                  | 116         | leyou               |              | Android           | -                     | -                     | -               |                        |
-| 汉风                                  | 117         | hanfeng               |              | Android           | -                     | -                     | -               |                        |
-| 小七                                  | 118         | x7sy               |              | Android           | -                     | -                     | -               |                        |
-| 牛刀                                  | 119         | niudao               |              | Android           | -                     | -                     | -               |                        |
-| 酷米                                  | 120         | kumi               |              | Android           | -                     | -                     | -               |                        |
-| 57K                                  | 121         | c57k               |              | Android           | -                     | -                     | -               |                        |
-| 爱乐                                  | 122         | c2lyx               |              | Android           | -                     | -                     | -               |                        |
-| 逗游                                  | 123         | douyou8               |              | Android           | -                     | -                     | -               |                        |
+| 乐游                                  | 116         | leyou               |  *.ly            | Android           | -                     | -                     | -               |                        |
+| 汉风                                  | 117         | hanfeng               |  *.qile            | Android           | -                     | -                     | -               |                        |
+| 小七                                  | 118         | x7sy               |   *.x7sy           | Android           | -                     | -                     | -               |                        |
+| 牛刀                                  | 119         | niudao               |   *.niudaosy           | Android           | -                     | -                     | -               |                        |
+| 酷米                                  | 120         | kumi               |   *.kmw           | Android           | -                     | -                     | -               |                        |
+| 57K                                  | 121         | c57k               |     *.57k         | Android           | -                     | -                     | -               |                        |
+| 爱乐                                  | 122         | c2lyx               |    *.2lyx          | Android           | -                     | -                     | -               |                        |
+| 逗游                                  | 123         | douyou8               |    *.dy8          | Android           | -                     | -                     | -               |                        |
 | 途游                                  | 124         | tuyoo               |              | Android           | -                     | -                     | -               |                        |
-| 夜神                                  | 125         | yeshen               |              | Android           | -                     | -                     | -               |                        |
-| 爱应用                                  | 126         | aiyingyong               |              | Android           | -                     | -                     | -               |                        |
+| 夜神                                  | 125         | yeshen               |    *.yeshen          | Android           | -                     | -                     | -               |                        |
+| 爱应用                                  | 126         | aiyingyong               |    *.ayy          | Android           | -                     | -                     | -               |                        |
 | 来玩棋牌                              | 9998        | lwqp               |              |            | -                     | -                     | -               |                        |
 
 
@@ -128,8 +128,11 @@
 | 云点友游(IOS)              | 68        | yundian          |          | IOS             | ?                   | -                   | -             |                |
 | 爱苹果                     | 72        | iapple           |          | IOS             | v1.2.8              | v1.2.8              | 2015-8-31     |                |
 | 海马玩(IOS)                | 85        | haimawan         |          | IOS             | -                   | ?                   | -             |                | |
-
-
+| 果盘(IOS)                | 89        | guopan         |  *.iOS.guopan        | IOS             | -                   | ?                   | -             |                | |
+| 熊猫玩(IOS)                | 65        | xmwan         |  *.qile        | IOS             | -                   | ?                   | -             |                | |
+| 小七(IOS)                | 118        | x7sy         |  *.iOS.x7sy        | IOS             | -                   | ?                   | -             |                | |
+| 爱应用(IOS)                | 126        | aiyingyong         |  *.ios.ayy        | IOS             | -                   | ?                   | -             |                | |
+| 57K(IOS)                | 121        | c57k         |  *.ios.le8        | IOS             | -                   | ?                   | -             |                | |
 
 ## 巨人移动官方CPS渠道
 
