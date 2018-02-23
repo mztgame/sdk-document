@@ -107,6 +107,8 @@
 | 爱乐                                  | 122         | c2lyx               |              | Android           | -                     | -                     | -               |                        |
 | 逗游                                  | 123         | douyou8               |              | Android           | -                     | -                     | -               |                        |
 | 途游                                  | 124         | tuyoo               |              | Android           | -                     | -                     | -               |                        |
+| 夜神                                  | 125         | yeshen               |              | Android           | -                     | -                     | -               |                        |
+| 爱应用                                  | 126         | aiyingyong               |              | Android           | -                     | -                     | -               |                        |
 | 来玩棋牌                              | 9998        | lwqp               |              |            | -                     | -                     | -               |                        |
 
 
