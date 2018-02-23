@@ -99,7 +99,7 @@
 | 手游咖啡2                             | 114         | coffee             |              | Android           | -                     | -                     | -               |                        |
 | 影视大全                              | 115         | ysdq               |              | Android           | -                     | -                     | -               |                        |
 | 乐游                                  | 116         | leyou               |  *.ly            | Android           | -                     | -                     | -               |                        |
-| 汉风                                  | 117         | hanfeng               |  *.qile            | Android           | -                     | -                     | -               |                        |
+| 汉风                                  | 117         | hanfeng               |  com.hf.tfycs.*            | Android           | -                     | -                     | -               |                        |
 | 小七                                  | 118         | x7sy               |   *.x7sy           | Android           | -                     | -                     | -               |                        |
 | 牛刀                                  | 119         | niudao               |   *.niudaosy           | Android           | -                     | -                     | -               |                        |
 | 酷米                                  | 120         | kumi               |   *.kmw           | Android           | -                     | -                     | -               |                        |
@@ -129,7 +129,7 @@
 | 爱苹果                     | 72        | iapple           |          | IOS             | v1.2.8              | v1.2.8              | 2015-8-31     |                |
 | 海马玩(IOS)                | 85        | haimawan         |          | IOS             | -                   | ?                   | -             |                | |
 | 果盘(IOS)                | 89        | guopan         |  *.iOS.guopan        | IOS             | -                   | ?                   | -             |                | |
-| 熊猫玩(IOS)                | 65        | xmwan         |  *.qile        | IOS             | -                   | ?                   | -             |                | |
+| 熊猫玩(IOS)                | 65        | xmwan         |  com.youxiqun.*        | IOS             | -                   | ?                   | -             |                | |
 | 小七(IOS)                | 118        | x7sy         |  *.iOS.x7sy        | IOS             | -                   | ?                   | -             |                | |
 | 爱应用(IOS)                | 126        | aiyingyong         |  *.ios.ayy        | IOS             | -                   | ?                   | -             |                | |
 | 57K(IOS)                | 121        | c57k         |  *.ios.le8        | IOS             | -                   | ?                   | -             |                | |
