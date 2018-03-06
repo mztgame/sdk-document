@@ -16,9 +16,10 @@ POST `http://beacon.ztgame.com/game/player-online`
 | mztgame_udid | mztgame_udid | 2323232323 |
 | role_id | 角色ID | 1211423 |
 | exp | 游戏数值变化（经验值、比赛次数等） | 123 |
-| idfa | IDFA(idfa) | XXXXXXXXXX |
-| imei | imei | XXXXXXXXXX |
-| mac | mac | XXXXXXXXXX |
+| idfa | IDFA(IOS特有) | XXXXXXXXXX |
+| imei | imei(安卓特有) | XXXXXXXXXX |
+| mac | mac(安卓特有) | XXXXXXXXXX |
+| channel_id | 渠道id | 2 |
 | sign | 签名 | 目前可不传 |
 
 
