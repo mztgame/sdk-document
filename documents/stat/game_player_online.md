@@ -13,7 +13,7 @@ POST `http://beacon.ztgame.com/game/player-online`
 | time_end | 统计周期结束时间（秒单位时间戳） | 1451375641 |
 | user_ip | 用户IP（user_ip） | 127.0.0.1 |
 | type | 根据游戏选择（按场次 1，按经验值 2） | 1 |
-| mztgame_udid | mztgame_udid | 2323232323 |
+| mztgame_udid | mztgame_udid(ios特有) | 2323232323 |
 | role_id | 角色ID | 1211423 |
 | exp | 游戏数值变化（经验值、比赛次数等） | 123 |
 | idfa | IDFA(IOS特有) | XXXXXXXXXX |
