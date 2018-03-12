@@ -109,7 +109,9 @@
 | 途游                                  | 124         | tuyoo               |              | Android           | -                     | -                     | -               |                        |
 | 夜神                                  | 125         | yeshen               |    *.yeshen          | Android           | -                     | -                     | -               |                        |
 | 爱应用                                  | 126         | aiyingyong               |    *.ayy          | Android           | -                     | -                     | -               |                        |
-| 哔哩哔哩                                | 127         | bili               |    *.bilibili          | Android           | -                     | -                     | -               |                        |
+| 哔哩哔哩                                | 127         | bili               |    *.bilibili          | Android           | -                     | -                     | -               |  
+| 爱玩                                | 128         | quicksdk               |              | Android           | -                     | -                     | -               |                       |
+| 怪猫                                | 129         | guaimao               |              | Android           | -                     | -                     | -               |                       |
 | 来玩棋牌                              | 9998        | lwqp               |              |            | -                     | -                     | -               |                        |
 
 
