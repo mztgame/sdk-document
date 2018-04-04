@@ -274,3 +274,8 @@
 |辉耀|10131|*.hy|CPS|
 |全民平台|10132|*.qm|CPS|
 |taptap|10133|*.taptap|CPS|
+|车轮|10134|*.chelun|CPS|
+|电信爱游戏|10135|*.egame|CPS|
+|九秀|10136|*.jiuxiu|CPS|
+|移动mm|10137|*.ydmm|CPS|
+|搜狗|10138|*.sougou.com|CPS|
