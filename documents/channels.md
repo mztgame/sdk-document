@@ -112,8 +112,8 @@
 | 哔哩哔哩                                | 127         | bili               |    *.bilibili          | Android           | -                     | -                     | -               |  
 | 爱玩                                | 128         | quicksdk               |              | Android           | -                     | -                     | -               |                       |
 | 怪猫                                | 129         | guaimao               |              | Android           | -                     | -                     | -               |                       |
-| 畅梦游戏                                | 130         | changmeng               |              | Android           | -                     | -                     | -               |                       |
-| 清风                                | 131         | qingfeng               |              | Android           | -                     | -                     | -               |                       |
+| 畅梦游戏                                | 130         | changmeng               |      *.zte.liu        | Android           | -                     | -                     | -               |                       |
+| 清风                                | 131         | qingfeng               |     *.qf         | Android           | -                     | -                     | -               |                       |
 | 来玩棋牌                              | 9998        | lwqp               |              |            | -                     | -                     | -               |                        |
 
 
