@@ -282,3 +282,4 @@
 |移动mm|10137|*.ydmm|CPS|
 |搜狗|10138|*.sougou.com|CPS|
 |花生wifi|10139|*.hswifi|CPS|
+|乐视游戏中心|10140|*.lsyx|CPS|
