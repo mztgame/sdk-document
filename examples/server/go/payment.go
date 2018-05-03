@@ -30,20 +30,22 @@ s78wGIiHT1yOmCMeKHCVgElwwgmFnmxKYsBD9XZ9GM6wzt/95M53jh/aNp/+9Y1m
 	extra          = "123"
 	game_id        = "GMG001"
 	is_black 	   = "0"
+	is_recovery    = "0";
 	is_test 	   = "0"
 	openid         = "1-1234"
 	order_id       = "1399633295037630"
+	original_purchase_orderid       = ""
 	product_id     = "HWDPID0006"
 	time           = "1404975144"
 	transaction_id = "1000000110081354"
-	version        = "5.0"
+	version        = "6.0"
 	zone_id        = "1"
-	sign           = "fV3swPV0kEALBRE3fLj10CjDloXkTuw33K4p9ZFpTdR8nD5nGrXC4pbml3bfjJOUtfbqUWyeN9h18k1+SmAZ+Dqosaus2wFCiKEmGJjItr2HScwyiZX8OIVbWKinjUxl+EiJpsoApgH1+I1gjhr9Vy2zsw9tMrGX28XId4nZztluA9yens9q5rgwE4+HBj/+6QreYDi5XmKiihTuRHycHuEwQ3xvWs5Q3Si2nKxxOf5CUnPKIsKPuOPXMfFSTKv+GZ9hhEHcRAPUxMCZAOZfLwYLNsRIa+Xvr275yKxNak0ZWuv/gxck/EWO02hdpIOwhy1cPv/ZeodOvp3MgPcHbg=="
+	sign           = "739dLJZycZKkTq4DFhR7S+rMv2a5pMCCnjSe5+Rm/QgMyjrikZISpEIgS8SXkzCs0kh2OlKP8numISgFDeNIMR0V6iFTLbL5yzKMCLU05RTbZyij/fVoyTI96R89xU6oytDvRSJKjvCuWcMhd+jb82k7GVgAmjgSTD0egKzRGupzf5LCRg20j0DZZxjsP82kBu0BQmKOT1OmVGBiQGtc/ccWsgncrOfJ/jTbcbFn+wuo5Dno+fjGpHBtdiWicniAVTdisP9eoKWRBvehRDPEoSYeo9IuR/OZYvenn17EAgMzVTGGzMWejSZ0rgHhqi2F1/BhuFEeL2NEe+om6WuAeg=="
 )
 
 func main() {
 	//签名内容
-	data := fmt.Sprintf("%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s", account, amount, black_desc, channel, extra, game_id, is_black, is_test, openid, order_id, product_id, time, transaction_id, version, zone_id)
+	data := fmt.Sprintf("%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s", account, amount, black_desc, channel, extra, game_id, is_black, is_recovery, is_test, openid, order_id, original_purchase_orderid, product_id, time, transaction_id, version, zone_id)
 	sign, _ := base64.StdEncoding.DecodeString(sign)
 	//验签
 	block, _ := pem.Decode([]byte(pubPem))
