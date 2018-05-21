@@ -283,3 +283,4 @@
 |搜狗|10138|*.sougou.com|CPS|
 |花生wifi|10139|*.hswifi|CPS|
 |乐视游戏中心|10140|*.lsyx|CPS|
+|好游快爆|10141|*.hykb|CPS|
