@@ -1,7 +1,7 @@
 游戏场次数据接口说明
 =========================
 
-POST `http://beacon.ztgame.com/game/player-online`
+POST `https://beacon.ztgame.com/game/player-online`
  
 ### 接口参数
  
