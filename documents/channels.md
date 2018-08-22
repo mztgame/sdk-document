@@ -114,6 +114,7 @@
 | 怪猫                                | 129         | guaimao               |              | Android           | -                     | -                     | -               |                       |
 | 畅梦游戏                                | 130         | changmeng               |      *.zte.liu        | Android           | -                     | -                     | -               |                       |
 | 清风                                | 131         | qingfeng               |     *.qf         | Android           | -                     | -                     | -               |                       |
+| 悟饭                                | 132         | papa91               |     *.wf         | Android           | -                     | -                     | -               |                       |
 | 来玩棋牌                              | 9998        | lwqp               |              |            | -                     | -                     | -               |                        |
 
 
