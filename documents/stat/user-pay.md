@@ -16,6 +16,8 @@ POST `https://beacon.ztgame.com/service/user-pay`
 ### 返回值
 
 ```
+content-type:application/json;charset=utf-8
+
 {"code":0,"msg":"ok","data":1234}
 ```
 | 参数名 | 说明 | 范例 |
