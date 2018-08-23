@@ -7,8 +7,8 @@ POST `https://beacon.ztgame.com/service/user-pay`
  
 | 参数名 | 说明 | 范例 |
 |------|------|------|
-| game_id | 游戏id | 5012 |
-| openid | open_id | 101 |
+| game_id | 游戏id | 5174 |
+| openid | open_id | 1-12345 |
 | begin | 开始时间(yyyy-mm-dd HH:ii:ss) | 2018-08-23 10:00:00 |
 | end | 结束时间(yyyy-mm-dd HH:ii:ss) | 2018-08-23 10:00:00 |
 | sign | 签名 |  |
