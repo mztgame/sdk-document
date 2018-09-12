@@ -115,6 +115,9 @@
 | 畅梦游戏                                | 130         | changmeng               |      *.zte.liu        | Android           | -                     | -                     | -               |                       |
 | 清风                                | 131         | qingfeng               |     *.qf         | Android           | -                     | -                     | -               |                       |
 | 悟饭                                | 132         | papa91               |     *.wf         | Android           | -                     | -                     | -               |                       |
+| 小米海外版                          | 133         | xiaomioverseas       |     *.xiaomi     | Android           | -                     | -                     | -               |                       |
+| OPPO海外版                          | 134         | oppooverseas         |     *.nearme.gamecenter         | Android           | -                     | -                     | -               |                       |
+| 华为海外版                          | 135         | huaweioverseas       |     *.huawei         | Android           | -                     | -                     | -               |                       |
 | 来玩棋牌                              | 9998        | lwqp               |              |            | -                     | -                     | -               |                        |
 
 
