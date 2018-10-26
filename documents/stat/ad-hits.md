@@ -34,7 +34,11 @@
 | callback |  广告商追踪使用url，登录时会回调 |  否 |
 | tid | tid=2，用于展示监控。tid=5，用于点击广告素材进入外媒页面。tid=8 只做回调标识必填项 | 是 |
 | dnm |  素材名 tid=5时，必填，其他不填 | 否 |
-| pr |  价格 | 否 |
+| androidid |   | 否 |
+| idfa_md5 |   | 否 |
+| imei_md5 |   | 否 |
+| androidid_md5 |   | 否 |
+| advertisingid_md5 |   | 否 |
  
 ### 对接地址范例
 
@@ -72,6 +76,11 @@ HTTP 响应状态码为 204，无响应内容
 | tid | tid=2，用于展示监控。tid=5，用于点击广告素材进入外媒页面。tid=8，代表点击跳转下载包或公司统一下载页 | 是 |
 | dnm |  素材名 tid=5时，必填，其他不填 | 否 |
 | pr |  价格(单位 分) | 否 |
+| androidid |   | 否 |
+| idfa_md5 |   | 否 |
+| imei_md5 |   | 否 |
+| androidid_md5 |   | 否 |
+| advertisingid_md5 |   | 否 |
 
 > 注：以上参数 `default_url`, `ios_url`, `android_url` 
 限制域名：`*.[m]ztgame.com`, `itunes.apple.com`,`*.[m]ztgame.com.cn`,`[m]ztgame.com.cn`
