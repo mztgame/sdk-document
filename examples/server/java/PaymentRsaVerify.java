@@ -24,24 +24,29 @@ public class PaymentRsaVerify {
 		String amount = "6.00";
 		String black_desc = "";
 		String channel = "1";
+		String currency = "";
 		String extra = "123";
 		String game_id = "GMG001";
 		String is_black = "0";
+		String is_cancel = "0";
 		String is_recovery = "0";
 		String is_test = "0";
+		String memo = "";
 		String openid = "1-1234";
 		String order_id = "1399633295037630";
+		String order_type = "0";
 		String original_purchase_orderid = "";
 		String product_id = "HWDPID0006";
 		String time = "1404975144";
 		String transaction_id = "1000000110081354";
-		String version = "6.0";
+		String version = "8.0";
 		String zone_id = "1";
 
-		String signString = account + amount + black_desc + channel + extra + game_id
-				+ is_black + is_recovery + is_test + openid + order_id + original_purchase_orderid + product_id + time + transaction_id
+		String signString = account + amount + black_desc + channel + currency + extra + game_id
+				+ is_black + is_cancel + is_recovery + is_test + memo + openid + order_id + order_type
+				+ original_purchase_orderid + product_id + time + transaction_id
 				+ version + zone_id;
-		String sign = "739dLJZycZKkTq4DFhR7S+rMv2a5pMCCnjSe5+Rm/QgMyjrikZISpEIgS8SXkzCs0kh2OlKP8numISgFDeNIMR0V6iFTLbL5yzKMCLU05RTbZyij/fVoyTI96R89xU6oytDvRSJKjvCuWcMhd+jb82k7GVgAmjgSTD0egKzRGupzf5LCRg20j0DZZxjsP82kBu0BQmKOT1OmVGBiQGtc/ccWsgncrOfJ/jTbcbFn+wuo5Dno+fjGpHBtdiWicniAVTdisP9eoKWRBvehRDPEoSYeo9IuR/OZYvenn17EAgMzVTGGzMWejSZ0rgHhqi2F1/BhuFEeL2NEe+om6WuAeg==";
+		String sign = "MT/Wp3jz8l8HV62/OrpXdDIdEF9BGw8zCtwu8VZNaxCi52QXCC7RO2Q5yLRsQy8SmZMk0h0hsxUOXSZ8zZysUL+r/ATVknUs76zveaHROAfqhwo4sBqNA3jvnkCtbV/x9vF46vmNB7tDJcG6UDrJM5a/9Bn3Xq0ctlfSJpqJskr4dqyIlvCbQyi2YtnW2f5aNWATyNUntWtzakXYxZ7mPVT7hhspREo/3v/YcygmUHJJsJ2NnqkyWH7kV3nTTtvTQirjbzgeqnFd+KZBBHuBxOXDZInNLcaTnOQLskRddt0sYJ9/L8aDx9AvZtMe8kgQJhlNq13JOLFbCoMAEHD4Gg==";
 System.out.println(PUBLIC_KEY);
 		System.out.println(signString);
 		System.out.println(rsaVerify(signString, sign));
