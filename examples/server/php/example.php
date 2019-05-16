@@ -114,7 +114,7 @@ echo "\n\n";
 
 //在线人数实时统计
 $onlineData = [
-    'game_id' => 5012,
+    'game_id' => 'GMG001',
     'zone_id' => 1,
     'number' => 100,
 ];
@@ -128,7 +128,7 @@ echo "\n\n";
 
 //游戏登录数据上报
 $loginData = [
-    'game_id' => 5012,
+    'game_id' => 'GMG001',
     'channel_id' => 1,
     'ip' => '192.168.100.1',
     'openid' => '1-123456',
@@ -146,7 +146,7 @@ echo "\n\n";
 
 //推送消息
 $pushData = [
-    'game_id' => 5012,
+    'game_id' => 'GMG001',
     'channel_id' => 1,
     'environment' => 'product',
     'audience_type' => 'account',

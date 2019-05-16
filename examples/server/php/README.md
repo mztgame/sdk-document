@@ -136,7 +136,7 @@ require_once 'ztgame_server_sdk.php';
 //示例login_key
 $loginKey = '11111111';
 $onlineData = [
-    'game_id' => 5012,
+    'game_id' => 'GMG001',
     'zone_id' => 1,
     'number' => 100,
 ];
@@ -156,7 +156,7 @@ require_once 'ztgame_server_sdk.php';
 $loginKey = '11111111';
 
 $onlineData = [
-    'game_id' => 5012,
+    'game_id' => 'GMG001',
     'channel_id' => 1,
     'ip' => '192.168.100.1',
     'openid' => '1-123456',
@@ -178,7 +178,7 @@ require_once 'ztgame_server_sdk.php';
 $loginKey = '11111111';
 
 $pushData = [
-    'game_id' => 5012,
+    'game_id' => 'GMG001',
     'channel_id' => 1,
     'environment' => 'product',
     'audience_type' => 'account',
