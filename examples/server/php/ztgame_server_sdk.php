@@ -195,7 +195,7 @@ class ZtgameServerSdk
         if (isset($result['code']) && $result['code'] == 0) {
             return true;
         }
-        var_dump($result);
+        //var_dump($result);
         return false;
     }
 
