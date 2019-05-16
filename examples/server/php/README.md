@@ -124,7 +124,7 @@ if (ZtgameServerSdk::paymentVerify($publicKey, $paymentPost)) {
 
     echo '{"code":0,"msg":"成功"}';
 } else {
-    echo '{"code":2}'; //签名验证失败返回
+    echo '{"code":2,"msg":"签名验证失败"}'; //签名验证失败返回
 }
 ```
 

@@ -62,9 +62,9 @@ $gameOrder = array(
 
 //验证签名一致
 if (ZtgameServerSdk::paymentVerify($publicKey, $paymentPost)) {
-    //游戏服务端根据order_id判断订单是否已经处理过，游戏服务端自行实现
+    //游戏服务端根据order_id判断订单是否已经处理过，游戏服务端自行实现，并响应'{"code":0,"msg":"成功"}'
 
-    //测试订单，如果游戏不允许测试订单通知，则返回echo '{"code":2,"msg":"不允许测试订单通知"}';
+    //测试订单，如果游戏不允许测试订单通知，则返回'{"code":2,"msg":"不允许测试订单通知"}';
     if ($paymentPost['is_test']) {
         echo '{"code":2,"msg":"不允许测试订单通知"}';
         exit;
@@ -107,7 +107,7 @@ if (ZtgameServerSdk::paymentVerify($publicKey, $paymentPost)) {
 
     echo '{"code":0,"msg":"成功"}';
 } else {
-    echo '{"code":2}'; //签名验证失败返回
+    echo '{"code":2,"msg":"签名验证失败"}'; //签名验证失败返回
 }
 
 echo "\n\n";
