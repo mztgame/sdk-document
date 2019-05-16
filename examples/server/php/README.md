@@ -169,6 +169,8 @@ if (ZtgameServerSdk::loginLogs($loginKey, $onlineData)) {
 } else {
     echo '上报游戏登录数据失败';
 }
+```
+
 ### 推送消息
 
 ```php
