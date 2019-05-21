@@ -1,11 +1,14 @@
+CC = g++
 TARGETS = demo
-OBJS = demo.o CryptHelper.o
-LIBS = -lcrypto
+CFLAGS = -g -I/usr/local/include/jsoncpp
+LIBS = -lcrypto   -L/usr/local/lib -ljsoncpp -lcurl
+OBJS = demo.o CryptHelper.o Sdk.o
 
+%.o : %.cpp
+	    $(CC) $(CFLAGS) $< -c $(CFLAGS)
 
 $(TARGETS): $(OBJS)
-	rm -f $@
-	g++ -o $@ $(OBJS) $(LIBS)
+	    $(CC) $^ $(LIBS) -o $@
 
 clean :
 	rm -f *.o $(TARGETS)

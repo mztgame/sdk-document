@@ -1,13 +1,18 @@
 #include "CryptHelper.h"
+#include <algorithm>
+#include <string>
+#include <curl/curl.h>
+#include <json/json.h>
 
-namespace UTILS
+
+namespace Sdk
 {
 EVP_PKEY* CryptHelper::getKeyByPKCS1(const std::string &key, const int32_t keyType)
 {
     RSA* rsa = getRsaKey(key, keyType);
     if(!rsa)
     {
-        printf("getRsaKey failed !\n");
+        printf("getRsaKey failed !key=%s,keytype=%d\n",key.c_str(),keyType);
         return NULL;
     }
     EVP_PKEY* pkey = EVP_PKEY_new();
@@ -32,7 +37,7 @@ RSA* CryptHelper::getRsaKey(const std::string &key, const int32_t keyType)
     keyLen = base64Decode(keyBuf, (const uint8_t *) key.c_str(), key.length());
     if (0 > keyLen)
     {
-        printf("base64Decode key failed !\n");
+        printf("base64Decode key failed !,key=%s,keytype=%d,lenght=%d\n",key.c_str(),keyType,key.length());
         return NULL;
     }
     //d2i_RSA_PUBKEY
@@ -159,5 +164,25 @@ int32_t CryptHelper::base64Decode(uint8_t *out, const uint8_t *in, int32_t inl)
     return outl - ret;
 }
 
+std::string  CryptHelper::md5(const std::string  &str)
+{
+	MD5_CTX _ctx;
+	unsigned char _outmd[16];
+	std::string  _retStr;
+
+	bzero(_outmd,sizeof(_outmd));
+	MD5_Init(&_ctx);
+	MD5_Update(&_ctx,str.c_str(),str.size());
+	MD5_Final(_outmd,&_ctx);
+
+	char _buf[3];
+	for(int i=0;i<16;i<i++)
+	{
+		bzero(_buf,sizeof(_buf));
+		snprintf(_buf,sizeof(_buf),"%02x",_outmd[i]);
+		_retStr += _buf;
+	}
+	return _retStr;
+}
 
 }  //end namespace UTILS

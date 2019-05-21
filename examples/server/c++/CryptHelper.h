@@ -10,11 +10,9 @@
 #include <iostream>
 #include <stdint.h>
 #include <string.h>
+#include <map>
 
-
-
-
-namespace UTILS
+namespace Sdk
 {
 
 enum EkeyType
@@ -26,29 +24,34 @@ enum EkeyType
 class CryptHelper
 {
 public:
-    CryptHelper()
-    {
-    }
-    ~CryptHelper()
-    {
-    }
+	CryptHelper()
+	{
+	}
+	~CryptHelper()
+	{
+	}
 
-    static EVP_PKEY* getKeyByPKCS1(const std::string &key, const int32_t keyType);
+	
 
-    static RSA* getRsaKey(const std::string &key, const int32_t keyType);
-    static void freeKey(RSA* key);
-    static void freeKey(EVP_PKEY* key);
+	static EVP_PKEY* getKeyByPKCS1(const std::string &key, const int32_t keyType);
 
-    static int32_t signWithRsa(const std::string &data, const EVP_MD *type, EVP_PKEY* key, std::string &sign);
-    static bool verifySignWithRsa(const std::string &data, const std::string &sign, const EVP_MD *type, EVP_PKEY* key);
+	static RSA* getRsaKey(const std::string &key, const int32_t keyType);
+	static void freeKey(RSA* key);
+	static void freeKey(EVP_PKEY* key);
 
-    static int32_t sha1WithRsa(const std::string &data, std::string &sign, EVP_PKEY* priKey);
-    static bool verifySha1WithRsa(const std::string &data, const std::string &sign, EVP_PKEY* pubKey);
+	static int32_t signWithRsa(const std::string &data, const EVP_MD *type, EVP_PKEY* key, std::string &sign);
+	static bool verifySignWithRsa(const std::string &data, const std::string &sign, const EVP_MD *type, EVP_PKEY* key);
 
 
-    static int32_t base64Encode(uint8_t *out, const uint8_t *in, int32_t inl);
-    static int32_t base64Decode(uint8_t *out, const uint8_t *in, int32_t inl);
+	static int32_t sha1WithRsa(const std::string &data, std::string &sign, EVP_PKEY* priKey);
+	static bool verifySha1WithRsa(const std::string &data, const std::string &sign, EVP_PKEY* pubKey);
 
+	static int32_t base64Encode(uint8_t *out, const uint8_t *in, int32_t inl);
+	static int32_t base64Decode(uint8_t *out, const uint8_t *in, int32_t inl);
+
+
+	static std::string  md5(const std::string  &str);
+	
 };
 
 }  //end namespace UTILS

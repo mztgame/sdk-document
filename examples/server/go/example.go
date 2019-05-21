@@ -25,7 +25,7 @@ func main()  {
 	//登录验证
 	loginEntity := `{"openid":"1-123123","account":"test","time":1482313093}`
 	loginSign := "m7JTn/y3IpB084vyeqoR9ysZ5/GeowcsO3KDrDsaa8Fof2Xjq4gKdk5eDLh0nTRxZslfbet5AWs+p1M0rtF8Jan8T2VxCW/czoCkrj4o/xnYtb3wdenCXAT7LUoydjTmd+cf0I9kw0DjkPDurrT9kNqxzw6dq1A6EFZAts4f0/H5+7kn81rzPq1RkWOM6OGm8R2D2WW/jHfqZDo1mvfZvIzkA/F0M62z2VsUK821BUkgoT23dByCdeqgx4hauJTHlnvg2/MplDYMDONHai6gTFWb4FQgY2wJq1BIWCyXgDuid6n9Ck0m6paJEfOffbK7BgwH3ssaF7xYGD2sjEuCFw=="
-	userInfo, err := server.LoginVerify(publicKey, loginEntity, loginSign, 3600)
+	userInfo, err := server.LoginVerify(publicKey, loginEntity, loginSign, 36000)
 	if err != nil {
 		fmt.Printf("签名验证失败或登录已过期: %s", err.Error())
 	} else {

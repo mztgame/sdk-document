@@ -6,6 +6,8 @@ import (
 	"crypto/sha1"
 	"encoding/base64"
 	"encoding/json"
+	"errors"
+	"time"
 )
 
 /**
@@ -40,5 +42,10 @@ func LoginVerify(publicKey string, entity string, sign string, expire int) (map[
 	if err != nil {
 		return nil, err
 	}
+	loginTime := int64(loginEntity["time"].(float64))
+	if loginTime < (time.Now().Unix() - int64(expire)) {
+		return nil, errors.New("login expired")
+	}
+
 	return loginEntity, nil
 }
