@@ -1,3 +1,8 @@
+## 登录验证和支付验证 C++ SDK
+
+### 登录验证
+
+```c++
 #include <iostream>
 #include <string.h>
 #include "Sdk.h"
@@ -6,19 +11,14 @@
 int main(int argc, char ** argv)
 {
 
+	// 公钥
 	std::string public_key="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA/VweA5KME/PR7QIwe+BoWf+yM5tRVpaXWOZC7S4SeLT5zyd1gNzKjLHCxAIhsxYUnXHRCdsC+cnKTVfCBuewv7N2kZCKF+/gMiqSdfiJo3XE7lmrxpIKO6YnWt7Itq/VvMJoTO7g0KkjF/irzI+OKUj5DSZORHwulA6OXNjUJbGeMdIGX7VHgbk7dv8oqx+FE0bAQ4APtOiSs5agBRdg9De92tURcj15jztYtPvaRVn5O8ozTEui4Kh2Cmf1fPFKbv5yQyNhHaqMdI2tGPREs78wGIiHT1yOmCMeKHCVgElwwgmFnmxKYsBD9XZ9GM6wzt/95M53jh/aNp/+9Y1m0QIDAQAB";
+	// --登录验证
 
-	/**********************************************************
-	 * 登录验证
-	 **********************************************************/
-	//构造测试数据
 	std::string loginEntity = "{\"openid\":\"1-123123\",\"account\":\"test\",\"time\":1482313093}";
 	std::string	 loginSign = "m7JTn/y3IpB084vyeqoR9ysZ5/GeowcsO3KDrDsaa8Fof2Xjq4gKdk5eDLh0nTRxZslfbet5AWs+p1M0rtF8Jan8T2VxCW/czoCkrj4o/xnYtb3wdenCXAT7LUoydjTmd+cf0I9kw0DjkPDurrT9kNqxzw6dq1A6EFZAts4f0/H5+7kn81rzPq1RkWOM6OGm8R2D2WW/jHfqZDo1mvfZvIzkA/F0M62z2VsUK821BUkgoT23dByCdeqgx4hauJTHlnvg2/MplDYMDONHai6gTFWb4FQgY2wJq1BIWCyXgDuid6n9Ck0m6paJEfOffbK7BgwH3ssaF7xYGD2sjEuCFw==";
 	int expire = 200;
-	//返回的登录数据
 	std::map<std::string,std::string>  retData;
-
-	//处理过程
 	bool ret=Sdk::loginVerify( public_key, loginEntity, loginSign,expire,retData);
 	if (ret)
 	{
@@ -32,10 +32,23 @@ int main(int argc, char ** argv)
 	{
 		std::cout<<"login verify error"<<std::endl;
 	}
-	/**********************************************************
-	 * 充值回调验证
-	 **********************************************************/
-	// 构造测试数据
+}
+```
+
+### 支付验证
+
+```c++
+#include <iostream>
+#include <string.h>
+#include "Sdk.h"
+#include <map>
+
+int main(int argc, char ** argv)
+{
+
+	// 公钥
+	std::string public_key="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA/VweA5KME/PR7QIwe+BoWf+yM5tRVpaXWOZC7S4SeLT5zyd1gNzKjLHCxAIhsxYUnXHRCdsC+cnKTVfCBuewv7N2kZCKF+/gMiqSdfiJo3XE7lmrxpIKO6YnWt7Itq/VvMJoTO7g0KkjF/irzI+OKUj5DSZORHwulA6OXNjUJbGeMdIGX7VHgbk7dv8oqx+FE0bAQ4APtOiSs5agBRdg9De92tURcj15jztYtPvaRVn5O8ozTEui4Kh2Cmf1fPFKbv5yQyNhHaqMdI2tGPREs78wGIiHT1yOmCMeKHCVgElwwgmFnmxKYsBD9XZ9GM6wzt/95M53jh/aNp/+9Y1m0QIDAQAB";
+	// --充值回调验证
 	std::map<std::string, std::string > paymentPost;
 	paymentPost["account"]="abcd";
 	paymentPost["amount"]="6.00";
@@ -120,16 +133,27 @@ int main(int argc, char ** argv)
 		//retString="{\"code\":1,\"msg\":\"数据库错误\"}";
 
 	}
+}
+```
 
+### 在线人数实时统计
 
-	/**********************************************************
-	 * 在线人数实时统计
-	 **********************************************************/
-	std::string  loginKey = "111111";
+```c++
+#include <iostream>
+#include <string.h>
+#include "Sdk.h"
+#include <map>
+
+int main(int argc, char ** argv)
+{
+	//  密钥
+	std::string  loginKey = "123456";
+	// 构造测试数据
 	std::map<std::string, std::string > online_data ;
-	online_data["game_id"]="1000";
+	online_data["game_id"]="5012";
 	online_data["zone_id"]="1";
 	online_data["number"]="99";
+
 	if (Sdk::gameOnline(loginKey, online_data))
 	{
 		std::cout<<"game online ok"<<std::endl;
@@ -138,18 +162,31 @@ int main(int argc, char ** argv)
 	{
 		std::cout<<"game online failed"<<std::endl;
 	}
+}
+```
 
-	/**********************************************************
-	 * 游戏登录数据上报
-	 **********************************************************/
+### 游戏登录数据上报
+
+```c++
+#include <iostream>
+#include <string.h>
+#include "Sdk.h"
+#include <map>
+
+int main(int argc, char ** argv)
+{
+	//  密钥
+	std::string  loginKey = "123456";
+	// 构造测试数据
 	std::map<std::string,std::string> loginLogs;		
-	loginLogs["game_id"] = "1000";
+	loginLogs["game_id"] = "5012";
 	loginLogs["channel_id"] = "1";
 	loginLogs["ip"] = "192.168.100.1";
 	loginLogs["openid"] = "1-123456";
 	loginLogs["device_udid"] = "860529036567763";
 	loginLogs["device_type"]= "vivo Y51";
 	loginLogs["os"]= "android";
+
 	if( Sdk::loginLogs(loginKey,loginLogs))
 	{
 		std::cout<<"send login logs success"<<std::endl;
@@ -158,12 +195,24 @@ int main(int argc, char ** argv)
 	{
 		std::cout<<"send login logs failed"<<std::endl;
 	}
+}
+```
 
-	/**********************************************************
-	 * 推送消息
-	 **********************************************************/
+### 推送消息
+
+```c++
+#include <iostream>
+#include <string.h>
+#include "Sdk.h"
+#include <map>
+
+int main(int argc, char ** argv)
+{
+	//  密钥
+	std::string  loginKey = "123456";
+	//构造测试数据
 	std::map<std::string,std::string> pushData;	
-	pushData["game_id"]= "1000";
+	pushData["game_id"]= "5012";
 	pushData["channel_id"]= "1";
 	pushData["environment"]= "product";
 	pushData["audience_type"]= "account";
@@ -180,6 +229,6 @@ int main(int argc, char ** argv)
 	{
 		std::cout<<"push failed"<<std::endl;
 	}
-	return 0;
-
 }
+```
+
