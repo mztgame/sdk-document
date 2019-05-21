@@ -147,10 +147,10 @@ int main(int argc, char ** argv)
 int main(int argc, char ** argv)
 {
 	//  密钥
-	std::string  loginKey = "123456";
+	std::string  loginKey = "111111";
 	// 构造测试数据
 	std::map<std::string, std::string > online_data ;
-	online_data["game_id"]="5012";
+	online_data["game_id"]="1000";
 	online_data["zone_id"]="1";
 	online_data["number"]="99";
 
@@ -176,10 +176,10 @@ int main(int argc, char ** argv)
 int main(int argc, char ** argv)
 {
 	//  密钥
-	std::string  loginKey = "123456";
+	std::string  loginKey = "111111";
 	// 构造测试数据
 	std::map<std::string,std::string> loginLogs;		
-	loginLogs["game_id"] = "5012";
+	loginLogs["game_id"] = "1000";
 	loginLogs["channel_id"] = "1";
 	loginLogs["ip"] = "192.168.100.1";
 	loginLogs["openid"] = "1-123456";
@@ -209,10 +209,10 @@ int main(int argc, char ** argv)
 int main(int argc, char ** argv)
 {
 	//  密钥
-	std::string  loginKey = "123456";
+	std::string  loginKey = "111111";
 	//构造测试数据
 	std::map<std::string,std::string> pushData;	
-	pushData["game_id"]= "5012";
+	pushData["game_id"]= "1000";
 	pushData["channel_id"]= "1";
 	pushData["environment"]= "product";
 	pushData["audience_type"]= "account";
