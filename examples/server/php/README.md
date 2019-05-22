@@ -8,9 +8,11 @@ SDK包含了如下几个功能：
 - 消息推送
 
 ### 使用方法
+
 - 引入SDK：
-···php
+```php
 require_once 'ztgame_server_sdk.php';
+
 ```
 
 - 调用相应方法
@@ -27,6 +29,8 @@ require_once 'ztgame_server_sdk.php';
  */
 ZtgameServerSdk::loginVerify($publicKey, $loginEntity, $loginSign, $expire)
 
+
+
 /**
  * 支付验证
  *
@@ -36,6 +40,8 @@ ZtgameServerSdk::loginVerify($publicKey, $loginEntity, $loginSign, $expire)
  * @return boolean 验证失败返回false，验证成功返回true
  */
 ZtgameServerSdk::paymentVerify($publicKey, $paymentPost)
+
+
 
 /**
  * 上报实时游戏在线人数
@@ -53,6 +59,8 @@ ZtgameServerSdk::paymentVerify($publicKey, $paymentPost)
  *
  */
 ZtgameServerSdk::gameOnline($loginKey, $onlineData)
+
+
 
 /**
  * 游戏登录数据上报
@@ -82,6 +90,8 @@ ZtgameServerSdk::gameOnline($loginKey, $onlineData)
  */
 ZtgameServerSdk::loginLogs($loginKey, $onlineData)
 
+
+
 /**
  * 推送消息
  *
@@ -106,6 +116,8 @@ ZtgameServerSdk::loginLogs($loginKey, $onlineData)
  *
  */
 ZtgameServerSdk::push($loginKey, $pushData)
+
+
 ```
 
 
