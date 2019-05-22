@@ -18,6 +18,7 @@ require_once 'ztgame_server_sdk.php';
 - 调用相应方法
 
  1. 登录数据签名验证
+ 
     方法说明
 ```php
 /**
@@ -61,6 +62,7 @@ if ($loginData = ZtgameServerSdk::loginVerify($publicKey, $loginEntity, $loginSi
 ```
 
  2. 支付数据签名验证
+ 
     方法说明
 ```php
 /**
@@ -72,7 +74,6 @@ if ($loginData = ZtgameServerSdk::loginVerify($publicKey, $loginEntity, $loginSi
  * @return boolean 验证失败返回false，验证成功返回true
  */
 ZtgameServerSdk::paymentVerify($publicKey, $paymentPost)
-
 ```
 
 	示例
@@ -175,6 +176,7 @@ if (ZtgameServerSdk::paymentVerify($publicKey, $paymentPost)) {
 ```
 
 	3. 上报在线人数
+	
 	   方法说明
 ```php
 /**
@@ -193,7 +195,6 @@ if (ZtgameServerSdk::paymentVerify($publicKey, $paymentPost)) {
  *
  */
 ZtgameServerSdk::gameOnline($loginKey, $onlineData)
-
 ```
 
 	示例
@@ -216,6 +217,7 @@ if (ZtgameServerSdk::gameOnline($loginKey, $onlineData)) {
 
 
 	4. 上报游戏登录数据
+	
 	   方法说明
 ```php
 /**
@@ -245,7 +247,6 @@ if (ZtgameServerSdk::gameOnline($loginKey, $onlineData)) {
  *
  */
 ZtgameServerSdk::loginLogs($loginKey, $loginData)
-
 ```
 
 	示例
@@ -272,6 +273,7 @@ if (ZtgameServerSdk::loginLogs($loginKey, $onlineData)) {
 ```
 
 	5. 消息推送
+	
 	   方法说明
 ```php
 /**
@@ -298,8 +300,6 @@ if (ZtgameServerSdk::loginLogs($loginKey, $onlineData)) {
  *
  */
 ZtgameServerSdk::push($loginKey, $pushData)
-
-
 ```
 
 	示例
