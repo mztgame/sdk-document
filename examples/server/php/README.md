@@ -17,7 +17,7 @@ require_once 'ztgame_server_sdk.php';
 
 2. 调用相应方法
 
--登录数据签名验证
+- 登录数据签名验证
  
  方法说明
 ```php
@@ -61,7 +61,7 @@ if ($loginData = ZtgameServerSdk::loginVerify($publicKey, $loginEntity, $loginSi
 }
 ```
 
--支付数据签名验证
+- 支付数据签名验证
  
  方法说明
 ```php
@@ -175,7 +175,7 @@ if (ZtgameServerSdk::paymentVerify($publicKey, $paymentPost)) {
 }
 ```
 
--上报在线人数
+- 上报在线人数
 	
  方法说明
 ```php
