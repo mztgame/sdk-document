@@ -9,17 +9,17 @@ SDK包含了如下几个功能：
 
 ### 使用方法
 
-- 引入SDK：
+1. 引入SDK：
 ```php
 require_once 'ztgame_server_sdk.php';
 
 ```
 
-- 调用相应方法
+2. 调用相应方法
 
- 1. 登录数据签名验证
+-登录数据签名验证
  
-    方法说明
+ 方法说明
 ```php
 /**
  * 登录验证
@@ -34,7 +34,7 @@ require_once 'ztgame_server_sdk.php';
 ZtgameServerSdk::loginVerify($publicKey, $loginEntity, $loginSign, $expire)
 ```
 
-   示例
+ 示例
 ```php
 require_once 'ztgame_server_sdk.php';
 
@@ -61,9 +61,9 @@ if ($loginData = ZtgameServerSdk::loginVerify($publicKey, $loginEntity, $loginSi
 }
 ```
 
- 2. 支付数据签名验证
+-支付数据签名验证
  
-    方法说明
+ 方法说明
 ```php
 /**
  * 支付验证
@@ -76,7 +76,7 @@ if ($loginData = ZtgameServerSdk::loginVerify($publicKey, $loginEntity, $loginSi
 ZtgameServerSdk::paymentVerify($publicKey, $paymentPost)
 ```
 
-	示例
+ 示例
 ```php
 require_once 'ztgame_server_sdk.php';
 
@@ -175,9 +175,9 @@ if (ZtgameServerSdk::paymentVerify($publicKey, $paymentPost)) {
 }
 ```
 
-	3. 上报在线人数
+-上报在线人数
 	
-	   方法说明
+ 方法说明
 ```php
 /**
  * 上报实时游戏在线人数
@@ -197,7 +197,7 @@ if (ZtgameServerSdk::paymentVerify($publicKey, $paymentPost)) {
 ZtgameServerSdk::gameOnline($loginKey, $onlineData)
 ```
 
-	示例
+ 示例
 ```php
 require_once 'ztgame_server_sdk.php';
 
@@ -216,9 +216,9 @@ if (ZtgameServerSdk::gameOnline($loginKey, $onlineData)) {
 ```
 
 
-	4. 上报游戏登录数据
+- 上报游戏登录数据
 	
-	   方法说明
+ 方法说明
 ```php
 /**
  * 游戏登录数据上报
@@ -249,7 +249,7 @@ if (ZtgameServerSdk::gameOnline($loginKey, $onlineData)) {
 ZtgameServerSdk::loginLogs($loginKey, $loginData)
 ```
 
-	示例
+ 示例
 ```php
 require_once 'ztgame_server_sdk.php';
 
@@ -272,9 +272,9 @@ if (ZtgameServerSdk::loginLogs($loginKey, $onlineData)) {
 }
 ```
 
-	5. 消息推送
+- 消息推送
 	
-	   方法说明
+ 方法说明
 ```php
 /**
  * 推送消息
@@ -302,7 +302,7 @@ if (ZtgameServerSdk::loginLogs($loginKey, $onlineData)) {
 ZtgameServerSdk::push($loginKey, $pushData)
 ```
 
-	示例
+ 示例
 ```php
 require_once 'ztgame_server_sdk.php';
 
