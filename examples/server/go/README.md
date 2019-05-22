@@ -1,6 +1,120 @@
 ## 登录验证和支付验证 GO SDK
 
-### 登录验证
+SDK包含了如下几个功能：
+- 登录数据签名验证
+- 支付数据签名验证
+- 上报在线人数
+- 上报游戏登录数据
+- 消息推送
+
+### 使用方法
+
+- 引入SDK：
+```go
+import (
+	"./server"
+)
+
+```
+
+- 调用相应方法
+```go
+
+/**
+ * 登录验证
+ *
+ * @param string 公钥
+ * @param string sdk客户端登录成功返回的entity，JSON字符串
+ * @param string sdk客户端登录成功返回的sign
+ * @param int 登录有效期，单位秒，如果登录信息超过此有效期，则登录失败
+ *
+ * @return (map[string]interface{}, error) 验证成功返回entity信息, 验证错误
+ */
+server.LoginVerify(publicKey, loginEntity, loginSign, 300)
+
+/**
+ * 支付验证
+ *
+ * @param string 公钥
+ * @param map[string]string sdk支付系统 HTTP POST方式通知游戏服务端，游戏服务端接收到的POST内容
+ *
+ * @return bool 验证失败返回false，验证成功返回true
+ */
+server.PaymentVerify(publicKey, paymentPost)
+
+/**
+ * 上报实时游戏在线人数
+ *
+ * @param string 秘钥
+ * @param map[string]interface{} 游戏数据，需要包含以下字段
+ * {
+ * "game_id": 游戏ID,   //必填
+ * "channel_id": 渠道ID,  //可选
+ * "zone_id": 区ID,    //必填
+ * "number": 人数,  //必填
+ * }
+ *
+ * @return bool
+ *
+ */
+server.GameOnline(loginKey, onlineData)
+
+/**
+ * 游戏登录数据上报
+ *
+ * @param string 秘钥
+ * @param map[string]interface{} 游戏数据，需要包含以下字段
+ * {
+ * "game_id": 游戏ID,   //必填
+ * "channel_id": 渠道ID,  //必填
+ * "ip": 客户端用户IP地址,  //必填
+ * "openid": 用户ID,  //必填
+ * "device_udid": 设备标识码,  //必填
+ * "device_type": 设备型号,    //必填
+ * "os": 设备系统类型，例如ios、android ,  //必填
+ * "ad_id": 广告ID,  //选填
+ * "zone_id": 区服ID,  //选填
+ * "zone_name": 区服名称,  //选填
+ * "char_id": 角色ID,  //选填
+ * "char_name": 角色名称,  //选填
+ * "level": 等级or段位,  //选填
+ * "sync": 同步数据到beacon 1010,  //选填
+ * "log_type": 日志类型,默认2 (1:账号登录,2:游戏区登录,3:账号+游戏区登录),  //选填
+ * }
+ *
+ * @return bool
+ *
+ */
+server.LoginLogs(loginKey, loginData)
+
+/**
+ * 推送消息
+ *
+ * @param string 秘钥
+ * @param map[string]interface{} 推送内容，需要包含以下字段
+ * {
+ * "game_id" : 游戏ID,   //必填
+ * "channel_id" : 渠道ID,  //必填
+ * "environment" : 推送环境(仅IOS，默认生产环境)，生产环境:product 开发环境:dev,  //选填
+ * "message_type" : 消息类型，通知消息:notify 透传消息:message,  //必填
+ * "title" : 消息标题,  //必填
+ * "content" : 消息内容,    //必填
+ * "audience_type" : 推送目标，全量推送:all 单账号推送:account 账号列表推送:account_list ,  //必填
+ * "audience_list" : 账号列表，当audience_type等于account时必须填写单个账号openid；当audience_type等于account_list时必须填写多个openid，以逗号分隔,  //选填
+ * "custom_content" : 自定义的键值对，json格式如：{"key1":"value1","key2":"value2"},  //选填
+ * "send_time" : 指定推送时间，格式为yyyy-MM-DD HH:MM:SS,  //选填
+ * "loop_times" : 循环任务重复次数，建议取值[1, 15],  //选填
+ * "loop_interval" : 循环执行消息下发的间隔，必须配合loop_times使用，以天为单位，取值[1, 14],  //选填
+ * }
+ *
+ * @return bool
+ *
+ */
+server.Push(loginKey, pushData)
+
+```
+
+### 登录验证SDK调用示例
 
 ```go
 package main
@@ -28,7 +142,7 @@ func main()  {
 	//登录验证
 	loginEntity := `{"openid":"1-123123","account":"test","time":1482313093}`
     loginSign := "m7JTn/y3IpB084vyeqoR9ysZ5/GeowcsO3KDrDsaa8Fof2Xjq4gKdk5eDLh0nTRxZslfbet5AWs+p1M0rtF8Jan8T2VxCW/czoCkrj4o/xnYtb3wdenCXAT7LUoydjTmd+cf0I9kw0DjkPDurrT9kNqxzw6dq1A6EFZAts4f0/H5+7kn81rzPq1RkWOM6OGm8R2D2WW/jHfqZDo1mvfZvIzkA/F0M62z2VsUK821BUkgoT23dByCdeqgx4hauJTHlnvg2/MplDYMDONHai6gTFWb4FQgY2wJq1BIWCyXgDuid6n9Ck0m6paJEfOffbK7BgwH3ssaF7xYGD2sjEuCFw=="
-    userInfo, err := server.LoginVerify(publicKey, loginEntity, loginSign, 3600)
+    userInfo, err := server.LoginVerify(publicKey, loginEntity, loginSign, 300)
 	if (err != nil) {
 		fmt.Printf("签名验证失败或登录已过期: %s", err.Error())
 	} else {
@@ -37,7 +151,7 @@ func main()  {
 }
 ```
 
-### 支付验证
+### 支付验证SDK调用示例
 
 ```go
 package main
@@ -147,7 +261,7 @@ func main()  {
 }
 ```
 
-### 在线人数实时统计
+### 在线人数实时统计SDK调用示例
 
 ```go
 package main
@@ -177,7 +291,7 @@ func main()  {
 }
 ```
 
-### 游戏登录数据上报
+### 游戏登录数据上报SDK调用示例
 
 ```go
 package main
@@ -211,7 +325,7 @@ func main()  {
 }
 ```
 
-### 推送消息
+### 推送消息SDK调用示例
 
 ```go
 package main

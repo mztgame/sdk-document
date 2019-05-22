@@ -16,7 +16,7 @@ import (
  * @param string 公钥
  * @param string sdk客户端登录成功返回的entity，JSON字符串
  * @param string sdk客户端登录成功返回的sign
- * @param int 登录有效期，单位秒，如果登录信息超过此有效期，测登录失败
+ * @param int 登录有效期，单位秒，如果登录信息超过此有效期，则登录失败
  *
  * @return (map[string]interface{}, error) 验证成功返回entity信息
  */

@@ -119,7 +119,7 @@ Sdk::push(loginKey, pushData)
 ```
 
 
-### 登录验证
+### 登录验证SDK调用示例
 
 ```c++
 #include <iostream>
@@ -154,7 +154,7 @@ int main(int argc, char ** argv)
 }
 ```
 
-### 支付验证
+### 支付验证SDK调用示例
 
 ```c++
 #include <iostream>
@@ -255,7 +255,7 @@ int main(int argc, char ** argv)
 }
 ```
 
-### 在线人数实时统计
+### 在线人数实时统计SDK调用示例
 
 ```c++
 #include <iostream>
@@ -284,7 +284,7 @@ int main(int argc, char ** argv)
 }
 ```
 
-### 游戏登录数据上报
+### 游戏登录数据上报SDK调用示例
 
 ```c++
 #include <iostream>
@@ -317,7 +317,7 @@ int main(int argc, char ** argv)
 }
 ```
 
-### 推送消息
+### 推送消息SDK调用示例
 
 ```c++
 #include <iostream>
