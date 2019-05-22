@@ -16,6 +16,8 @@ require_once 'ztgame_server_sdk.php';
 ```
 
 - 调用相应方法
+ + 登录数据签名验证
+  * 方法说明
 ```php
 /**
  * 登录验证
@@ -28,9 +30,36 @@ require_once 'ztgame_server_sdk.php';
  * @return boolean|array 验证失败返回false，验证成功返回entity信息
  */
 ZtgameServerSdk::loginVerify($publicKey, $loginEntity, $loginSign, $expire)
+```
 
+  * 示例
+```php
+require_once 'ztgame_server_sdk.php';
 
+//示例公钥
+$publicKey = <<<EOT
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA/VweA5KME/PR7QIwe+Bo
+Wf+yM5tRVpaXWOZC7S4SeLT5zyd1gNzKjLHCxAIhsxYUnXHRCdsC+cnKTVfCBuew
+v7N2kZCKF+/gMiqSdfiJo3XE7lmrxpIKO6YnWt7Itq/VvMJoTO7g0KkjF/irzI+O
+KUj5DSZORHwulA6OXNjUJbGeMdIGX7VHgbk7dv8oqx+FE0bAQ4APtOiSs5agBRdg
+9De92tURcj15jztYtPvaRVn5O8ozTEui4Kh2Cmf1fPFKbv5yQyNhHaqMdI2tGPRE
+s78wGIiHT1yOmCMeKHCVgElwwgmFnmxKYsBD9XZ9GM6wzt/95M53jh/aNp/+9Y1m
+0QIDAQAB
+-----END PUBLIC KEY-----
+EOT;
 
+//登录验证
+$loginEntity = '{"openid":"1-123123","account":"test","time":1482313093}';
+$loginSign = 'm7JTn\/y3IpB084vyeqoR9ysZ5\/GeowcsO3KDrDsaa8Fof2Xjq4gKdk5eDLh0nTRxZslfbet5AWs+p1M0rtF8Jan8T2VxCW\/czoCkrj4o\/xnYtb3wdenCXAT7LUoydjTmd+cf0I9kw0DjkPDurrT9kNqxzw6dq1A6EFZAts4f0\/H5+7kn81rzPq1RkWOM6OGm8R2D2WW\/jHfqZDo1mvfZvIzkA\/F0M62z2VsUK821BUkgoT23dByCdeqgx4hauJTHlnvg2\/MplDYMDONHai6gTFWb4FQgY2wJq1BIWCyXgDuid6n9Ck0m6paJEfOffbK7BgwH3ssaF7xYGD2sjEuCFw==';
+if ($loginData = ZtgameServerSdk::loginVerify($publicKey, $loginEntity, $loginSign, 100000000)) {
+    echo '签名验证到成功, openid: ' . $loginData['openid'];
+} else {
+    echo '签名验证失败或登录已过期';
+}
+```
+
+```php
 /**
  * 支付验证
  *
@@ -118,35 +147,6 @@ ZtgameServerSdk::loginLogs($loginKey, $loginData)
 ZtgameServerSdk::push($loginKey, $pushData)
 
 
-```
-
-
-### 登录验证SDK调用示例
-
-```php
-require_once 'ztgame_server_sdk.php';
-
-//示例公钥
-$publicKey = <<<EOT
------BEGIN PUBLIC KEY-----
-MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA/VweA5KME/PR7QIwe+Bo
-Wf+yM5tRVpaXWOZC7S4SeLT5zyd1gNzKjLHCxAIhsxYUnXHRCdsC+cnKTVfCBuew
-v7N2kZCKF+/gMiqSdfiJo3XE7lmrxpIKO6YnWt7Itq/VvMJoTO7g0KkjF/irzI+O
-KUj5DSZORHwulA6OXNjUJbGeMdIGX7VHgbk7dv8oqx+FE0bAQ4APtOiSs5agBRdg
-9De92tURcj15jztYtPvaRVn5O8ozTEui4Kh2Cmf1fPFKbv5yQyNhHaqMdI2tGPRE
-s78wGIiHT1yOmCMeKHCVgElwwgmFnmxKYsBD9XZ9GM6wzt/95M53jh/aNp/+9Y1m
-0QIDAQAB
------END PUBLIC KEY-----
-EOT;
-
-//登录验证
-$loginEntity = '{"openid":"1-123123","account":"test","time":1482313093}';
-$loginSign = 'm7JTn\/y3IpB084vyeqoR9ysZ5\/GeowcsO3KDrDsaa8Fof2Xjq4gKdk5eDLh0nTRxZslfbet5AWs+p1M0rtF8Jan8T2VxCW\/czoCkrj4o\/xnYtb3wdenCXAT7LUoydjTmd+cf0I9kw0DjkPDurrT9kNqxzw6dq1A6EFZAts4f0\/H5+7kn81rzPq1RkWOM6OGm8R2D2WW\/jHfqZDo1mvfZvIzkA\/F0M62z2VsUK821BUkgoT23dByCdeqgx4hauJTHlnvg2\/MplDYMDONHai6gTFWb4FQgY2wJq1BIWCyXgDuid6n9Ck0m6paJEfOffbK7BgwH3ssaF7xYGD2sjEuCFw==';
-if ($loginData = ZtgameServerSdk::loginVerify($publicKey, $loginEntity, $loginSign, 100000000)) {
-    echo '签名验证到成功, openid: ' . $loginData['openid'];
-} else {
-    echo '签名验证失败或登录已过期';
-}
 ```
 
 ### 支付验证SDK调用示例
