@@ -35,7 +35,7 @@ ZtgameServerSdk::loginVerify($publicKey, $loginEntity, $loginSign, $expire)
  * 支付验证
  *
  * @param string $publicKey 公钥
- * @param string $paymentPost sdk支付系统 HTTP POST方式通知游戏服务端，游戏服务端接收到的POST内容
+ * @param array $paymentPost sdk支付系统 HTTP POST方式通知游戏服务端，游戏服务端接收到的POST内容
  *
  * @return boolean 验证失败返回false，验证成功返回true
  */
@@ -66,7 +66,7 @@ ZtgameServerSdk::gameOnline($loginKey, $onlineData)
  * 游戏登录数据上报
  *
  * @param string $loginKey 秘钥
- * @param array $onlineData 游戏数据，需要包含以下字段
+ * @param array $loginData 游戏数据，需要包含以下字段
  * [
  * 'game_id' => 游戏ID,   //必填
  * 'channel_id' => 渠道ID,  //必填
@@ -88,7 +88,7 @@ ZtgameServerSdk::gameOnline($loginKey, $onlineData)
  * @return boolean
  *
  */
-ZtgameServerSdk::loginLogs($loginKey, $onlineData)
+ZtgameServerSdk::loginLogs($loginKey, $loginData)
 
 
 

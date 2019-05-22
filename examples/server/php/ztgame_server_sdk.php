@@ -45,7 +45,7 @@ class ZtgameServerSdk
      * 支付验证
      *
      * @param string $publicKey 公钥
-     * @param string $postData sdk支付系统 HTTP POST方式通知游戏服务端，游戏服务端接收到的POST内容
+     * @param array $postData sdk支付系统 HTTP POST方式通知游戏服务端，游戏服务端接收到的POST内容
      *
      * @return boolean 验证失败返回false，验证成功返回true
      */
