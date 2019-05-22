@@ -15,11 +15,11 @@ class ZtgameServerSdk
      * @param string $publicKey 公钥
      * @param string $entity sdk客户端登录成功返回的entity，JSON字符串
      * @param string $sign sdk客户端登录成功返回的sign
-     * @param int $expire 登录有效期，单位秒，如果登录信息超过此有效期，测登录失败
+     * @param int $expire 登录有效期，单位秒，默认300秒，如果登录信息超过此有效期，则登录失败
      *
      * @return boolean|array 验证失败返回false，验证成功返回entity信息
      */
-    public static function loginVerify($publicKey, $entity, $sign, $expire = 3600)
+    public static function loginVerify($publicKey, $entity, $sign, $expire = 300)
     {
         if (empty($publicKey) || empty($entity) || empty($sign)) {
             return false;
