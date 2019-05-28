@@ -7,6 +7,7 @@
 
 namespace Sdk
 {
+
 EVP_PKEY* CryptHelper::getKeyByPKCS1(const std::string &key, const int32_t keyType)
 {
     RSA* rsa = getRsaKey(key, keyType);

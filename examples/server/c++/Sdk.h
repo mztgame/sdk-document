@@ -6,7 +6,7 @@
 
 namespace Sdk
 {
-	bool loginVerify(const std::string &publicKey , const std::string &entity ,const std::string &sign,int32_t expire , std::map<std::string,std::string> & retData) ;
+	bool loginVerify(const std::string &publicKey , const std::string &jsonobj,int expire , std::map<std::string,std::string> & retData) ;
 	bool paymentVerify(const std::string &publicKey, const std::map<std::string,std::string> &postData);
 	//游戏在线人数上报，http请求会阻塞
 	bool gameOnline(const std::string &loginkeys,const std::map<std::string,std::string> &datas);

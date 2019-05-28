@@ -9,16 +9,27 @@
 namespace  Sdk
 {
 
-	std::string  buildReqDataFromEntity( const std::string & entity, std::map<std::string,std::string> &retData);
+#define  ENTER_FUNCTION   try{
+#define  LEAVE_FUNCTION   }catch(...){return false;}
+	std::string  buildReqDataFromEntity( std::map<std::string,std::string> & entity, std::map<std::string,std::string> &retData);
 	std::string  implodeMapValue(std::map<std::string,std::string> &postData);
 	std::string  curl(std::string url,std::map<std::string,std::string>data, std::string method);
 	std::string  buildQueryUrl(std::map<std::string,std::string> &queryData);
 	size_t curlWriteFunction(void *ptr, size_t size, size_t nmemb, void *data);
+	bool  parseEntifyAndSign(const std::string  &jsonobj, std::map<std::string,std::string> & entify_out, std::string &sign_out);
 
 
-
-	bool  loginVerify(const std::string &publicKey , const std::string &entity ,const std::string &sign, int expire ,std::map<std::string,std::string > &retData) 
+	bool  loginVerify(const std::string &publicKey , const std::string &jsonobj, int expire ,std::map<std::string,std::string > &retData) 
 	{
+		ENTER_FUNCTION
+		//decode entity and sign
+		std::string  sign;
+		std::map<std::string,std::string>  entity;
+		if( !parseEntifyAndSign(jsonobj,entity,sign))
+		{
+			return false;
+		}
+
 		std::string reqData = buildReqDataFromEntity(entity,retData);	
 		EVP_PKEY* pkey = CryptHelper::getKeyByPKCS1(publicKey, 0);
 		if( !pkey)
@@ -39,11 +50,13 @@ namespace  Sdk
 		}
 		
 		return true;
+		LEAVE_FUNCTION
 	}
 
 
 	bool paymentVerify(const std::string &publicKey, const std::map<std::string,std::string> &paramData)
 	{
+		ENTER_FUNCTION
 		//copy the post data
 		std::map<std::string,std::string> postData=paramData;
 
@@ -67,11 +80,13 @@ namespace  Sdk
 			return true;
 		}
 		return false;
+		LEAVE_FUNCTION
 	}
 
 
 	bool  gameOnline(const std::string &loginkeys,const std::map<std::string,std::string> &datas)
 	{
+		ENTER_FUNCTION
 		std::map<std::string,std::string> _onlineData=datas;	
 		std::ostringstream os;
 		os<<_onlineData["game_id"]<<"&"<<_onlineData["number"]<<"&"<<_onlineData["zone_id"]<<"&"<<loginkeys;
@@ -99,10 +114,12 @@ namespace  Sdk
 		}
 
 		return true;
+		LEAVE_FUNCTION
 	}
 
 	bool loginLogs(const std::string &loginkeys, const std::map<std::string, std::string> &datas)
 	{
+		ENTER_FUNCTION
 		std::map<std::string,std::string> _queryData = datas;
 		std::string _signData = implodeMapValue(_queryData);
 		_signData += loginkeys;
@@ -130,11 +147,13 @@ namespace  Sdk
 		}
 
 		return true;
+		LEAVE_FUNCTION
 	}
 
 
 	bool push(const std::string & loginkeys, const std::map<std::string,std::string> &datas)
 	{
+		ENTER_FUNCTION
 		std::map<std::string,std::string> _onlineData=datas;	
 		std::ostringstream os;
 		os<<_onlineData["game_id"]<<"&"<<_onlineData["channel_id"]<<"&"<<_onlineData["message_type"]<<"&"<<_onlineData["title"]<<"&"<<_onlineData["content"]<<"&"<<_onlineData["audience_type"]<<"&"<<loginkeys;
@@ -162,39 +181,29 @@ namespace  Sdk
 		}
 
 		return true;
+		LEAVE_FUNCTION
 
 	}
 
 
 
-	std::string  buildReqDataFromEntity( const std::string & entity,std::map<std::string,std::string> &retData)
+	std::string  buildReqDataFromEntity( std::map<std::string,std::string> & entity,std::map<std::string,std::string> &retData)
 	{
-		Json::Reader reader; 
-		Json::Value root; 
-		Json::Value::Members  members;
 		std::string  retReq;
-		// reader将Json字符串解析到root，root将包含Json里所有子元素
-		if (!reader.parse(entity, root))   
-		{ 
-			return retReq;
-		}
 		std::vector<std::string>  _keyArr;
-		members = root.getMemberNames(); // 获取所有key的值
-		for (Json::Value::Members::iterator iterMember = members.begin(); iterMember != members.end(); iterMember++) // 遍历每个key
+		for (std::map<std::string,std::string>::iterator itr = entity.begin(); itr != entity.end(); itr ++)
 		{  
-			std::string strKey = *iterMember; 
-			_keyArr.push_back(strKey);
+			_keyArr.push_back(itr->first);
 		}
 		std::sort(_keyArr.begin(),_keyArr.end());
 		unsigned int params_len=_keyArr.size();
 		unsigned int i=0;
 		for(i=0 ; i< params_len ; i++)
 		{
-			std::string value = root[ _keyArr[i].c_str()].asString();
-			retData[_keyArr[i].c_str()] = value;
+			retData[_keyArr[i].c_str()] = entity[_keyArr[i]];
 			retReq += _keyArr[i];
 			retReq += "=";
-			retReq += value;
+			retReq += entity[_keyArr[i]];
 			if( i +1 < params_len){
 				retReq+="&";	
 			}
@@ -284,4 +293,36 @@ namespace  Sdk
 		str->append( (char *)ptr, _retLen);
 		return _retLen;
 	}
+
+
+	bool  parseEntifyAndSign(const std::string  &jsonobj, std::map<std::string,std::string> & entity_out, std::string &sign_out)
+	{
+		Json::Reader reader;
+		Json::Value root;
+		Json::Value::Members  members;
+		try{
+			if (!reader.parse(jsonobj.c_str(), root))
+			{
+				return false;
+			}
+			if( root["entity"].isNull() || root["sign"].isNull())
+			{
+				return false;
+			}
+
+			std::vector<std::string>  _keyArr;
+			members = root["entity"].getMemberNames(); // 获取所有key的值
+			for (Json::Value::Members::iterator iterMember = members.begin(); iterMember != members.end(); iterMember++) // 遍历每个key
+			{  
+				std::string strKey = *iterMember; 
+				std::string value = root["entity"][strKey ].asString();
+				entity_out[strKey] = value;
+			}
+			sign_out = root["sign"].asString();
+			return true;
+		}catch(...){
+			return false;
+		}
+	}
+	
 }

@@ -29,14 +29,13 @@ SDK使用cURL库进行网络相关操作，JsonCpp库进行相关数据解析，
  * 登录验证
  *
  * @param string publicKey 公钥
- * @param string loginEntity sdk客户端登录成功返回的entity，JSON字符串
- * @param string loginSign sdk客户端登录成功返回的sign
+ * @param string jsonobj  客户端sdk登陆返回的整个jsonobj
  * @param int expire 登录有效期，单位秒，如果登录信息超过此有效期，则登录失败
  * @param map<string,string> retData 验证成功后，返回entity的登录信息
  *
  * @return bool 验证失败返回false，验证成功返回true
  */
-Sdk::loginVerify(publicKey, loginEntity, loginSign, expire, retData)
+Sdk::loginVerify(publicKey, jsonobj,  expire, retData)
 ```
 
  示例
@@ -53,11 +52,11 @@ int main(int argc, char ** argv)
 	std::string public_key="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA/VweA5KME/PR7QIwe+BoWf+yM5tRVpaXWOZC7S4SeLT5zyd1gNzKjLHCxAIhsxYUnXHRCdsC+cnKTVfCBuewv7N2kZCKF+/gMiqSdfiJo3XE7lmrxpIKO6YnWt7Itq/VvMJoTO7g0KkjF/irzI+OKUj5DSZORHwulA6OXNjUJbGeMdIGX7VHgbk7dv8oqx+FE0bAQ4APtOiSs5agBRdg9De92tURcj15jztYtPvaRVn5O8ozTEui4Kh2Cmf1fPFKbv5yQyNhHaqMdI2tGPREs78wGIiHT1yOmCMeKHCVgElwwgmFnmxKYsBD9XZ9GM6wzt/95M53jh/aNp/+9Y1m0QIDAQAB";
 	// --登录验证
 
-	std::string loginEntity = "{\"openid\":\"1-123123\",\"account\":\"test\",\"time\":1482313093}";
-	std::string	 loginSign = "m7JTn/y3IpB084vyeqoR9ysZ5/GeowcsO3KDrDsaa8Fof2Xjq4gKdk5eDLh0nTRxZslfbet5AWs+p1M0rtF8Jan8T2VxCW/czoCkrj4o/xnYtb3wdenCXAT7LUoydjTmd+cf0I9kw0DjkPDurrT9kNqxzw6dq1A6EFZAts4f0/H5+7kn81rzPq1RkWOM6OGm8R2D2WW/jHfqZDo1mvfZvIzkA/F0M62z2VsUK821BUkgoT23dByCdeqgx4hauJTHlnvg2/MplDYMDONHai6gTFWb4FQgY2wJq1BIWCyXgDuid6n9Ck0m6paJEfOffbK7BgwH3ssaF7xYGD2sjEuCFw==";
+	std::string jsonobj= "{\"entity\":{\"openid\":\"1-123123\",\"account\":\"test\",\"time\":1482313093},\"sign\":\"m7JTn/y3IpB084vyeqoR9ysZ5/GeowcsO3KDrDsaa8Fof2Xjq4gKdk5eDLh0nTRxZslfbet5AWs+p1M0rtF8Jan8T2VxCW/czoCkrj4o/xnYtb3wdenCXAT7LUoydjTmd+cf0I9kw0DjkPDurrT9kNqxzw6dq1A6EFZAts4f0/H5+7kn81rzPq1RkWOM6OGm8R2D2WW/jHfqZDo1mvfZvIzkA/F0M62z2VsUK821BUkgoT23dByCdeqgx4hauJTHlnvg2/MplDYMDONHai6gTFWb4FQgY2wJq1BIWCyXgDuid6n9Ck0m6paJEfOffbK7BgwH3ssaF7xYGD2sjEuCFw==\"}";
 	int expire = 200;
 	std::map<std::string,std::string>  retData;
-	bool ret=Sdk::loginVerify( public_key, loginEntity, loginSign,expire,retData);
+	//处理过程
+	bool ret=Sdk::loginVerify( public_key, jsonobj, expire,retData);
 	if (ret)
 	{
 		std::cout<<"login ok "<<std::endl;
