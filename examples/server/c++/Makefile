@@ -1,7 +1,8 @@
-CC = g++
+CC =g++
 TARGETS = demo
-CFLAGS = -g -I/usr/local/include/jsoncpp
-LIBS = -lcrypto   -L/usr/local/lib -ljsoncpp -lcurl
+#CFLAGS = -ggdb  -I/usr/local/include/jsoncpp -std=c++11
+CFLAGS = -ggdb  -I/usr/local/include/jsoncpp 
+LIBS = -lcrypto    -L/usr/local/lib -ljsoncpp -lcurl
 OBJS = demo.o CryptHelper.o Sdk.o
 
 %.o : %.cpp

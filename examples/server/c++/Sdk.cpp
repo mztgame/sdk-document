@@ -6,9 +6,11 @@
 #include <sstream> 
 #include <time.h>
 #include <stdlib.h>
+#include <memory>
 namespace  Sdk
 {
 
+#define  SAFE_DELETE(X) { if( (X) != NULL){ delete (X); (X)=NULL;} }
 #define  ENTER_FUNCTION   try{
 #define  LEAVE_FUNCTION   }catch(...){return false;}
 	std::string  buildReqDataFromEntity( std::map<std::string,std::string> & entity, std::map<std::string,std::string> &retData);
@@ -17,6 +19,7 @@ namespace  Sdk
 	std::string  buildQueryUrl(std::map<std::string,std::string> &queryData);
 	size_t curlWriteFunction(void *ptr, size_t size, size_t nmemb, void *data);
 	bool  parseEntifyAndSign(const std::string  &jsonobj, std::map<std::string,std::string> & entify_out, std::string &sign_out);
+	bool 	parseHttpResponse(const std::string  & jsonobj);
 
 
 	bool  loginVerify(const std::string &publicKey , const std::string &jsonobj, int expire ,std::map<std::string,std::string > &retData) 
@@ -99,21 +102,7 @@ namespace  Sdk
 			return false;
 		}
 
-		Json::Reader reader; 
-		Json::Value root; 
-		Json::Value::Members  members;
-		std::string  retReq;
-		if (!reader.parse(_respData.c_str(), root))   
-		{ 
-			return false;
-		}
-		int _retcode=root["code"].asInt();
-		if (_retcode != 0)
-		{
-			return false;
-		}
-
-		return true;
+		return parseHttpResponse( _respData);
 		LEAVE_FUNCTION
 	}
 
@@ -131,22 +120,7 @@ namespace  Sdk
 		{
 			return false;
 		}
-
-		Json::Reader reader; 
-		Json::Value root; 
-		Json::Value::Members  members;
-		std::string  retReq;
-		if (!reader.parse(_respData.c_str(), root))   
-		{ 
-			return false;
-		}
-		int _retcode=root["code"].asInt();
-		if (_retcode != 0)
-		{
-			return false;
-		}
-
-		return true;
+		return parseHttpResponse( _respData);
 		LEAVE_FUNCTION
 	}
 
@@ -165,22 +139,7 @@ namespace  Sdk
 		{
 			return false;
 		}
-
-		Json::Reader reader; 
-		Json::Value root; 
-		Json::Value::Members  members;
-		std::string  retReq;
-		if (!reader.parse(_respData.c_str(), root))   
-		{ 
-			return false;
-		}
-		int _retcode=root["code"].asInt();
-		if (_retcode != 0)
-		{
-			return false;
-		}
-
-		return true;
+		return parseHttpResponse( _respData);
 		LEAVE_FUNCTION
 
 	}
@@ -297,32 +256,66 @@ namespace  Sdk
 
 	bool  parseEntifyAndSign(const std::string  &jsonobj, std::map<std::string,std::string> & entity_out, std::string &sign_out)
 	{
-		Json::Reader reader;
+		int nLen = jsonobj.length();
 		Json::Value root;
-		Json::Value::Members  members;
-		try{
-			if (!reader.parse(jsonobj.c_str(), root))
-			{
-				return false;
-			}
-			if( root["entity"].isNull() || root["sign"].isNull())
-			{
-				return false;
-			}
-
-			std::vector<std::string>  _keyArr;
-			members = root["entity"].getMemberNames(); // 获取所有key的值
-			for (Json::Value::Members::iterator iterMember = members.begin(); iterMember != members.end(); iterMember++) // 遍历每个key
-			{  
-				std::string strKey = *iterMember; 
-				std::string value = root["entity"][strKey ].asString();
-				entity_out[strKey] = value;
-			}
-			sign_out = root["sign"].asString();
-			return true;
-		}catch(...){
+		Json::CharReaderBuilder jsreader;
+		Json::CharReader  * reader=jsreader.newCharReader();
+		const char *pStart = jsonobj.c_str();
+		std::string err;
+		if(reader == NULL)
+		{
 			return false;
 		}
+		if (!reader->parse(pStart, pStart + nLen, &root, &err))
+		{
+			SAFE_DELETE(reader)
+			return false;
+		}
+		SAFE_DELETE(reader)
+		
+		Json::Value _entity_v= root["entity"];
+		Json::Value _sign_v = root["sign"];
+		if( _entity_v.isNull() || _sign_v.isNull())
+		{
+			return false;
+		}
+		sign_out = _sign_v.asString();
+
+		std::vector<std::string>  _keyArr;
+		Json::Value::Members members = root["entity"].getMemberNames(); // 获取所有key的值
+		//for (Json::Value::Members::iterator iterMember = members.begin(); iterMember != members.end(); iterMember++) // 遍历每个key
+		for (Json::Value::Members::iterator strKey=members.begin(); strKey!=members.end(); strKey++)
+		{  
+			std::string value = root["entity"][*strKey ].asString();
+			entity_out[*strKey] = value;
+		}
+		sign_out = root["sign"].asString();
+		return true;
 	}
+	bool 	parseHttpResponse(const std::string  & jsonobj)
+	{
+		int nLen = jsonobj.length();
+		Json::Value root;
+		Json::CharReaderBuilder jsreader;
+		Json::CharReader  * reader=jsreader.newCharReader();
+		if(reader == NULL)
+			return false;
+		//std::unique_ptr<Json::CharReader> const reader(jsreader.newCharReader());
+		const char *pStart = jsonobj.c_str();
+		std::string err;
+		if (!reader->parse(pStart, pStart + nLen, &root, &err))
+		{
+			SAFE_DELETE(reader)
+			return false;
+		}
+		SAFE_DELETE(reader)
+		Json::Value code_v = root["code"];
+		if(code_v.isNull() || code_v.asInt() != 0)
+		{
+			return false;
+		}
+		return true;
+	}
+
 	
 }

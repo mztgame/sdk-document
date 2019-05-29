@@ -13,13 +13,13 @@ EVP_PKEY* CryptHelper::getKeyByPKCS1(const std::string &key, const int32_t keyTy
     RSA* rsa = getRsaKey(key, keyType);
     if(!rsa)
     {
-        printf("getRsaKey failed !key=%s,keytype=%d\n",key.c_str(),keyType);
+        //printf("getRsaKey failed !key=%s,keytype=%d\n",key.c_str(),keyType);
         return NULL;
     }
     EVP_PKEY* pkey = EVP_PKEY_new();
     if(1 != EVP_PKEY_assign_RSA(pkey, rsa))
     {
-        printf("EVP_PKEY_assign_RSA failed !\n");
+        //printf("EVP_PKEY_assign_RSA failed !\n");
         RSA_free(rsa);
         EVP_PKEY_free(pkey);
         return NULL;
@@ -38,7 +38,7 @@ RSA* CryptHelper::getRsaKey(const std::string &key, const int32_t keyType)
     keyLen = base64Decode(keyBuf, (const uint8_t *) key.c_str(), key.length());
     if (0 > keyLen)
     {
-        printf("base64Decode key failed !,key=%s,keytype=%d,lenght=%d\n",key.c_str(),keyType,key.length());
+        //printf("base64Decode key failed !,key=%s,keytype=%d,lenght=%d\n",key.c_str(),keyType,key.length());
         return NULL;
     }
     //d2i_RSA_PUBKEY
@@ -76,14 +76,14 @@ int32_t CryptHelper::signWithRsa(const std::string &data, const EVP_MD *type, EV
     int32_t ret = EVP_SignFinal(&mdCtx, signBuf, &signLen, priKey);
     if (1 != ret)
     {
-        printf("EVP_SignFinal failed\n");
+        //printf("EVP_SignFinal failed\n");
     }
     else
     {
         if (0 > (outLen = EVP_EncodeBlock(outBuf, signBuf, signLen)))
         {
             ret = -1;
-            printf("EVP_EncodeBlock failed\n");
+            //printf("EVP_EncodeBlock failed\n");
         }
         else
         {
@@ -104,7 +104,7 @@ bool CryptHelper::verifySignWithRsa(const std::string &data, const std::string &
     int32_t signSrcLen = base64Decode(signSrc, (const uint8_t *)sign.c_str(), sign.length());
     if(0 > signSrcLen)
     {
-        printf("sign base64Decode failed\n");
+        //printf("sign base64Decode failed\n");
         OPENSSL_free(signSrc);
         return false;//return -1;
     }
@@ -158,7 +158,7 @@ int32_t CryptHelper::base64Decode(uint8_t *out, const uint8_t *in, int32_t inl)
     outl = EVP_DecodeBlock(out, in, inl);
     if (0 > outl)
     {
-        printf("EVP_DecodeBlock failed\n");
+        //printf("EVP_DecodeBlock failed\n");
         return -1;
     }
     out[outl - ret] = '\0';
@@ -177,7 +177,7 @@ std::string  CryptHelper::md5(const std::string  &str)
 	MD5_Final(_outmd,&_ctx);
 
 	char _buf[3];
-	for(int i=0;i<16;i<i++)
+	for(int i=0;i<16;i++)
 	{
 		bzero(_buf,sizeof(_buf));
 		snprintf(_buf,sizeof(_buf),"%02x",_outmd[i]);
