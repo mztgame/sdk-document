@@ -94,7 +94,7 @@ namespace  Sdk
 		std::ostringstream os;
 		os<<_onlineData["game_id"]<<"&"<<_onlineData["number"]<<"&"<<_onlineData["zone_id"]<<"&"<<loginkeys;
 		_onlineData["sign"] = CryptHelper::md5( os.str());			
-		std::string url = 	"http://stat.mztgame.com/game/online";
+		std::string url = 	"https://stat.sdk.mobileztgame.com/game/online";
 
 		std::string _respData = curl(url,_onlineData,"get");
 		if( _respData == "")

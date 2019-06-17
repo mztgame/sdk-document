@@ -25,7 +25,7 @@ func GameOnline(loginKey string, data map[string]interface{}) bool {
 		data["number"].(int),
 		data["zone_id"].(int),
 		loginKey))
-	response, err := httpRequest("GET", "http://stat.mztgame.com/game/online", data, nil, "")
+	response, err := httpRequest("GET", "https://stat.sdk.mobileztgame.com/game/online", data, nil, "")
 	if err != nil {
 		return  false
 	}

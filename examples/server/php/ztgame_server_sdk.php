@@ -87,7 +87,7 @@ class ZtgameServerSdk
         }
         $data['sign'] = md5($data['game_id'].'&'.$data['number'].'&'.$data['zone_id'].'&'.$loginKey);
         $response = self::httpRequest(
-            'http://stat.mztgame.com/game/online',
+            'https://stat.sdk.mobileztgame.com/game/online',
             $data
         );
         if (!$response) {
