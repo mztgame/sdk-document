@@ -26,7 +26,8 @@
         'account': 'bigWame',
         'nickname': '大肚子',
         'sex': '1',
-        'birth": '2005-03-28'
+        'birth": '2005-03-28',
+        'accounts": ['aaaa', 'bbbb']
     }
 }
 ```
@@ -39,6 +40,7 @@
 | nickname | 昵称 |
 | sex | 性别 
 | birth | 生日 |
+| accounts | 与授权账号绑定在同一个账号管家里的账号列表，包含当前账号 |
 
 **错误示例**
 
