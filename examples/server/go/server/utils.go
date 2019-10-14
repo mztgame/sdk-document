@@ -103,6 +103,8 @@ func httpBuildQuery(params map[string]interface{}) string {
 		case float32:
 		case float64:
 			str = strconv.Itoa(int(v.(float64)))
+		default:
+			str = fmt.Sprintf("%v", v)
 		}
 		c.Add(k, str)
 	}
@@ -129,6 +131,8 @@ func buildParamsSort(params map[string]interface{}) string {
 		case float32:
 		case float64:
 			str = strconv.Itoa(int(v.(float64)))
+		default:
+			str = fmt.Sprintf("%v", v)
 		}
 		query = append(query, fmt.Sprintf("%s=%s", k, str))
 	}
@@ -156,9 +160,12 @@ func implodeParamsSort(params map[string]interface{}) string {
 		case float32:
 		case float64:
 			str = strconv.Itoa(int(v.(float64)))
+		default:
+			str = fmt.Sprintf("%v", v)
 		}
 		query = append(query, str)
 	}
+	//fmt.Println(strings.Join(query, ""))
 	return strings.Join(query, "")
 
 }
