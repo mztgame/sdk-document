@@ -87,7 +87,7 @@ class ZtgameServerSdk
         }
         $data['sign'] = md5($data['game_id'].'&'.$data['number'].'&'.$data['zone_id'].'&'.$loginKey);
         $response = self::httpRequest(
-            'https://stat.sdk.mobileztgame.com/game/online',
+            'https://apis.sdk.mobileztgame.com/sdk-plugins/game/online',
             $data
         );
         if (!$response) {
@@ -184,7 +184,7 @@ class ZtgameServerSdk
         $data['sign'] = md5($data['game_id'].'&'.$data['channel_id'].'&'.$data['message_type'].'&'.$data['title']
             .'&'.$data['content'].'&'.$data['audience_type'].'&'.$loginKey);
         $response = self::httpRequest(
-            'https://gapush.sdk.mobileztgame.com/api/push',
+            'https://apis.sdk.mobileztgame.com/gapush/api/push',
             $data,
             'post'
         );

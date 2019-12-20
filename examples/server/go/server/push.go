@@ -37,7 +37,7 @@ func Push(loginKey string, data map[string]interface{}) bool {
 	header:= map[string]string{
 		"Content-Type": "application/x-www-form-urlencoded",
 	}
-	response, err := httpRequest("POST", "https://gapush.sdk.mobileztgame.com/api/push", data, header, "")
+	response, err := httpRequest("POST", "https://apis.sdk.mobileztgame.com/gapush/api/push", data, header, "")
 	if err != nil {
 		return  false
 	}

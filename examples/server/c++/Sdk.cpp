@@ -94,7 +94,7 @@ namespace  Sdk
 		std::ostringstream os;
 		os<<_onlineData["game_id"]<<"&"<<_onlineData["number"]<<"&"<<_onlineData["zone_id"]<<"&"<<loginkeys;
 		_onlineData["sign"] = CryptHelper::md5( os.str());			
-		std::string url = 	"https://stat.sdk.mobileztgame.com/game/online";
+		std::string url = 	"https://apis.sdk.mobileztgame.com/sdk-plugins/game/online";
 
 		std::string _respData = curl(url,_onlineData,"get");
 		if( _respData == "")
@@ -132,7 +132,7 @@ namespace  Sdk
 		std::ostringstream os;
 		os<<_onlineData["game_id"]<<"&"<<_onlineData["channel_id"]<<"&"<<_onlineData["message_type"]<<"&"<<_onlineData["title"]<<"&"<<_onlineData["content"]<<"&"<<_onlineData["audience_type"]<<"&"<<loginkeys;
 		_onlineData["sign"] = CryptHelper::md5( os.str());			
-		std::string url = "https://gapush.sdk.mobileztgame.com/api/push"; 
+		std::string url = "https://apis.sdk.mobileztgame.com/gapush/api/push"; 
 
 		std::string _respData = curl(url,_onlineData,"post");
 		if( _respData == "")
