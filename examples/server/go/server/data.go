@@ -25,7 +25,7 @@ func GameOnline(loginKey string, data map[string]interface{}) bool {
 		data["number"].(int),
 		data["zone_id"].(int),
 		loginKey))
-	response, err := httpRequest("GET", "https://apis.sdk.mobileztgame.com/sdk-plugins/game/online", data, nil, "")
+	response, err := httpRequest("GET", "http://apis.sdk.mobileztgame.com/sdk-plugins/game/online", data, nil, "")
 	if err != nil {
 		return  false
 	}
@@ -74,7 +74,7 @@ func LoginLogs(loginKey string, data map[string]interface{}) bool {
 	header:= map[string]string{
 		"Content-Type": "application/x-www-form-urlencoded",
 	}
-	response, err := httpRequest("POST", "https://beacon.ztgame.com/game/login-logs", data, header, "")
+	response, err := httpRequest("POST", "http://beacon.ztgame.com/game/login-logs", data, header, "")
 	if err != nil {
 		return  false
 	}

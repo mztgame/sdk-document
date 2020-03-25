@@ -94,7 +94,7 @@ namespace  Sdk
 		std::ostringstream os;
 		os<<_onlineData["game_id"]<<"&"<<_onlineData["number"]<<"&"<<_onlineData["zone_id"]<<"&"<<loginkeys;
 		_onlineData["sign"] = CryptHelper::md5( os.str());			
-		std::string url = 	"https://apis.sdk.mobileztgame.com/sdk-plugins/game/online";
+		std::string url = 	"http://apis.sdk.mobileztgame.com/sdk-plugins/game/online";
 
 		std::string _respData = curl(url,_onlineData,"get");
 		if( _respData == "")
@@ -114,7 +114,7 @@ namespace  Sdk
 		_signData += loginkeys;
 		_queryData["sign"] = CryptHelper::md5(_signData);
 
-		std::string url = "https://beacon.ztgame.com/game/login-logs";
+		std::string url = "http://beacon.ztgame.com/game/login-logs";
 		std::string _respData = curl(url,_queryData,"post");
 		if( _respData == "")
 		{
@@ -132,7 +132,7 @@ namespace  Sdk
 		std::ostringstream os;
 		os<<_onlineData["game_id"]<<"&"<<_onlineData["channel_id"]<<"&"<<_onlineData["message_type"]<<"&"<<_onlineData["title"]<<"&"<<_onlineData["content"]<<"&"<<_onlineData["audience_type"]<<"&"<<loginkeys;
 		_onlineData["sign"] = CryptHelper::md5( os.str());			
-		std::string url = "https://apis.sdk.mobileztgame.com/gapush/api/push"; 
+		std::string url = "http://apis.sdk.mobileztgame.com/gapush/api/push";
 
 		std::string _respData = curl(url,_onlineData,"post");
 		if( _respData == "")
@@ -221,6 +221,7 @@ namespace  Sdk
 			curl_easy_setopt(pcurl, CURLOPT_NOSIGNAL, 1L); //关闭中断信号响应
 			curl_easy_setopt(pcurl, CURLOPT_HTTPHEADER, headers);// 改协议头
 			curl_easy_setopt(pcurl, CURLOPT_WRITEFUNCTION, curlWriteFunction);  //得到请求结果后的回调函数
+			curl_easy_setopt(pcurl, CURLOPT_SSL_VERIFYHOST, 0L);
 			curl_easy_setopt(pcurl, CURLOPT_WRITEDATA,&_retData); //写的地址
 			if ( method != "post")
 			{
