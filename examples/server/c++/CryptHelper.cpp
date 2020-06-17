@@ -4,10 +4,12 @@
 #include <curl/curl.h>
 #include <json/json.h>
 
+#ifdef _WIN32
+#define bzero(a, b) memset(a, 0, b)
+#endif // _WIN32
 
 namespace Sdk
 {
-
 EVP_PKEY* CryptHelper::getKeyByPKCS1(const std::string &key, const int32_t keyType)
 {
     RSA* rsa = getRsaKey(key, keyType);
