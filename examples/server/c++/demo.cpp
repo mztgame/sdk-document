@@ -14,7 +14,7 @@ int main(int argc, char ** argv)
 	//构造测试数据,客户端sdk返回的整个json包
 	std::string jsonobj= "{\"entity\":{\"openid\":\"1-123123\",\"account\":\"test\",\"time\":1482313093},\"sign\":\"m7JTn/y3IpB084vyeqoR9ysZ5/GeowcsO3KDrDsaa8Fof2Xjq4gKdk5eDLh0nTRxZslfbet5AWs+p1M0rtF8Jan8T2VxCW/czoCkrj4o/xnYtb3wdenCXAT7LUoydjTmd+cf0I9kw0DjkPDurrT9kNqxzw6dq1A6EFZAts4f0/H5+7kn81rzPq1RkWOM6OGm8R2D2WW/jHfqZDo1mvfZvIzkA/F0M62z2VsUK821BUkgoT23dByCdeqgx4hauJTHlnvg2/MplDYMDONHai6gTFWb4FQgY2wJq1BIWCyXgDuid6n9Ck0m6paJEfOffbK7BgwH3ssaF7xYGD2sjEuCFw==\"}";
 
-	std::cout<<jsonobj<<std::endl;
+	std::cout<<jsonobj.c_str()<<std::endl;
 	int expire = 200;
 	//返回的登录数据
 	std::map<std::string,std::string>  retData;
@@ -26,7 +26,7 @@ int main(int argc, char ** argv)
 		std::cout<<"login ok "<<std::endl;
 		for( std::map<std::string,std::string>::iterator itr = retData.begin(); itr != retData.end(); itr++)
 		{
-			std::cout<<"ret user data key="<<itr->first<<",value="<<itr->second<<std::endl;
+			std::cout<<"ret user data key="<<itr->first.c_str()<<",value="<<itr->second.c_str()<<std::endl;
 		}
 	}
 	else
