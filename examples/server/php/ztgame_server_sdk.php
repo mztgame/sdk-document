@@ -200,6 +200,50 @@ class ZtgameServerSdk
     }
 
     /**
+     * 兑换礼包码
+     *
+     * @param string $loginKey 秘钥
+     * @param array $data 礼包码内容，需要包含以下字段
+     * [
+     * 'game_id' => 游戏ID,   //必填
+     * 'channel_id' => 渠道ID,  //必填
+     * 'plat' => 平台名称,  //选填
+     * 'area' => 大区号，没有填0,  //选填
+     * 'partition' => 小区号,  //必填
+     * 'uid' => 用户ID,    //必填
+     * 'char_id' => 角色ID ,  //选填
+     * 'gakey' => 礼包码,  //必填
+     * ]
+     *
+     * @return boolean
+     *
+     */
+    public static function giftUse($loginKey, $data)
+    {
+        if (empty($loginKey) || empty($data['game_id']) || empty($data['channel_id']) || empty($data['uid'])
+            || empty($data['gakey']) || empty($data['partition'])
+        ) {
+            return false;
+        }
+        $data['sign'] = md5($data['game_id'].'&'.$data['channel_id'].'&'.$data['partition'].'&'.$data['uid']
+            .'&'.$data['gakey'].'&'.$loginKey);
+        $response = self::httpRequest(
+            'http://apis.sdk.mobileztgame.com/sdk-plugins/api/gift-use',
+            $data,
+            'post'
+        );
+        if (!$response) {
+            return false;
+        }
+        $result = self::jsonDecode($response);
+        if (isset($result['code']) && $result['code'] == 0) {
+            return true;
+        }
+        //var_dump($result);
+        return false;
+    }
+
+    /**
      * HTTP请求
      *
      * @param $gateway

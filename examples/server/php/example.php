@@ -160,3 +160,22 @@ if (ZtgameServerSdk::push($loginKey, $pushData)) {
 } else {
     echo '推送消息失败';
 }
+
+echo "\n\n";
+
+//兑换礼包码
+$giftData = [
+    'game_id' => 1000,
+    'channel_id' => 1,
+    'plat' => 'android',
+    'area' => 0,
+    'partition' => 1,
+    'uid' => '1-123456',
+    'char_id' => '78910',
+    'gakey' => '8B8CM5VP',
+];
+if (ZtgameServerSdk::giftUse($loginKey, $giftData)) {
+    echo '兑换成功';
+} else {
+    echo '兑换失败';
+}

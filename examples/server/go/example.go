@@ -168,4 +168,23 @@ func main()  {
 		fmt.Println("推送消息失败")
 	}
 
+	//============================================
+
+	//兑换礼包码
+	giftUseData := map[string]interface{}{
+		"game_id": 1000,
+		"channel_id": 1,
+		"plat": "android",
+		"area": 0,
+		"partition": 1,
+		"uid": "1-123456",
+		"char_id": "78910",
+		"gakey": "8B8CM5VP",
+	}
+	if server.GiftUse(loginKey, giftUseData) {
+		fmt.Println("兑换成功")
+	} else {
+		fmt.Println("兑换失败")
+	}
+
 }

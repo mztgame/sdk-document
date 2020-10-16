@@ -144,6 +144,25 @@ namespace  Sdk
 
 	}
 
+	bool giftUse(const std::string & loginkeys, const std::map<std::string,std::string> &datas)
+    	{
+    		ENTER_FUNCTION
+    		std::map<std::string,std::string> _giftData=datas;
+    		std::ostringstream os;
+    		os<<_giftData["game_id"]<<"&"<<_giftData["channel_id"]<<"&"<<_giftData["partition"]<<"&"<<_giftData["uid"]<<"&"<<_giftData["gakey"]<<"&"<<loginkeys;
+    		_giftData["sign"] = CryptHelper::md5( os.str());
+    		std::string url = "http://apis.sdk.mobileztgame.com/sdk-plugins/api/gift-use";
+
+    		std::string _respData = curl(url,_giftData,"post");
+    		if( _respData == "")
+    		{
+    			return false;
+    		}
+    		return parseHttpResponse( _respData);
+    		LEAVE_FUNCTION
+
+    	}
+
 
 
 	std::string  buildReqDataFromEntity( std::map<std::string,std::string> & entity,std::map<std::string,std::string> &retData)

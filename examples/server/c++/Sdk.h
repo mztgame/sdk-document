@@ -14,6 +14,8 @@ namespace Sdk
 	bool loginLogs(const std::string &loginkeys,const std::map<std::string,std::string> & datas);
 	// push消息, http请求会阻塞
 	bool push(const std::string & loginkeys, const std::map<std::string,std::string> &datas);
+	// 兑换礼包码, http请求会阻塞
+    bool giftUse(const std::string & loginkeys, const std::map<std::string,std::string> &datas);
 }
 
 

@@ -181,6 +181,29 @@ int main(int argc, char ** argv)
 	{
 		std::cout<<"push failed"<<std::endl;
 	}
+
+	/**********************************************************
+     * 兑换礼包码
+     **********************************************************/
+    std::map<std::string,std::string> giftData;
+    giftData["game_id"]= "1000";
+    giftData["channel_id"]= "1";
+    giftData["plat"]= "android";
+    giftData["area"]= "0";
+    giftData["partition"]= "1";
+    giftData["uid"]= "1-123456";
+    giftData["char_id"]= "78910";
+    giftData["gakey"]= "8B8CM5VP";
+
+    if( Sdk::giftUse(loginKey,giftData))
+    {
+        std::cout<<"gift use success"<<std::endl;
+    }
+    else
+    {
+        std::cout<<"gift use failed"<<std::endl;
+    }
+
 	return 0;
 
 }
