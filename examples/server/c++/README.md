@@ -6,6 +6,7 @@ SDK包含了如下几个功能：
 - 上报在线人数
 - 上报游戏登录数据
 - 消息推送
+- 兑换礼包码
 
 ### 使用方法
 
@@ -365,3 +366,63 @@ int main(int argc, char ** argv)
 }
 ```
 
+
+- 兑换礼包码
+	
+ 方法说明
+```c++
+/**
+ * 推送消息
+ *
+ * @param string loginKey 秘钥
+ * @param map<string,string> giftData 推送内容，需要包含以下字段
+ * [
+ * 'game_id' => 游戏ID,   //必填
+ * 'channel_id' => 渠道ID,  //必填
+ * 'plat' => 平台名称,  //选填
+ * 'area' => 大区号，没有填0,  //选填
+ * 'partition' => 小区号,  //必填
+ * 'uid' => 用户ID,    //必填
+ * 'char_id' => 角色ID ,  //选填
+ * 'gakey' => 礼包码,  //必填
+ * ]
+ *
+ * @return bool
+ *
+ */
+Sdk::giftUse(loginKey, giftData)
+
+```
+
+ 示例
+```c++
+#include <iostream>
+#include <string.h>
+#include "Sdk.h"
+#include <map>
+
+int main(int argc, char ** argv)
+{
+	//  密钥
+	std::string  loginKey = "111111";
+	//构造测试数据
+	std::map<std::string,std::string> giftData;
+    giftData["game_id"]= "1000";
+    giftData["channel_id"]= "1";
+    giftData["plat"]= "android";
+    giftData["area"]= "0";
+    giftData["partition"]= "1";
+    giftData["uid"]= "1-123456";
+    giftData["char_id"]= "78910";
+    giftData["gakey"]= "8B8CM5VP";
+
+    if( Sdk::giftUse(loginKey,giftData))
+    {
+        std::cout<<"gift use success"<<std::endl;
+    }
+    else
+    {
+        std::cout<<"gift use failed"<<std::endl;
+    }
+}
+```

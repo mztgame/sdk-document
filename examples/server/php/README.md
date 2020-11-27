@@ -6,6 +6,7 @@ SDK包含了如下几个功能：
 - 上报在线人数
 - 上报游戏登录数据
 - 消息推送
+- 兑换礼包码
 
 ### 使用方法
 
@@ -323,5 +324,56 @@ if (ZtgameServerSdk::push($loginKey, $pushData)) {
     echo '推送消息成功';
 } else {
     echo '推送消息失败';
+}
+```
+
+
+- 兑换礼包码
+	
+ 方法说明
+```php
+/**
+ * 兑换礼包码
+ *
+ * @param string $loginKey 秘钥
+ * @param array $data 礼包码内容，需要包含以下字段
+ * [
+ * 'game_id' => 游戏ID,   //必填
+ * 'channel_id' => 渠道ID,  //必填
+ * 'plat' => 平台名称,  //选填
+ * 'area' => 大区号，没有填0,  //选填
+ * 'partition' => 小区号,  //必填
+ * 'uid' => 用户ID,    //必填
+ * 'char_id' => 角色ID ,  //选填
+ * 'gakey' => 礼包码,  //必填
+ * ]
+ *
+ * @return boolean
+ *
+ */
+ZtgameServerSdk::giftUse($loginKey, $giftData)
+```
+
+ 示例
+```php
+require_once 'ztgame_server_sdk.php';
+
+//示例login_key
+$loginKey = '11111111';
+
+$giftData = [
+    'game_id' => 1000,
+    'channel_id' => 1,
+    'plat' => 'android',
+    'area' => 0,
+    'partition' => 1,
+    'uid' => '1-123456',
+    'char_id' => '78910',
+    'gakey' => '8B8CM5VP',
+];
+if (ZtgameServerSdk::giftUse($loginKey, $giftData)) {
+    echo '兑换成功';
+} else {
+    echo '兑换失败';
 }
 ```
