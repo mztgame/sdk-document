@@ -172,10 +172,8 @@ $giftData = [
     'partition' => 1,
     'uid' => '1-123456',
     'char_id' => '78910',
+    'from' => '',
     'gakey' => '8B8CM5VP',
 ];
-if (ZtgameServerSdk::giftUse($loginKey, $giftData)) {
-    echo '兑换成功';
-} else {
-    echo '兑换失败';
-}
+$re = ZtgameServerSdk::giftUse($loginKey, $giftData)
+print_r($re);

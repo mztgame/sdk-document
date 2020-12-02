@@ -212,10 +212,11 @@ class ZtgameServerSdk
      * 'partition' => 小区号,  //必填
      * 'uid' => 用户ID,    //必填
      * 'char_id' => 角色ID ,  //选填
+     * 'from' => 来源 ,  //选填
      * 'gakey' => 礼包码,  //必填
      * ]
      *
-     * @return boolean
+     * @return boolean|array
      *
      */
     public static function giftUse($loginKey, $data)
@@ -236,11 +237,8 @@ class ZtgameServerSdk
             return false;
         }
         $result = self::jsonDecode($response);
-        if (isset($result['code']) && $result['code'] == 0) {
-            return true;
-        }
         //var_dump($result);
-        return false;
+        return $result;
     }
 
     /**

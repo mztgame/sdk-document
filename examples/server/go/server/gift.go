@@ -15,13 +15,14 @@ import "fmt"
  * "partition" : 小区号,  //必填
  * "uid" : 用户ID,    //必填
  * "char_id" : 角色ID ,  //选填
+ * "from" : 来源 ,  //选填
  * "gakey" : 礼包码,  //必填
  * }
  *
- * @return bool
+ * @return map[string]interface{}
  *
  */
-func GiftUse(loginKey string, data map[string]interface{}) bool {
+func GiftUse(loginKey string, data map[string]interface{}) (map[string]interface{}, error) {
 	data["sign"] = MD5(fmt.Sprintf("%d&%d&%d&%s&%s&%s",
 		data["game_id"].(int),
 		data["channel_id"].(int),
@@ -34,18 +35,12 @@ func GiftUse(loginKey string, data map[string]interface{}) bool {
 	}
 	response, err := httpRequest("GET", "http://apis.sdk.mobileztgame.com/sdk-plugins/api/gift-use", data, header, "")
 	if err != nil {
-		return  false
+		return  nil, err
 	}
 	fmt.Println(response)
 	result, err := jsonDecode(response)
 	if err != nil {
-		return false
+		return  nil, err
 	}
-	if _, ok := result["code"]; !ok {
-		return false
-	}
-	if int(result["code"].(float64)) == 0 {
-		return true
-	}
-	return false
+	return result, nil
 }

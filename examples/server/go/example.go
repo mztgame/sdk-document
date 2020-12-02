@@ -179,12 +179,14 @@ func main()  {
 		"partition": 1,
 		"uid": "1-123456",
 		"char_id": "78910",
+		"from": "",
 		"gakey": "8B8CM5VP",
 	}
-	if server.GiftUse(loginKey, giftUseData) {
-		fmt.Println("兑换成功")
+	re, err := server.GiftUse(loginKey, giftUseData)
+	if err != nil {
+		fmt.Printf("兑换失败 %s", err.Error())
 	} else {
-		fmt.Println("兑换失败")
+		fmt.Println(re)
 	}
 
 }

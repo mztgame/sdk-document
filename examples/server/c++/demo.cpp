@@ -193,6 +193,7 @@ int main(int argc, char ** argv)
     giftData["partition"]= "1";
     giftData["uid"]= "1-123456";
     giftData["char_id"]= "78910";
+    giftData["from"]= "";
     giftData["gakey"]= "8B8CM5VP";
 
     if( Sdk::giftUse(loginKey,giftData))

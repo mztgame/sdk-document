@@ -397,6 +397,7 @@ func main()  {
  * "partition" : 小区号,  //必填
  * "uid" : 用户ID,    //必填
  * "char_id" : 角色ID ,  //选填
+ * "from" : 来源 ,  //选填
  * "gakey" : 礼包码,  //必填
  * }
  *
@@ -431,6 +432,7 @@ func main()  {
 		"partition": 1,
 		"uid": "1-123456",
 		"char_id": "78910",
+		"from": "",
 		"gakey": "8B8CM5VP",
 	}
 	if server.GiftUse(loginKey, giftUseData) {
