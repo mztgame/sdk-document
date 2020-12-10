@@ -380,8 +380,8 @@ int main(int argc, char ** argv)
  * 'game_id' => 游戏ID,   //必填
  * 'channel_id' => 渠道ID,  //必填
  * 'plat' => 平台名称,  //选填
- * 'area' => 大区号，没有填0,  //选填
- * 'partition' => 小区号,  //必填
+ * 'area' => 自定义ID，没有填0,  //选填
+ * 'partition' => 区ID,  //必填
  * 'uid' => 用户ID,    //必填
  * 'char_id' => 角色ID ,  //选填
  * 'from' => 来源 ,  //选填
