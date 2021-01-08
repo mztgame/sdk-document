@@ -40,8 +40,9 @@ func PaymentVerify(publicKey string, postData map[string]string) bool  {
 		postData["version"],
 		postData["zone_id"])*/
 	sign := postData["sign"]
-	delete(postData, "sign")
-	data := implodeParamsSort(convertMapToInterface(postData))
+	params := convertMapToInterface(postData)
+	delete(params, "sign")
+	data := implodeParamsSort(params)
 
 	signData, _ := base64.StdEncoding.DecodeString(sign)
 	pub, err := parsePublicKey(publicKey)

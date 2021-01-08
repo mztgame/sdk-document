@@ -26,18 +26,19 @@ import "fmt"
  *
  */
 func Push(loginKey string, data map[string]interface{}) bool {
-	data["sign"] = MD5(fmt.Sprintf("%d&%d&%s&%s&%s&%s&%s",
-		data["game_id"].(int),
-		data["channel_id"].(int),
-		data["message_type"].(string),
-		data["title"].(string),
-		data["content"].(string),
-		data["audience_type"].(string),
+	params := mapCopy(data)
+	params["sign"] = MD5(fmt.Sprintf("%d&%d&%s&%s&%s&%s&%s",
+		params["game_id"].(int),
+		params["channel_id"].(int),
+		params["message_type"].(string),
+		params["title"].(string),
+		params["content"].(string),
+		params["audience_type"].(string),
 		loginKey))
 	header:= map[string]string{
 		"Content-Type": "application/x-www-form-urlencoded",
 	}
-	response, err := httpRequest("POST", "http://apis.sdk.mobileztgame.com/gapush/api/push", data, header, "")
+	response, err := httpRequest("POST", "http://apis.sdk.mobileztgame.com/gapush/api/push", params, header, "")
 	if err != nil {
 		return  false
 	}

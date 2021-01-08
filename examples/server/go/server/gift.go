@@ -23,17 +23,18 @@ import "fmt"
  *
  */
 func GiftUse(loginKey string, data map[string]interface{}) (map[string]interface{}, error) {
-	data["sign"] = MD5(fmt.Sprintf("%d&%d&%d&%s&%s&%s",
-		data["game_id"].(int),
-		data["channel_id"].(int),
-		data["partition"].(int),
-		data["uid"].(string),
-		data["gakey"].(string),
+	params := mapCopy(data)
+	params["sign"] = MD5(fmt.Sprintf("%d&%d&%d&%s&%s&%s",
+		params["game_id"].(int),
+		params["channel_id"].(int),
+		params["partition"].(int),
+		params["uid"].(string),
+		params["gakey"].(string),
 		loginKey))
 	header:= map[string]string{
 		"Content-Type": "application/x-www-form-urlencoded",
 	}
-	response, err := httpRequest("GET", "http://apis.sdk.mobileztgame.com/sdk-plugins/api/gift-use", data, header, "")
+	response, err := httpRequest("GET", "http://apis.sdk.mobileztgame.com/sdk-plugins/api/gift-use", params, header, "")
 	if err != nil {
 		return  nil, err
 	}

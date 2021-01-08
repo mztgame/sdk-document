@@ -207,3 +207,12 @@ func convertMapToInterface(m map[string]string) map[string]interface{} {
 	}
 	return convertMap
 }
+
+func mapCopy(oldMap map[string]interface{}) map[string]interface{} {
+	newMap := make(map[string]interface{})
+	for k, v := range oldMap {
+		newMap[k] = v
+	}
+
+	return newMap
+}

@@ -20,12 +20,13 @@ import (
  *
  */
 func GameOnline(loginKey string, data map[string]interface{}) bool {
-	data["sign"] = MD5(fmt.Sprintf("%d&%d&%d&%s",
-		data["game_id"].(int),
-		data["number"].(int),
-		data["zone_id"].(int),
+	params := mapCopy(data)
+	params["sign"] = MD5(fmt.Sprintf("%d&%d&%d&%s",
+		params["game_id"].(int),
+		params["number"].(int),
+		params["zone_id"].(int),
 		loginKey))
-	response, err := httpRequest("GET", "http://apis.sdk.mobileztgame.com/sdk-plugins/game/online", data, nil, "")
+	response, err := httpRequest("GET", "http://apis.sdk.mobileztgame.com/sdk-plugins/game/online", params, nil, "")
 	if err != nil {
 		return  false
 	}
@@ -69,12 +70,13 @@ func GameOnline(loginKey string, data map[string]interface{}) bool {
  *
  */
 func LoginLogs(loginKey string, data map[string]interface{}) bool {
-	signData := implodeParamsSort(data)
-	data["sign"] = MD5(fmt.Sprintf("%s%s", signData, loginKey))
+	params := mapCopy(data)
+	signData := implodeParamsSort(params)
+	params["sign"] = MD5(fmt.Sprintf("%s%s", signData, loginKey))
 	header:= map[string]string{
 		"Content-Type": "application/x-www-form-urlencoded",
 	}
-	response, err := httpRequest("POST", "http://beacon.ztgame.com/game/login-logs", data, header, "")
+	response, err := httpRequest("POST", "http://beacon.ztgame.com/game/login-logs", params, header, "")
 	if err != nil {
 		return  false
 	}
