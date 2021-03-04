@@ -7,32 +7,27 @@ int main(int argc, char ** argv)
 {
 
 	std::string public_key="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA/VweA5KME/PR7QIwe+BoWf+yM5tRVpaXWOZC7S4SeLT5zyd1gNzKjLHCxAIhsxYUnXHRCdsC+cnKTVfCBuewv7N2kZCKF+/gMiqSdfiJo3XE7lmrxpIKO6YnWt7Itq/VvMJoTO7g0KkjF/irzI+OKUj5DSZORHwulA6OXNjUJbGeMdIGX7VHgbk7dv8oqx+FE0bAQ4APtOiSs5agBRdg9De92tURcj15jztYtPvaRVn5O8ozTEui4Kh2Cmf1fPFKbv5yQyNhHaqMdI2tGPREs78wGIiHT1yOmCMeKHCVgElwwgmFnmxKYsBD9XZ9GM6wzt/95M53jh/aNp/+9Y1m0QIDAQAB";
+	// --登录验证
 
-	/**********************************************************
-	 * 登录验证
-	 **********************************************************/
-	//构造测试数据,客户端sdk返回的整个json包
-	std::string jsonobj= "{\"entity\":{\"openid\":\"1-123123\",\"account\":\"test\",\"time\":1482313093},\"sign\":\"m7JTn/y3IpB084vyeqoR9ysZ5/GeowcsO3KDrDsaa8Fof2Xjq4gKdk5eDLh0nTRxZslfbet5AWs+p1M0rtF8Jan8T2VxCW/czoCkrj4o/xnYtb3wdenCXAT7LUoydjTmd+cf0I9kw0DjkPDurrT9kNqxzw6dq1A6EFZAts4f0/H5+7kn81rzPq1RkWOM6OGm8R2D2WW/jHfqZDo1mvfZvIzkA/F0M62z2VsUK821BUkgoT23dByCdeqgx4hauJTHlnvg2/MplDYMDONHai6gTFWb4FQgY2wJq1BIWCyXgDuid6n9Ck0m6paJEfOffbK7BgwH3ssaF7xYGD2sjEuCFw==\"}";
-
-	std::cout<<jsonobj.c_str()<<std::endl;
+	std::string loginEntity = "{\"openid\":\"1-123123\",\"account\":\"test\",\"time\":1482313093}";
+	std::string	 loginSign = "m7JTn/y3IpB084vyeqoR9ysZ5/GeowcsO3KDrDsaa8Fof2Xjq4gKdk5eDLh0nTRxZslfbet5AWs+p1M0rtF8Jan8T2VxCW/czoCkrj4o/xnYtb3wdenCXAT7LUoydjTmd+cf0I9kw0DjkPDurrT9kNqxzw6dq1A6EFZAts4f0/H5+7kn81rzPq1RkWOM6OGm8R2D2WW/jHfqZDo1mvfZvIzkA/F0M62z2VsUK821BUkgoT23dByCdeqgx4hauJTHlnvg2/MplDYMDONHai6gTFWb4FQgY2wJq1BIWCyXgDuid6n9Ck0m6paJEfOffbK7BgwH3ssaF7xYGD2sjEuCFw==";
 	int expire = 200;
-	//返回的登录数据
 	std::map<std::string,std::string>  retData;
-
-	//处理过程
-	bool ret=Sdk::loginVerify( public_key, jsonobj, expire,retData);
+	bool ret=Sdk::loginVerify( public_key, loginEntity, loginSign,expire,retData);
 	if (ret)
 	{
 		std::cout<<"login ok "<<std::endl;
 		for( std::map<std::string,std::string>::iterator itr = retData.begin(); itr != retData.end(); itr++)
 		{
-			std::cout<<"ret user data key="<<itr->first.c_str()<<",value="<<itr->second.c_str()<<std::endl;
+			std::cout<<"ret user data key="<<itr->first<<",value="<<itr->second<<std::endl;
 		}
 	}
 	else
 	{
 		std::cout<<"login verify error"<<std::endl;
 	}
+	return 0;
+
 	/**********************************************************
 	 * 充值回调验证
 	 **********************************************************/
@@ -122,7 +117,6 @@ int main(int argc, char ** argv)
 
 	}
 
-
 	/**********************************************************
 	 * 在线人数实时统计
 	 **********************************************************/
@@ -181,6 +175,7 @@ int main(int argc, char ** argv)
 	{
 		std::cout<<"push failed"<<std::endl;
 	}
+	return 0;
 
 	/**********************************************************
      * 兑换礼包码
@@ -206,5 +201,4 @@ int main(int argc, char ** argv)
     }
 
 	return 0;
-
 }
